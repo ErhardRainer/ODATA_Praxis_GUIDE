@@ -5,15 +5,17 @@ from ftplib import FTP
 # --- Funktion zum Laden der Konfiguration ---
 
 def load_config(filename='ftp.json'):
-    """Lädt die Konfiguration aus einer JSON-Datei."""
+    """Lädt die Konfiguration aus einer JSON-Datei im selben Verzeichnis wie diesem Skript."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    config_path = os.path.join(script_dir, filename)
     try:
-        with open(filename, 'r') as f:
+        with open(config_path, 'r') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"FEHLER: Die Konfigurationsdatei '{filename}' wurde nicht gefunden.")
+        print(f"FEHLER: Die Konfigurationsdatei '{config_path}' wurde nicht gefunden.")
         exit(1)
     except json.JSONDecodeError:
-        print(f"FEHLER: Die Datei '{filename}' enthält ungültiges JSON.")
+        print(f"FEHLER: Die Datei '{config_path}' enthält ungültiges JSON.")
         exit(1)
 
 # --- Hauptfunktion ---
@@ -57,7 +59,8 @@ if __name__ == "__main__":
     FTP_HOST = config['ftp']['host']
     FTP_USER = config['ftp']['user']
     FTP_PASS = config['ftp']['pass']
-    LOCAL_ROOT_DIR = config['paths']['local_root_dir']
+    git_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    LOCAL_ROOT_DIR = os.path.join(git_root, config['paths']['local_root_dir'])
     REMOTE_ROOT_DIR = config['paths']['remote_root_dir']
 
     try:

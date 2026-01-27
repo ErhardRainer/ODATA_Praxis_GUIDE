@@ -11,6 +11,20 @@ const setCookie = (name, value, days = 365) => {
   document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}; Max-Age=${maxAge}; Path=/; SameSite=Lax`;
 };
 
+const GA_MEASUREMENT_ID = 'G-GCJS0MM52K';
+
+function trackVirtualPageview({ path, title }) {
+  if (typeof gtag !== 'function') return;
+
+  if (title) document.title = title;
+
+  gtag('event', 'page_view', {
+    page_location: window.location.origin + path,
+    page_path: path,
+    page_title: document.title
+  });
+}
+
 const normalizeLang = (lang) => {
   const code = String(lang || '').trim().toLowerCase();
   if (!code) return '';
@@ -210,6 +224,26 @@ const App = () => {
 
   const loadItem = async (item) => {
     const file = resolveItemFile(item);
+
+    // GA4 & Navigation
+    const path = '/' + (item?.id || '');
+    const title = lt(item);
+    
+    if (item?.id) {
+        history.pushState({ 
+            path, 
+            fragmentUrl: file, 
+            title, 
+            itemId: item.id, 
+            init: item.init,
+            // Context restoration
+            contextId: activeContextId,
+            langId: activeLangId,
+            viewMode: viewMode 
+        }, '', path);
+    }
+    trackVirtualPageview({ path, title });
+
     await loadSection(file, item?.id ?? null, item?.init ?? null);
   };
 
@@ -479,6 +513,24 @@ const App = () => {
   };
 
   useEffect(() => {
+    const onPopState = async (e) => {
+        const state = e.state;
+        if (!state) return;
+        
+        if (state.contextId) setActiveContextId(state.contextId);
+        if (state.langId) setActiveLangId(state.langId);
+        if (state.viewMode) setViewMode(state.viewMode);
+        
+        if (state.fragmentUrl) {
+           trackVirtualPageview({ path: state.path, title: state.title });
+           await loadSection(state.fragmentUrl, state.itemId, state.init);
+        }
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+
+  useEffect(() => {
     (async () => {
       try {
         const response = await fetch('./navigation.json', { cache: 'no-store' });
@@ -497,6 +549,23 @@ const App = () => {
           setViewMode('docs');
           setActiveContextId(firstContext.id);
           setActiveLangId(null);
+
+          const path = '/' + firstItem.id;
+          const title = lt(firstItem);
+          
+          history.replaceState({ 
+             path, 
+             fragmentUrl: firstFile, 
+             title, 
+             itemId: firstItem.id, 
+             init: firstItem.init,
+             contextId: firstContext.id,
+             langId: null,
+             viewMode: 'docs'
+          }, '', path);
+          
+          trackVirtualPageview({ path, title });
+
           await loadSection(firstFile, firstItem.id, firstItem.init ?? null);
         }
       } catch (e) {

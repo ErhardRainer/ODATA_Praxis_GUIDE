@@ -18,7 +18,7 @@ Dies ist das Herzstück der Kommunikation. Die Datei enthält alle notwendigen Z
     "port": 21
   },
   "paths": {
-    "local_root_dir": "..\\Website",
+    "local_root_dir": "Website",
     "remote_root_dir": "/httpdocs/odata-guide"
   }
 }
