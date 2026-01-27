@@ -1,0 +1,52 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">Zählen ($inlinecount / $count)</h2>
+  
+  <p class="text-lg text-slate-700 leading-relaxed mb-8">
+    Oft müssen Sie wissen, wie viele Datensätze insgesamt vorhanden sind (z. B. für die Anzeige der Gesamtseitenanzahl in einer Liste).
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-blue-300 transition-colors">
+      <h3 class="text-xl font-bold text-slate-900 mb-4 inline-flex items-center gap-2">
+        <span class="p-2 bg-blue-100 rounded text-blue-600">V2</span> $inlinecount
+      </h3>
+      <p class="text-slate-600 text-sm mb-4">
+        Gibt die Daten UND die Gesamtanzahl in einem Paket zurück.
+      </p>
+      <div class="bg-slate-50 p-3 rounded font-mono text-xs text-blue-700">
+        ?$inlinecount=allpages
+      </div>
+      <p class="text-xs text-slate-400 mt-4 italic">
+        Das Ergebnis enthält ein Feld <code class="text-slate-500">d.__count</code>.
+      </p>
+    </div>
+
+    <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-purple-300 transition-colors">
+      <h3 class="text-xl font-bold text-slate-900 mb-4 inline-flex items-center gap-2">
+        <span class="p-2 bg-purple-100 rounded text-purple-600">V4</span> $count
+      </h3>
+      <p class="text-slate-600 text-sm mb-4">
+        In OData V4 wurde dies zu <code>$count=true</code> vereinfacht.
+      </p>
+      <div class="bg-slate-50 p-3 rounded font-mono text-xs text-purple-700">
+        ?$count=true
+      </div>
+      <p class="text-xs text-slate-400 mt-4 italic">
+        Das Ergebnis enthält ein Feld <code class="text-slate-500">@odata.count</code>.
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-12 bg-slate-900 rounded-2xl p-6 text-white overflow-hidden relative">
+    <div class="relative z-10">
+      <h4 class="text-amber-400 font-bold mb-2 uppercase tracking-widest text-xs">Ausschließlich Zählen</h4>
+      <p class="text-slate-300 text-sm mb-4">
+        Wenn Sie NUR die Zahl ohne Daten benötigen (sehr performant):
+      </p>
+      <code class="text-green-400 font-mono">.../A_SalesOrder/$count</code>
+    </div>
+    <div class="absolute -right-8 -bottom-8 opacity-10">
+       <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 24 24" fill="white"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+    </div>
+  </div>
+</article>

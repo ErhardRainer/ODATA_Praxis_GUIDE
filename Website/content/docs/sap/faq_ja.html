@@ -1,0 +1,61 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> よくある質問 (FAQ)</h2>
+  
+  <div class="grid gap-8 mt-8">
+    
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">SAP における OData v2 と v4 の違いは何ですか？</h3>
+      <p class="text-slate-600">OData v2 は、ほとんどの SAP Gateway 実装における標準です。v4 は、最新の S/4HANA システムで使用される、より新しく効率的な標準です。v4 は、パフォーマンスの向上、メタデータの簡素化、およびより強力なクエリ機能を提供します。</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">「Property cannot be filtered」というエラーが出るのはなぜですか？</h3>
+      <p class="text-slate-600">これは、<code>$metadata</code> 内でフィールドに <code>sap:filterable="false"</code> が設定されている場合に発生します。SAP はデータベースのパフォーマンスを確保するために、計算フィールドや長いテキストフィールドのフィルタリングを制限することがよくあります。</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">OData 呼び出しの認証はどのように処理すればよいですか？</h3>
+      <p class="text-slate-600">SAP は Basic 認証、OAuth 2.0 (推奨)、および SAML をサポートしています。ブラウザベースのアプリでは、Principal Propagation (本人伝達) がよく使用されます。認証情報を保護するために、常に HTTPS を使用してください。</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">取得できるレコードの最大件数は？</h3>
+      <p class="text-slate-600">SAP システムにはサーバーサイドの制限（例：1000件）があることがよくあります。それ以上のデータが必要な場合は、**ページング**を使用する必要があります（<code>__next</code> リンクをたどるか、<code>$skip</code>/<code>$top</code> を使用します）。</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">OData の関数 (Function) やアクション (Action) を呼び出すには？</h3>
+      <p class="text-slate-600">関数 (GET) とアクション (POST) は、<code>$metadata</code> で定義されるカスタム操作です。サービス URL の末尾に名前を追加して呼び出します。例: <code>.../GetQuickStats()</code> や <code>.../ReleaseOrder</code>。</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">1 回のリクエストで複数のレコードを更新できますか？</h3>
+      <p class="text-slate-600">はい、**OData バッチリクエスト** (<code>$batch</code>) を使用します。複数の GET、POST、PATCH、または DELETE 操作を 1 つの HTTP POST にまとめることができます。SAP は、multipart/mixed コンテンツタイプを使用して、アトミック（すべて成功かすべて失敗か）と非アトミックの両方の処理をサポートしています。</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">ディープインサート（関連エンティティの一括作成）はどのように行いますか？</h3>
+      <p class="text-slate-600">ディープインサートを使用すると、親 JSON 構造の中に子データをネストさせることで、1 回の POST リクエストで親エンティティと子エンティティ（販売伝票とその明細など）を同時に作成できます。</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">CSRF トークンエラーの意味は何ですか？</h3>
+      <p class="text-slate-600">SAP は、状態を変更するすべてのリクエスト (POST/PUT/DELETE) に対して CSRF トークンを要求します。まず <code>x-csrf-token: fetch</code> ヘッダーを付けて GET リクエストを送信してトークンを取得し、その後に送信する書き込みリクエストで受け取ったトークンを返送する必要があります。</p>
+    </div>
+
+    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+      <h3 class="font-bold text-lg text-slate-800 mb-2 italic text-sm uppercase">レガシーコンセプト</h3>
+      <div class="space-y-4">
+        <div>
+          <h4 class="font-bold text-slate-700">EntitySet と EntityType の違いは？</h4>
+          <p class="text-slate-600 text-sm">EntityType は「クラス」（設計図）、EntitySet は「テーブル」（インスタンスの集合）です。</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-700">JSON と XML どちらを使うべき？</h4>
+          <p class="text-slate-600 text-sm">常に JSON を優先してください。より軽量で解析が速く、帯域幅の消費も少なくなります。</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>

@@ -1,0 +1,55 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Filtering ($filter)</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Effective filtering is crucial for performance. It restricts results serverseide.
+  </p>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Comparison Operators</h3>
+  <div class="overflow-x-auto mb-8">
+    <table class="w-full text-left border-collapse">
+      <thead class="bg-slate-50">
+        <tr>
+          <th class="p-3 font-semibold text-slate-700">Operator</th>
+          <th class="p-3 font-semibold text-slate-700">Meaning</th>
+          <th class="p-3 font-semibold text-slate-700">Example</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100">
+        <tr><td class="p-3 font-mono text-blue-600">eq</td><td class="p-3">Equal</td><td class="p-3 font-mono text-xs">Status eq 'A'</td></tr>
+        <tr><td class="p-3 font-mono text-blue-600">ne</td><td class="p-3">Not equal</td><td class="p-3 font-mono text-xs">Status ne 'X'</td></tr>
+        <tr><td class="p-3 font-mono text-blue-600">gt</td><td class="p-3">Greater than</td><td class="p-3 font-mono text-xs">Amount gt 100</td></tr>
+        <tr><td class="p-3 font-mono text-blue-600">ge</td><td class="p-3">Greater or equal</td><td class="p-3 font-mono text-xs">Amount ge 100</td></tr>
+        <tr><td class="p-3 font-mono text-blue-600">lt</td><td class="p-3">Less than</td><td class="p-3 font-mono text-xs">Quantity lt 50</td></tr>
+        <tr><td class="p-3 font-mono text-blue-600">le</td><td class="p-3">Less or equal</td><td class="p-3 font-mono text-xs">Quantity le 50</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Common Filtering Patterns</h3>
+  
+  <div class="space-y-4">
+    <div class="bg-white p-4 rounded-lg border shadow-sm">
+      <h4 class="font-bold text-slate-800 mb-2">Date Filtering (OData V2)</h4>
+      <p class="text-slate-600 mb-2">Orders created in 2024:</p>
+      <code class="block bg-slate-900 text-green-400 p-3 rounded text-sm overflow-x-auto">
+        $filter=CreationDate ge datetime'2024-01-01T00:00:00' and CreationDate le datetime'2024-12-31T23:59:59'
+      </code>
+    </div>
+
+    <div class="bg-white p-4 rounded-lg border shadow-sm">
+      <h4 class="font-bold text-slate-800 mb-2">String Filtering</h4>
+      <p class="text-slate-600 mb-2">Exact match or starts with:</p>
+      <code class="block bg-slate-900 text-green-400 p-3 rounded text-sm overflow-x-auto">
+        $filter=CustomerID eq 'CUST001'<br>
+        $filter=startswith(CustomerName,'ACME')
+      </code>
+    </div>
+  </div>
+
+  <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-amber-900 font-bold mb-2">Performance Tip</h4>
+    <p class="text-amber-800 text-sm leading-relaxed">
+       Use key fields and indexed properties in filters for best performance. Avoid using <code>substringof</code> on non-indexed fields as it may result in full table scans.
+    </p>
+  </div>
+</article>

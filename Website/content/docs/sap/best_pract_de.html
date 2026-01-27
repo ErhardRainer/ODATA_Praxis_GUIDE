@@ -1,0 +1,33 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight underline underline-offset-8 decoration-emerald-500">Best Practices & Performance</h2>
+  
+  <p class="text-lg text-slate-700 leading-relaxed italic">
+    Effiziente OData-Abfragen schonen die Systemressourcen Ihres SAP-Backend und verbessern die Antwortzeiten.
+  </p>
+
+  <div class="space-y-4">
+    <div class="group p-5 bg-white border-l-4 border-emerald-500 rounded-r-xl shadow-sm hover:shadow-md transition-all">
+      <h3 class="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">1. Filtern im Backend</h3>
+      <p class="text-slate-600 text-sm">Nutzen Sie <code>$filter</code> so weit wie möglich. Laden Sie niemals alle Daten, um sie dann im JavaScript/Frontend zu filtern.</p>
+    </div>
+
+    <div class="group p-5 bg-white border-l-4 border-emerald-500 rounded-r-xl shadow-sm hover:shadow-md transition-all">
+      <h3 class="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">2. Nur benötigte Felder</h3>
+      <p class="text-slate-600 text-sm">SAP Tabellen haben oft hunderte Spalten. Verwenden Sie <code>$select</code>, um nur die 5-10 Felder zu holen, die Sie wirklich anzeigen.</p>
+    </div>
+
+    <div class="group p-5 bg-white border-l-4 border-emerald-500 rounded-r-xl shadow-sm hover:shadow-md transition-all">
+      <h3 class="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">3. Batch-Verarbeitung ($batch)</h3>
+      <p class="text-slate-600 text-sm">Kombinieren Sie mehrere Requests zu einem einzigen HTTP-Call. Das eliminiert den Network-Overhead für jeden einzelnen Request.</p>
+    </div>
+
+    <div class="group p-5 bg-white border-l-4 border-emerald-500 rounded-r-xl shadow-sm hover:shadow-md transition-all">
+      <h3 class="font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">4. Typsichere Filter</h3>
+      <p class="text-slate-600 text-sm">Stellen Sie sicher, dass GUIDs, Datumsangaben und Zahlen korrekt formatiert sind (z.B. <code>datetime'...'</code>), sonst muss SAP den Filter mühsam konvertieren oder schlägt fehl.</p>
+    </div>
+  </div>
+
+  <div class="mt-8 bg-emerald-50 p-6 rounded-2xl border border-emerald-100 italic text-emerald-800 text-sm">
+    "Ein guter OData-Request ist wie ein Skalpell – scharf und präzise. Ein schlechter Request ist wie ein Staubsauger – er saugt alles auf und macht das System langsam."
+  </div>
+</article>

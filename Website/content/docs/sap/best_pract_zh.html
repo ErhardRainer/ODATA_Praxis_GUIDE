@@ -1,0 +1,68 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">SAP OData <span class="text-slate-300 mx-2">&rsaquo;</span> 最佳实践</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    遵循这些准则，确保您的 SAP OData 集成是高效、可扩展且对系统性能友好的。
+  </p>
+
+  <div class="space-y-4 mt-8">
+    <div class="flex items-start gap-4 p-4 rounded-xl border border-emerald-100 bg-emerald-50/30">
+      <div class="bg-emerald-500 text-white rounded-lg p-2 mt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900">有选择性地使用 ($select)</h4>
+        <p class="text-slate-600 text-sm italic">“永远不要索取你不需要的东西。”</p>
+        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+          SAP Gateway 必须从数据库中检索每个字段并将其转换为 XML/JSON。通过使用 <code>$select</code>，您可以大幅减少 ABAP 处理时间和在网络上传输的数据包大小。
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4 p-4 rounded-xl border border-blue-100 bg-blue-50/30">
+      <div class="bg-blue-500 text-white rounded-lg p-2 mt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900">尽早过滤，始终过滤 ($filter)</h4>
+        <p class="text-slate-600 text-sm italic">“让数据库来完成繁重的工作。”</p>
+        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+          永远不要获取 10,000 条记录却只在 JavaScript 代码中过滤出 10 条。使用 OData 过滤器确保 SAP 执行优化的 SQL 语句，并仅返回严格需要的内容。
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4 p-4 rounded-xl border border-purple-100 bg-purple-50/30">
+      <div class="bg-purple-500 text-white rounded-lg p-2 mt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900">确定性分页</h4>
+        <p class="text-slate-600 text-sm italic">“一致性是良好用户体验的关键。”</p>
+        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+          始终将 <code>$top</code> 和 <code>$skip</code> 与包含至少一个唯一值字段（例如主键）的 <code>$orderby</code> 结合使用。这可以避免在页面之间导航时出现数据“跳跃”或重复。
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4 p-4 rounded-xl border border-amber-100 bg-amber-50/30">
+      <div class="bg-amber-500 text-white rounded-lg p-2 mt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900">谨慎使用 $expand</h4>
+        <p class="text-slate-600 text-sm italic">“适度扩展。”</p>
+        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+          虽然 <code>$expand</code> 在减少网络调用次数方面非常强大，但深度或多个连接可能会严重降低 SAP 服务器的性能。评估一个 expand 是否优于两个优化的调用。
+        </p>
+      </div>
+    </div>
+  </div>
+</article>

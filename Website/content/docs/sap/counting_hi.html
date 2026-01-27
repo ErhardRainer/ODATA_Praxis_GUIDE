@@ -1,0 +1,37 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> रिकॉर्ड गणना (Counting)</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    OData में रिकॉर्ड काउंट प्राप्त करने के दो तरीके हैं, जिनमें से प्रत्येक एक अलग उद्देश्य को पूरा करता है।
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-6 mt-8">
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      <h3 class="text-xl font-bold text-slate-800">$inlinecount (पैरामीटर)</h3>
+      <p class="text-slate-600 text-sm">
+        एक ही पेलोड में डेटा <strong>और</strong> कुल रिकॉर्ड संख्या ($top और $skip को नज़रअंदाज़ करते हुए) लौटाता है।
+      </p>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-xs font-mono text-purple-300">/SalesOrders?$inlinecount=allpages</code>
+      </div>
+      <p class="text-xs text-slate-500 italic">UI में पेजिनेशन कंपोनेंट्स बनाने के लिए आदर्श।</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      <h3 class="text-xl font-bold text-slate-800">$count (रिसोर्स)</h3>
+      <p class="text-slate-600 text-sm">
+        रिकॉर्ड काउंट दर्शाने वाला <strong>केवल</strong> एक साधारण नंबर (text/plain) लौटाता है। कोई डेटा नहीं लौटाता।
+      </p>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-xs font-mono text-purple-300">/SalesOrders/$count</code>
+      </div>
+      <p class="text-xs text-slate-500 italic">डैशबोर्ड पर बैज या त्वरित काउंटर के लिए आदर्श।</p>
+    </div>
+  </div>
+
+  <div class="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-amber-900 font-bold mb-2">प्रदर्शन प्रभाव (Performance Impact)</h4>
+    <p class="text-amber-800 text-sm leading-relaxed">
+      SAP में बड़े टेबल पर काउंटिंग धीमी हो सकती है। सिस्टम को <code>$top</code> और <code>$skip</code> पैरामीटर के लिए डेटा पुनः प्राप्त करने से पहले डेटाबेस पर <code>SELECT COUNT(*)</code> करना पड़ता है। केवल आवश्यकता होने पर ही इसका उपयोग करें।
+    </p>
+  </div>
+</article>

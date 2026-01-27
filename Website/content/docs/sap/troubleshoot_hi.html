@@ -1,0 +1,30 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> समस्या निवारण (Troubleshooting)</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    SAP OData सेवाओं के साथ काम करते समय आने वाली सामान्य समस्याएँ और उन्हें हल करने के तरीके।
+  </p>
+
+  <div class="space-y-6 mt-8">
+    
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">त्रुटि: "Property 'X' is not a valid property"</h3>
+      <p class="text-red-700 text-sm mt-1">संभवतः आप ऐसे प्रॉपर्टी नाम का उपयोग कर रहे हैं जो EntityType में मौजूद नहीं है। केस संवेदनशीलता (जैसे, <code>SalesOrder</code> बनाम <code>salesOrder</code>) की जाँच करें। OData केस-सेंसिटिव है।</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">त्रुटि: "Filter not supported" या अमान्य सिस्टम क्वेरी विकल्प</h3>
+      <p class="text-red-700 text-sm mt-1">प्रॉपर्टी फ़िल्टरिंग को कड़ाई से प्रतिबंधित कर सकती है (<code>sap:filterable="false"</code>)। या, आप ऐसे ऑपरेटर का उपयोग कर रहे होंगे जो गेटवे कार्यान्वयन द्वारा समर्थित नहीं है (जैसे, न्यूमेरिक फ़ील्ड पर <code>substringof</code>)।</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">पेजिंग में डेटा गायब होना / डुप्लिकेट होना</h3>
+      <p class="text-red-700 text-sm mt-1">यह गैर-नियतात्मक (non-deterministic) सॉर्टिंग का एक क्लासिक लक्षण है। अपने <code>$orderby</code> क्लॉज में एक यूनिक की जोड़ें।</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">HTTP 401 Unauthorized / 403 Forbidden</h3>
+      <p class="text-red-700 text-sm mt-1">अपनी क्रेडेंशियल्स सत्यापित करें। यह भी जाँचें कि क्या SAP उपयोगकर्ता के पास विशिष्ट OData सेवा तक पहुँचने के लिए आवश्यक PFCG भूमिकाएँ और प्राधिकरण ऑब्जेक्ट (S_SERVICE) हैं।</p>
+    </div>
+
+  </div>
+</article>

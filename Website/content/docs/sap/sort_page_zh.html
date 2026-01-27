@@ -1,0 +1,42 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> 排序和分页</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    适当的分页需要确定性的排序。如果没有 <code>$orderby</code>，记录的顺序是不确定的，这可能会在分页时导致记录缺失或重复。
+  </p>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">排序 ($orderby)</h3>
+  <p class="text-slate-600 mb-4">使用 <code>asc</code>（升序）或 <code>desc</code>（降序）对结果进行排序。</p>
+  
+  <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto mb-6">
+    <code class="text-sm font-mono text-purple-300">$orderby=CreationDate desc,SalesOrder asc</code>
+  </div>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">分页 ($top & $skip)</h3>
+  <ul class="list-disc list-inside text-slate-600 space-y-2 mb-6">
+    <li><code>$top=n</code>：返回前 n 条记录。</li>
+    <li><code>$skip=n</code>：跳过前 n 条记录。</li>
+  </ul>
+
+  <div class="space-y-2">
+    <div class="bg-gray-100 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700">
+      $top=50 <span class="text-gray-400">// 前 50 条记录</span>
+    </div>
+    <div class="bg-gray-100 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700">
+      $top=50&$skip=50 <span class="text-gray-400">// 第 51-100 条记录</span>
+    </div>
+    <div class="bg-gray-100 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700">
+      $top=50&$skip=100 <span class="text-gray-400">// 第 101-150 条记录</span>
+    </div>
+  </div>
+
+  <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-blue-900 font-bold mb-2">分页的关键</h4>
+    <p class="text-blue-800 text-sm leading-relaxed mb-2">
+      <strong>始终按唯一键排序！</strong>
+    </p>
+    <p class="text-blue-800 text-sm leading-relaxed">
+      如果您按非唯一字段（例如日期）排序，则具有相同日期的记录在请求之间可能会改变顺序。始终添加一个唯一的决胜字段，如主键：<br>
+      <code>$orderby=CreationDate desc, <strong>SalesOrderID asc</strong></code>
+    </p>
+  </div>
+</article>

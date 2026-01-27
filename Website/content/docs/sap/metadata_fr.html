@@ -1,0 +1,53 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Métadonnées ($metadata)</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Le point de terminaison <code>$metadata</code> est le plan de votre API. Il décrit le schéma complet du service — types d'entités, propriétés, relations et capacités.
+  </p>
+
+  <div class="my-4">
+    <p class="font-semibold mb-2">Accès aux Métadonnées :</p>
+    <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+      <code class="text-sm font-mono text-blue-300">GET /sap/opu/odata/sap/API_SALES_ORDER_SRV/$metadata</code>
+    </div>
+  </div>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Qu'est-ce qu'il y a à l'intérieur ?</h3>
+  <ul class="space-y-3">
+    <li class="flex items-start">
+      <span class="bg-blue-100 text-blue-800 font-bold px-2 py-1 rounded text-xs mr-3 mt-1 uppercase">EntityType</span>
+      <span class="text-slate-700">Définit la structure : propriétés, types de données et clés. Considérez cela comme une définition de classe.</span>
+    </li>
+    <li class="flex items-start">
+      <span class="bg-green-100 text-green-800 font-bold px-2 py-1 rounded text-xs mr-3 mt-1 uppercase">EntitySet</span>
+      <span class="text-slate-700">Une collection nommée d'instances de EntityType. C'est ce que vous interrogez dans les URL.</span>
+    </li>
+    <li class="flex items-start">
+      <span class="bg-purple-100 text-purple-800 font-bold px-2 py-1 rounded text-xs mr-3 mt-1 uppercase">NavigationProperty</span>
+      <span class="text-slate-700">Définit les relations entre les entités (ex : SalesOrder &rarr; SalesOrderItem).</span>
+    </li>
+  </ul>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Annotations SAP à Surveiller</h3>
+  <div class="overflow-x-auto">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-slate-100 border-b border-slate-200">
+          <th class="p-3 font-semibold text-slate-700">Annotation</th>
+          <th class="p-3 font-semibold text-slate-700">Signification</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100">
+        <tr><td class="p-3 font-mono text-sm text-pink-600">sap:filterable="false"</td><td class="p-3 text-slate-600">Impossible d'utiliser cette propriété dans <code>$filter</code></td></tr>
+        <tr><td class="p-3 font-mono text-sm text-pink-600">sap:sortable="false"</td><td class="p-3 text-slate-600">Impossible d'utiliser cette propriété dans <code>$orderby</code></td></tr>
+        <tr><td class="p-3 font-mono text-sm text-pink-600">sap:creatable="false"</td><td class="p-3 text-slate-600">Impossible de définir cette propriété lors du POST</td></tr>
+        <tr><td class="p-3 font-mono text-sm text-pink-600">sap:required-in-filter="true"</td><td class="p-3 text-slate-600">Doit inclure cette propriété dans <code>$filter</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-6">
+    <p class="text-yellow-800 text-sm">
+      <strong>Vérifiez toujours les métadonnées en premier :</strong> Avant de construire des requêtes, examinez le <code>$metadata</code> pour comprendre les restrictions de champ. Tenter de filtrer sur un champ non filtrable retournera une erreur.
+    </p>
+  </div>
+</article>

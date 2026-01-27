@@ -1,0 +1,42 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> ベストプラクティス</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    OData クエリの最適化は、SAP アプリケーションの安定性と速度を確保するために不可欠です。
+  </p>
+
+  <div class="space-y-8 mt-6">
+    
+    <div class="flex gap-4">
+      <div class="flex-none w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold text-xl">1</div>
+      <div>
+        <h3 class="text-xl font-bold text-slate-800">必要な項目のみを選択する</h3>
+        <p class="text-slate-600 mt-1">常に <code>$select</code> を使用して、プロセスに必要なフィールドのみを取得してください。これにより、データベースの負荷、アプリケーションサーバーのメモリ使用量、およびネットワークペイロードが削減されます。</p>
+      </div>
+    </div>
+
+    <div class="flex gap-4">
+      <div class="flex-none w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold text-xl">2</div>
+      <div>
+        <h3 class="text-xl font-bold text-slate-800">キーとインデックス付きフィールドでフィルタリングする</h3>
+        <p class="text-slate-600 mt-1">インデックスのない列でフィルタリングすると、HANA データベースでテーブルのフルスキャンが発生します。主キーまたはインデックス付きのビジネスキーでのフィルタリングを優先してください。</p>
+      </div>
+    </div>
+
+    <div class="flex gap-4">
+      <div class="flex-none w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold text-xl">3</div>
+      <div>
+        <h3 class="text-xl font-bold text-slate-800">適切なページングを使用する</h3>
+        <p class="text-slate-600 mt-1">大規模なデータセットを取得するときは、常にサーバーサイドページング (<code>$top</code>/<code>$skip</code>) を使用し、<code>$orderby</code> でユニークキーによる決定論的なソートを保証してください。</p>
+      </div>
+    </div>
+
+    <div class="flex gap-4">
+      <div class="flex-none w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold text-xl">4</div>
+      <div>
+        <h3 class="text-xl font-bold text-slate-800">メタデータの機能を確認する</h3>
+        <p class="text-slate-600 mt-1">すべてのフィールドがフィルタリング可能であると仮定しないでください。ランタイムエラーを避けるために、<code>$metadata</code> の <code>sap:filterable</code> および <code>sap:sortable</code> アノテーションを確認してください。</p>
+      </div>
+    </div>
+
+  </div>
+</article>

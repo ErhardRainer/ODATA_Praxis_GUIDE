@@ -1,0 +1,48 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> चयन ($select)</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    <code>$select</code> विकल्प यह सीमित करता है कि कौन से गुण लौटाए जाने हैं। यह एक प्रमुख अनुकूलन (optimization) तकनीक है।
+  </p>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">$select के लाभ</h3>
+  <ul class="grid gap-4 md:grid-cols-3">
+    <li class="bg-green-50 p-4 rounded-lg border border-green-100">
+      <strong class="block text-green-700 mb-1">कम पेलोड</strong>
+      <span class="text-green-800 text-sm">कम रिस्पॉन्स साइज का मतलब है तेज़ ट्रांसफर।</span>
+    </li>
+    <li class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+      <strong class="block text-blue-700 mb-1">तेज़ प्रोसेसिंग</strong>
+      <span class="text-blue-800 text-sm">बैकएंड बिना चुने गए फ़ील्ड्स के लिए महंगी गणनाओं को छोड़ सकता है।</span>
+    </li>
+    <li class="bg-purple-50 p-4 rounded-lg border border-purple-100">
+      <strong class="block text-purple-700 mb-1">साफ डेटा</strong>
+      <span class="text-purple-800 text-sm">केवल वही प्राप्त करें जिसकी आपको आवश्यकता है—बाद के कामों के लिए आसान।</span>
+    </li>
+  </ul>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">उदाहरण</h3>
+  
+  <div class="space-y-6">
+    <div>
+      <h4 class="font-bold text-slate-700 mb-2">बुनियादी चयन</h4>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-sm font-mono text-cyan-300">$select=SalesOrder,CustomerID,CreationDate,TotalNetAmount</code>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="font-bold text-slate-700 mb-2">$expand के साथ संयोजन</h4>
+      <p class="text-slate-600 mb-2 text-sm">मुख्य एंटिटी और संबंधित एंटिटी दोनों से फ़ील्ड चुनें।</p>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-sm font-mono text-cyan-300">$select=SalesOrder,CustomerID&$expand=to_Item($select=SalesOrderItem,Material,NetAmount)</code>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-red-900 font-bold mb-2">सावधानी</h4>
+    <p class="text-red-800 text-sm leading-relaxed">
+       कुछ एंडपॉइंट (विशेष रूप से <code>sap:semantics="aggregate"</code> वाले विश्लेषणात्मक एंडपॉइंट) विशिष्ट <code>$select</code> संयोजनों को प्रतिबंधित कर सकते हैं।
+    </p>
+  </div>
+</article>

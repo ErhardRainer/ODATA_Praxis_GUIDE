@@ -1,0 +1,61 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Frequently Asked Questions</h2>
+  
+  <div class="grid gap-8 mt-8">
+    
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">What's the difference between OData v2 and v4 in SAP?</h3>
+      <p class="text-slate-600">OData v2 is the standard for most SAP Gateway implementations. v4 is the newer, more efficient standard used in modern S/4HANA systems. v4 offers better performance, simplified metadata, and more powerful query capabilities.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Why am I getting 'Property cannot be filtered' errors?</h3>
+      <p class="text-slate-600">This happens when a field is marked with <code>sap:filterable="false"</code> in the <code>$metadata</code>. SAP often restricts filtering on calculated fields or large text fields to ensure database performance.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">How do I handle authentication for OData calls?</h3>
+      <p class="text-slate-600">SAP supports Basic Auth, OAuth 2.0 (recommended), and SAML. For browser-based apps, Principal Propagation is often used. Always use HTTPS to protect credentials.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">What's the maximum number of records I can retrieve?</h3>
+      <p class="text-slate-600">SAP systems often have server-side limits (e.g., 1000 records). If you need more, you must use **paging** (following the <code>__next</code> link or using <code>$skip</code>/<code>$top</code>).</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">How do I call OData functions or actions?</h3>
+      <p class="text-slate-600">Functions (GET) and Actions (POST) are custom operations defined in the <code>$metadata</code>. You call them by appending the name to the service URL, e.g., <code>.../GetQuickStats()</code> or <code>.../ReleaseOrder</code>.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Can I update multiple records in a single request?</h3>
+      <p class="text-slate-600">Yes, using **OData batch requests** (<code>$batch</code>). You can bundle multiple GET, POST, PATCH, or DELETE operations into a single HTTP POST. SAP supports both atomic (all-or-nothing) and non-atomic processing using multipart/mixed content types.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">How do I handle deep inserts (creating related entities)?</h3>
+      <p class="text-slate-600">Deep inserts allow you to create a parent and child entities (like a Sales Order and its Items) in a single POST request by nesting the child data within the parent JSON structure.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">What does the CSRF token error mean?</h3>
+      <p class="text-slate-600">SAP requires a CSRF token for all state-changing requests (POST/PUT/DELETE). You must first fetch a token via a GET request with the header <code>x-csrf-token: fetch</code>, then send the received token back in your follow-up write request.</p>
+    </div>
+
+    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+      <h3 class="font-bold text-lg text-slate-800 mb-2 italic text-sm uppercase">Legacy Concepts</h3>
+      <div class="space-y-4">
+        <div>
+          <h4 class="font-bold text-slate-700">EntitySet vs. EntityType?</h4>
+          <p class="text-slate-600 text-sm">EntityType is the "Class" (Blueprint), EntitySet is the "Table" (Instance collection).</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-700">JSON vs. XML?</h4>
+          <p class="text-slate-600 text-sm">Always prefer JSON. It is lighter, faster to parse, and uses less bandwidth.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>

@@ -1,0 +1,73 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight underline underline-offset-8 decoration-blue-600 mb-6 font-mono text-slate-800 tracking-tighter">Interaktiver OData-Query-Builder</h2>
+  
+  <p class="text-slate-600 mb-8 border-l-4 border-slate-300 pl-4 py-2 italic">
+    Stellen Sie Ihre SAP-OData-Abfrage visuell zusammen und sehen Sie, wie die URL entsprechend den Datentypen und Optionen generiert wird.
+  </p>
+
+  <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+    <div class="p-6 md:p-8 space-y-8">
+      
+      <!-- Base Configuration -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-8 border-b border-slate-100">
+        <div class="space-y-2">
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">SAP Base URL</label>
+          <input type="text" id="baseUrl" placeholder="https://host/sap/opu/odata/sap/SRV_NAME" 
+                 class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all font-mono text-sm">
+        </div>
+        <div class="space-y-2">
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Entity Set / Tabelle</label>
+          <input type="text" id="entitySet" placeholder="z.B. A_SalesOrder" 
+                 class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all font-mono text-sm">
+        </div>
+      </div>
+
+      <!-- Filters Section -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" /></svg>
+            Filter ($filter)
+          </h3>
+          <button id="addFilter" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-bold transition-colors shadow-lg shadow-blue-200 flex items-center gap-2">
+            <span>+ Filter hinzufügen</span>
+          </button>
+        </div>
+        
+        <div id="filterContainer" class="space-y-3 min-h-[50px]">
+          <!-- Dynamic filter rows go here -->
+        </div>
+      </div>
+
+      <!-- Format Section -->
+      <div class="flex flex-wrap items-center gap-6 py-6 border-t border-slate-100">
+        <span class="text-sm font-bold text-slate-500 uppercase tracking-widest">Ausgabeformat:</span>
+        <div class="flex gap-4">
+          <label class="flex items-center gap-2 cursor-pointer group">
+            <input type="radio" name="format" value="json" checked class="w-4 h-4 text-blue-600">
+            <span class="text-slate-700 group-hover:text-blue-600 transition-colors font-semibold">JSON</span>
+          </label>
+          <label class="flex items-center gap-2 cursor-pointer group">
+            <input type="radio" name="format" value="xml" class="w-4 h-4 text-blue-600">
+            <span class="text-slate-700 group-hover:text-blue-600 transition-colors font-semibold">XML (Atom)</span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Live Preview Result -->
+    <div class="bg-slate-900 p-6 md:p-8">
+      <div class="flex items-center justify-between mb-4">
+        <label class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Generierte OData URL</label>
+        <span class="text-[10px] bg-green-500/20 text-green-400 px-2 py-1 rounded border border-green-500/30 font-mono">Live</span>
+      </div>
+      <div id="resultUrl" class="text-green-400 font-mono text-sm md:text-base break-all leading-relaxed bg-black/30 p-4 rounded-lg border border-white/5 min-h-[60px] cursor-pointer hover:bg-black/40 transition-all active:scale-[0.99]" title="Klicken zum Kopieren">
+        // Geben Sie oben Daten ein, um die URL zu generieren...
+      </div>
+      <p class="text-[10px] text-slate-500 mt-4 italic text-right">
+        Basierend auf OData V2 (Standard für viele SAP-Systeme).
+      </p>
+    </div>
+  </div>
+</article>

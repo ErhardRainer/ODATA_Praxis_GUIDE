@@ -1,0 +1,47 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Guía Rápida de Opciones de Consulta</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Las opciones de consulta le permiten filtrar, ordenar, paginar y dar forma a los datos devueltos por los servicios OData. Todas las opciones comienzan con <code>$</code>.
+  </p>
+
+  <div class="grid gap-6 mt-6">
+    
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$filter</h3>
+      <p class="text-slate-600 mb-2">Restringe los resultados a las entidades que coinciden con una condición.</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">$filter=SalesOrderType eq 'OR' and TotalNetAmount gt 1000</code>
+    </div>
+
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$select</h3>
+      <p class="text-slate-600 mb-2">Devuelve solo las propiedades especificadas, lo que reduce el tamaño de la carga útil.</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">$select=SalesOrder,CustomerID,NetValue</code>
+    </div>
+
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$orderby</h3>
+      <p class="text-slate-600 mb-2">Ordena los resultados. Use <code>asc</code> o <code>desc</code>.</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">$orderby=CreationDate desc,SalesOrder asc</code>
+    </div>
+
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$top & $skip</h3>
+      <p class="text-slate-600 mb-2">Controles de paginación. <code>$top</code> limita los resultados; <code>$skip</code> desplaza el punto de partida.</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">$top=50&$skip=100</code>
+    </div>
+
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$count / $inlinecount</h3>
+      <p class="text-slate-600 mb-2">Obtenga el recuento total de entidades coincidentes.</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">/A_SalesOrder/$count</code>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words mt-1">?$inlinecount=allpages</code>
+    </div>
+
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$format</h3>
+      <p class="text-slate-600 mb-2">Especifique el formato de respuesta. El valor por defecto suele ser Atom/XML en OData v2.</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">$format=json</code>
+    </div>
+
+  </div>
+</article>

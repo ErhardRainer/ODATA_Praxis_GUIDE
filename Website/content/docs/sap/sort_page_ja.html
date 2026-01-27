@@ -1,0 +1,42 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> ソートとページング</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    適切なページングには、決定論的なソートが必要です。<code>$orderby</code> を指定しない場合、レコードの順序は定義されず、ページング時にレコードの欠落や重複が発生する可能性があります。
+  </p>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">ソート ($orderby)</h3>
+  <p class="text-slate-600 mb-4"><code>asc</code> (昇順) または <code>desc</code> (降順) を使用して結果をソートします。</p>
+  
+  <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto mb-6">
+    <code class="text-sm font-mono text-purple-300">$orderby=CreationDate desc,SalesOrder asc</code>
+  </div>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">ページング ($top & $skip)</h3>
+  <ul class="list-disc list-inside text-slate-600 space-y-2 mb-6">
+    <li><code>$top=n</code>: 最初の n 件のレコードを返します。</li>
+    <li><code>$skip=n</code>: 最初の n 件のレコードをスキップします。</li>
+  </ul>
+
+  <div class="space-y-2">
+    <div class="bg-gray-100 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700">
+      $top=50 <span class="text-gray-400">// 最初の 50 レコード</span>
+    </div>
+    <div class="bg-gray-100 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700">
+      $top=50&$skip=50 <span class="text-gray-400">// 51～100 レコード</span>
+    </div>
+    <div class="bg-gray-100 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700">
+      $top=50&$skip=100 <span class="text-gray-400">// 101～150 レコード</span>
+    </div>
+  </div>
+
+  <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-blue-900 font-bold mb-2">ページングにおける重要事項</h4>
+    <p class="text-blue-800 text-sm leading-relaxed mb-2">
+      <strong>必ずユニークキーでソートしてください！</strong>
+    </p>
+    <p class="text-blue-800 text-sm leading-relaxed">
+      ユニークでないフィールド（例：日付）でソートすると、リクエスト間で同じ日付を持つレコードの順序が変わる可能性があります。必ず主キーなどのユニークな項目を追加して順序を確定させてください： <br>
+      <code>$orderby=CreationDate desc, <strong>SalesOrderID asc</strong></code>
+    </p>
+  </div>
+</article>

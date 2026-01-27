@@ -1,0 +1,30 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Troubleshooting</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Common issues when working with SAP OData services and how to resolve them.
+  </p>
+
+  <div class="space-y-6 mt-8">
+    
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">Error: "Property 'X' is not a valid property"</h3>
+      <p class="text-red-700 text-sm mt-1">You are likely using a property name that doesn't exist in the EntityType. Check the case sensitivity (e.g., <code>SalesOrder</code> vs <code>salesOrder</code>). OData is case-sensitive.</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">Error: "Filter not supported" or Invalid System Query Option</h3>
+      <p class="text-red-700 text-sm mt-1">The property might strictly prohibit filtering (<code>sap:filterable="false"</code>). Or, you might be using an operator not supported by the gateway implementation (e.g., <code>substringof</code> on a numeric field).</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">Missing Data / Duplicates in Paging</h3>
+      <p class="text-red-700 text-sm mt-1">This is a classic symptom of non-deterministic sorting. Add a unique key to your <code>$orderby</code> clause.</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">HTTP 401 Unauthorized / 403 Forbidden</h3>
+      <p class="text-red-700 text-sm mt-1">Verify your credentials. Also check if the SAP user has the required PFCG roles and authorization objects (S_SERVICE) to access the specific OData service.</p>
+    </div>
+
+  </div>
+</article>

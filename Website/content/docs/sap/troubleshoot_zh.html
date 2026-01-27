@@ -1,0 +1,30 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> 故障排除</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    使用 SAP OData 服务时的常见问题及其解决方法。
+  </p>
+
+  <div class="space-y-6 mt-8">
+    
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">错误："Property 'X' is not a valid property"</h3>
+      <p class="text-red-700 text-sm mt-1">您可能使用了 EntityType 中不存在的属性名称。检查大小写敏感性（例如，<code>SalesOrder</code> 与 <code>salesOrder</code>）。OData 是区分大小写的。</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">错误："Filter not supported" 或无效的系统查询选项</h3>
+      <p class="text-red-700 text-sm mt-1">该属性可能严格禁止过滤 (<code>sap:filterable="false"</code>)。或者，您可能使用了 gateway 实现不支持的运算符（例如，在数字字段上使用 <code>substringof</code>）。</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">分页中的数据缺失/重复</h3>
+      <p class="text-red-700 text-sm mt-1">这是非确定性排序的典型症状。在 <code>$orderby</code> 子句中添加唯一键。</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">HTTP 401 Unauthorized / 403 Forbidden</h3>
+      <p class="text-red-700 text-sm mt-1">验证您的凭据。还要检查 SAP 用户是否具有访问特定 OData 服务所需的 PFCG 角色和授权对象 (S_SERVICE)。</p>
+    </div>
+
+  </div>
+</article>

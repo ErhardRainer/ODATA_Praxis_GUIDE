@@ -1,0 +1,42 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> सॉर्टिंग और पेजिनेशन</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    उचित पेजिनेशन के लिए नियतात्मक (deterministic) सॉर्टिंग की आवश्यकता होती है। <code>$orderby</code> के बिना, रिकॉर्ड का क्रम अपरिभाषित होता है, जिससे पेजिंग करते समय रिकॉर्ड छूट सकते हैं या डुप्लिकेट हो सकते हैं।
+  </p>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">सॉर्टिंग ($orderby)</h3>
+  <p class="text-slate-600 mb-4"><code>asc</code> (आरोही) या <code>desc</code> (अवरोही) का उपयोग करके परिणामों को सॉर्ट करें।</p>
+  
+  <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto mb-6">
+    <code class="text-sm font-mono text-purple-300">$orderby=CreationDate desc,SalesOrder asc</code>
+  </div>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">पेजिंग ($top & $skip)</h3>
+  <ul class="list-disc list-inside text-slate-600 space-y-2 mb-6">
+    <li><code>$top=n</code>: पहले n रिकॉर्ड लौटाएं।</li>
+    <li><code>$skip=n</code>: पहले n रिकॉर्ड छोड़ें।</li>
+  </ul>
+
+  <div class="space-y-2">
+    <div class="bg-gray-100 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700">
+      $top=50 <span class="text-gray-400">// पहले 50 रिकॉर्ड</span>
+    </div>
+    <div class="bg-gray-100 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700">
+      $top=50&$skip=50 <span class="text-gray-400">// रिकॉर्ड 51-100</span>
+    </div>
+    <div class="bg-gray-100 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700">
+      $top=50&$skip=100 <span class="text-gray-400">// रिकॉर्ड 101-150</span>
+    </div>
+  </div>
+
+  <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-blue-900 font-bold mb-2">पेजिंग के लिए महत्वपूर्ण</h4>
+    <p class="text-blue-800 text-sm leading-relaxed mb-2">
+      <strong>हमेशा एक यूनिक की (Unique Key) द्वारा सॉर्ट करें!</strong>
+    </p>
+    <p class="text-blue-800 text-sm leading-relaxed">
+      यदि आप एक गैर-यूनिक फ़ील्ड (जैसे दिनांक) द्वारा सॉर्ट करते हैं, तो एक ही दिनांक वाले रिकॉर्ड अनुरोधों के बीच क्रम बदल सकते हैं। हमेशा प्राइमरी की जैसा एक यूनिक टाई-ब्रेकर जोड़ें: <br>
+      <code>$orderby=CreationDate desc, <strong>SalesOrderID asc</strong></code>
+    </p>
+  </div>
+</article>

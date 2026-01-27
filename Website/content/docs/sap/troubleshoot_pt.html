@@ -1,0 +1,30 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Solução de Problemas</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Problemas comuns ao trabalhar com serviços SAP OData e como resolvê-los.
+  </p>
+
+  <div class="space-y-6 mt-8">
+    
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">Erro: "Property 'X' is not a valid property"</h3>
+      <p class="text-red-700 text-sm mt-1">É provável que você esteja usando um nome de propriedade que não existe no EntityType. Verifique a diferenciação entre maiúsculas e minúsculas (ex: <code>SalesOrder</code> vs <code>salesOrder</code>). O OData diferencia maiúsculas de minúsculas.</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">Erro: "Filter not supported" ou Parâmetro de Consulta de Sistema Inválido</h3>
+      <p class="text-red-700 text-sm mt-1">A propriedade pode proibir estritamente a filtragem (<code>sap:filterable="false"</code>). Ou você pode estar usando um operador não suportado pela implementação do gateway (ex: <code>substringof</code> em um campo numérico).</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">Dados Ausentes / Duplicatas na Paginação</h3>
+      <p class="text-red-700 text-sm mt-1">Este é um sintoma clássico de ordenação não determinística. Adicione uma chave única à sua cláusula <code>$orderby</code>.</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">HTTP 401 Unauthorized / 403 Forbidden</h3>
+      <p class="text-red-700 text-sm mt-1">Verifique suas credenciais. Além disso, verifique se o usuário SAP tem as funções PFCG e objetos de autorização (S_SERVICE) necessários para acessar o serviço OData específico.</p>
+    </div>
+
+  </div>
+</article>

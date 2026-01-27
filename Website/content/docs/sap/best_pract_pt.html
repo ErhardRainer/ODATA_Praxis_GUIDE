@@ -1,0 +1,68 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">SAP OData <span class="text-slate-300 mx-2">&rsaquo;</span> Melhores Práticas</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Siga estas diretrizes para garantir que suas integrações OData com SAP sejam eficientes, escaláveis e amigáveis ao desempenho do sistema.
+  </p>
+
+  <div class="space-y-4 mt-8">
+    <div class="flex items-start gap-4 p-4 rounded-xl border border-emerald-100 bg-emerald-50/30">
+      <div class="bg-emerald-500 text-white rounded-lg p-2 mt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900">Seja Seletivo ($select)</h4>
+        <p class="text-slate-600 text-sm italic">"Nunca peça o que você não precisa."</p>
+        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+          O SAP Gateway tem que buscar cada campo do banco de dados e convertê-lo para XML/JSON. Ao usar <code>$select</code>, você reduz drasticamente o tempo de processamento no ABAP e o tamanho do pacote de dados transferido pela rede.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4 p-4 rounded-xl border border-blue-100 bg-blue-50/30">
+      <div class="bg-blue-500 text-white rounded-lg p-2 mt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900">Filtre Cedo, Filtre Sempre ($filter)</h4>
+        <p class="text-slate-600 text-sm italic">"Deixe o banco de dados fazer o trabalho pesado."</p>
+        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+          Nunca busque 10.000 registros para filtrar apenas 10 no seu código JavaScript. Use os filtros OData para garantir que o SAP execute instruções SQL otimizadas e retorne apenas o que é estritamente necessário.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4 p-4 rounded-xl border border-purple-100 bg-purple-50/30">
+      <div class="bg-purple-500 text-white rounded-lg p-2 mt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900">Paginação Determinística</h4>
+        <p class="text-slate-600 text-sm italic">"A consistência é a chave para uma boa UX."</p>
+        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+          Sempre combine <code>$top</code> e <code>$skip</code> com um <code>$orderby</code> contendo pelo menos um campo de valor único (ex: chave primária). Isso evita "saltos" ou duplicação de dados ao navegar entre as páginas.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4 p-4 rounded-xl border border-amber-100 bg-amber-50/30">
+      <div class="bg-amber-500 text-white rounded-lg p-2 mt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900">Cuidado com $expand</h4>
+        <p class="text-slate-600 text-sm italic">"Expanda com moderação."</p>
+        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+          Embora o <code>$expand</code> seja poderoso para reduzir o número de chamadas de rede, conexões profundas ou múltiplas podem degradar severamente a performance no servidor SAP. Avalie se um expand é melhor do que duas chamadas otimizadas.
+        </p>
+      </div>
+    </div>
+  </div>
+</article>

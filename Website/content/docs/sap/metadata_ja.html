@@ -1,0 +1,53 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> メタデータ ($metadata)</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    <code>$metadata</code> エンドポイントは API の設計図です。エンティティタイプ、プロパティ、リレーションシップ、機能など、サービスの完全なスキーマを記述しています。
+  </p>
+
+  <div class="my-4">
+    <p class="font-semibold mb-2">メタデータへのアクセス:</p>
+    <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+      <code class="text-sm font-mono text-blue-300">GET /sap/opu/odata/sap/API_SALES_ORDER_SRV/$metadata</code>
+    </div>
+  </div>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">内容の構成要素</h3>
+  <ul class="space-y-3">
+    <li class="flex items-start">
+      <span class="bg-blue-100 text-blue-800 font-bold px-2 py-1 rounded text-xs mr-3 mt-1 uppercase">EntityType (エンティティタイプ)</span>
+      <span class="text-slate-700">構造（プロパティ、データ型、キー）を定義します。クラス定義のようなものと考えてください。</span>
+    </li>
+    <li class="flex items-start">
+      <span class="bg-green-100 text-green-800 font-bold px-2 py-1 rounded text-xs mr-3 mt-1 uppercase">EntitySet (エンティティセット)</span>
+      <span class="text-slate-700">EntityType インスタンスの名前付きコレクションです。これが URL でクエリ対象となるものです。</span>
+    </li>
+    <li class="flex items-start">
+      <span class="bg-purple-100 text-purple-800 font-bold px-2 py-1 rounded text-xs mr-3 mt-1 uppercase">NavigationProperty (ナビゲーションプロパティ)</span>
+      <span class="text-slate-700">エンティティ間のリレーションシップを定義します (例: SalesOrder &rarr; SalesOrderItem)。</span>
+    </li>
+  </ul>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">注目すべき SAP アノテーション</h3>
+  <div class="overflow-x-auto">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-slate-100 border-b border-slate-200">
+          <th class="p-3 font-semibold text-slate-700">アノテーション</th>
+          <th class="p-3 font-semibold text-slate-700">意味</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100">
+        <tr><td class="p-3 font-mono text-sm text-pink-600">sap:filterable="false"</td><td class="p-3 text-slate-600">このプロパティを <code>$filter</code> で使用することはできません。</td></tr>
+        <tr><td class="p-3 font-mono text-sm text-pink-600">sap:sortable="false"</td><td class="p-3 text-slate-600">このプロパティを <code>$orderby</code> で使用することはできません。</td></tr>
+        <tr><td class="p-3 font-mono text-sm text-pink-600">sap:creatable="false"</td><td class="p-3 text-slate-600">POST 中にこのプロパティを設定することはできません。</td></tr>
+        <tr><td class="p-3 font-mono text-sm text-pink-600">sap:required-in-filter="true"</td><td class="p-3 text-slate-600"><code>$filter</code> にこのプロパティを含める必要があります。</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-6">
+    <p class="text-yellow-800 text-sm">
+      <strong>常に最初にメタデータを確認してください:</strong> クエリを作成する前に、<code>$metadata</code> を確認してフィールドの制限事項を把握してください。フィルタリング不可のフィールドでフィルタリングしようとするとエラーが返されます。
+    </p>
+  </div>
+</article>

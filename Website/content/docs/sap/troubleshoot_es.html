@@ -1,0 +1,30 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Solución de Problemas</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Problemas comunes al trabajar con servicios SAP OData y cómo resolverlos.
+  </p>
+
+  <div class="space-y-6 mt-8">
+    
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">Error: "Property 'X' is not a valid property"</h3>
+      <p class="text-red-700 text-sm mt-1">Es probable que esté utilizando un nombre de propiedad que no existe en el EntityType. Compruebe la distinción entre mayúsculas y minúsculas (p. ej., <code>SalesOrder</code> frente a <code>salesOrder</code>). OData distingue entre mayúsculas y minúsculas.</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">Error: "Filter not supported" o Opción de Consulta de Sistema No Válida</h3>
+      <p class="text-red-700 text-sm mt-1">Es posible que la propiedad prohíba estrictamente el filtrado (<code>sap:filterable="false"</code>). O bien, puede que esté utilizando un operador no admitido por la implementación del gateway (p. ej., <code>substringof</code> en un campo numérico).</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">Datos Faltantes / Duplicados en la Paginación</h3>
+      <p class="text-red-700 text-sm mt-1">Este es un síntoma clásico de una ordenación no determinista. Añada una clave única a su cláusula <code>$orderby</code>.</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">HTTP 401 Unauthorized / 403 Forbidden</h3>
+      <p class="text-red-700 text-sm mt-1">Verifique sus credenciales. Compruebe también si el usuario SAP tiene los roles PFCG y los objetos de autorización (S_SERVICE) necesarios para acceder al servicio OData específico.</p>
+    </div>
+
+  </div>
+</article>

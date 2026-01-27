@@ -1,0 +1,61 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> 常见问题解答 (FAQ)</h2>
+  
+  <div class="grid gap-8 mt-8">
+    
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">SAP 中 OData v2 和 v4 有什么区别？</h3>
+      <p class="text-slate-600">OData v2 是大多数 SAP Gateway 实现的标准。v4 是现代 S/4HANA 系统中使用的更新、更高效的标准。v4 提供更好的性能、简化的元数据和更强大的查询功能。</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">为什么我会收到“Property cannot be filtered”错误？</h3>
+      <p class="text-slate-600">当 <code>$metadata</code> 中的字段被标记为 <code>sap:filterable="false"</code> 时，就会发生这种情况。SAP 通常会限制对计算字段或大文本字段的过滤，以确保数据库性能。</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">如何处理 OData 调用的身份验证？</h3>
+      <p class="text-slate-600">SAP 支持基本身份验证 (Basic Auth)、OAuth 2.0（推荐）和 SAML。对于基于浏览器的应用程序，通常使用主体传播 (Principal Propagation)。始终使用 HTTPS 以保护凭据。</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">我最多可以检索多少条记录？</h3>
+      <p class="text-slate-600">SAP 系统通常有服务器端限制（例如 1000 条记录）。如果您需要更多记录，则必须使用**分页**（关注 <code>__next</code> 链接或使用 <code>$skip</code>/<code>$top</code>）。</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">如何调用 OData 函数或操作？</h3>
+      <p class="text-slate-600">函数 (GET) 和操作 (POST) 是 <code>$metadata</code> 中定义的自定义操作。您可以通过在服务 URL 后附加名称来调用它们，例如 <code>.../GetQuickStats()</code> 或 <code>.../ReleaseOrder</code>。</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">我可以在单个请求中更新多个记录吗？</h3>
+      <p class="text-slate-600">可以，使用 **OData 批处理请求** (<code>$batch</code>)。您可以将多个 GET、POST、PATCH 或 DELETE 操作捆绑到单个 HTTP POST 中。SAP 支持使用 multipart/mixed 内容类型的原子（全有或全无）和非原子处理。</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">如何处理深层插入（创建相关实体）？</h3>
+      <p class="text-slate-600">深层插入 (Deep Insert) 允许您在单个 POST 请求中创建父实体和子实体（如销售订单及其行项目），方法是将子数据嵌套在父 JSON 结构中。</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">CSRF 令牌错误是什么意思？</h3>
+      <p class="text-slate-600">SAP 要求对所有更改状态的请求 (POST/PUT/DELETE) 使用 CSRF 令牌。您必须首先通过带有标头 <code>x-csrf-token: fetch</code> 的 GET 请求获取令牌，然后在后续的写入请求中将收到的令牌发回。</p>
+    </div>
+
+    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+      <h3 class="font-bold text-lg text-slate-800 mb-2 italic text-sm uppercase">遗留概念</h3>
+      <div class="space-y-4">
+        <div>
+          <h4 class="font-bold text-slate-700">EntitySet 与 EntityType？</h4>
+          <p class="text-slate-600 text-sm">EntityType 是“类”（蓝图），EntitySet 是“表”（实例集合）。</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-700">JSON 与 XML？</h4>
+          <p class="text-slate-600 text-sm">始终首选 JSON。它更轻量、解析速度更快且占用的带宽更少。</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>

@@ -1,0 +1,12 @@
+{
+    "ftp": {
+        "host": "212.132.71.90",
+        "user": "thinkbigger.at_acten9je54c",
+        "pass": "GQ!8a0eA1wrrqn#v",
+        "port": 21
+    },
+    "paths": {
+        "local_root_dir": "C:\\Users\\erhard.rainer\\Documents\\GitHub\\Health_Tracker\\HTML",
+        "remote_root_dir": "/healthtracker.thinkbigger.at/"
+    }
+}

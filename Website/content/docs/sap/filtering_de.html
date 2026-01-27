@@ -1,0 +1,53 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">Filtern ($filter)</h2>
+  
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Die Option <code>$filter</code> ermöglicht es Ihnen, Ausdrücke auf eine Sammlung anzuwenden, um die von der Abfrage zurückgegebenen Ergebnisse einzugrenzen.
+  </p>
+
+  <div class="space-y-8">
+    <section>
+      <h3 class="text-xl font-bold text-slate-900 mb-4 border-b-2 border-blue-100 pb-1">Vergleichsoperatoren</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-3 bg-white rounded border border-slate-200 shadow-sm">
+          <code class="text-blue-600 font-bold">eq</code> <span class="text-slate-500 mx-2">/</span> <code class="text-blue-600 font-bold">ne</code>
+          <p class="text-xs text-slate-600 mt-1">Gleich (Equal) / Ungleich (Not Equal)</p>
+        </div>
+        <div class="p-3 bg-white rounded border border-slate-200 shadow-sm">
+          <code class="text-blue-600 font-bold">gt</code> <span class="text-slate-500 mx-2">/</span> <code class="text-blue-600 font-bold">lt</code>
+          <p class="text-xs text-slate-600 mt-1">Größer als (Greater than) / Kleiner als (Less than)</p>
+        </div>
+        <div class="p-3 bg-white rounded border border-slate-200 shadow-sm">
+          <code class="text-blue-600 font-bold">ge</code> <span class="text-slate-500 mx-2">/</span> <code class="text-blue-600 font-bold">le</code>
+          <p class="text-xs text-slate-600 mt-1">Größer gleich (Greater/Equal) / Kleiner gleich (Less/Equal)</p>
+        </div>
+        <div class="p-3 bg-white rounded border border-slate-200 shadow-sm">
+          <code class="text-blue-600 font-bold">and</code> <span class="text-slate-500 mx-2">/</span> <code class="text-blue-600 font-bold">or</code>
+          <p class="text-xs text-slate-600 mt-1">Logisches UND / ODER</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="text-xl font-bold text-slate-900 mb-4 border-b-2 border-blue-100 pb-1">Funktionen</h3>
+      <ul class="list-disc list-inside space-y-2 text-slate-700">
+        <li><code class="font-bold">startswith(Field, 'Value')</code></li>
+        <li><code class="font-bold">endswith(Field, 'Value')</code></li>
+        <li><code class="font-bold">substringof('Value', Field)</code> (Häufig in OData V2)</li>
+        <li><code class="font-bold">contains(Field, 'Value')</code> (OData V4)</li>
+      </ul>
+    </section>
+
+    <div class="bg-indigo-900 text-indigo-100 p-6 rounded-2xl shadow-lg">
+      <h4 class="font-bold mb-3 flex items-center gap-2">⚠️ Der Datentyp ist entscheidend!</h4>
+      <p class="text-sm opacity-90 leading-relaxed mb-4">
+        In OData V2 (typisch für SAP ECC/S4) müssen Datentypen mit spezifischen Literalen formatiert werden:
+      </p>
+      <ul class="text-sm space-y-2 font-mono">
+        <li class="bg-indigo-800 p-2 rounded"><span class="text-amber-400">Date:</span> PostingDate eq datetime'2023-10-01T00:00:00'</li>
+        <li class="bg-indigo-800 p-2 rounded"><span class="text-amber-400">GUID:</span> NodeID eq guid'005056ab-...'</li>
+        <li class="bg-indigo-800 p-2 rounded"><span class="text-amber-400">String:</span> City eq 'Berlin'</li>
+      </ul>
+    </div>
+  </div>
+</article>

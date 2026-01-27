@@ -1,0 +1,40 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">Selektieren & Erweitern</h2>
+  
+  <div class="grid md:grid-cols-2 gap-8 items-start">
+    <div class="space-y-4">
+      <h3 class="text-xl font-bold text-slate-900">$select</h3>
+      <p class="text-slate-600 leading-relaxed">
+        Verwenden Sie <code>$select</code>, um nur die Felder zurückzugeben, die Sie tatsächlich benötigen. Dies reduziert die Payload-Größe und verbessert die Performance erheblich.
+      </p>
+      <div class="bg-slate-100 p-3 rounded font-mono text-xs">
+        ?$select=SalesOrder,Customer,Amount
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      <h3 class="text-xl font-bold text-slate-900">$expand</h3>
+      <p class="text-slate-600 leading-relaxed">
+        Verwenden Sie <code>$expand</code>, um verknüpfte Entitäten in einem einzigen Request mitzuladen. Das vermeidet den "N+1 Query"-Effekt.
+      </p>
+      <div class="bg-slate-100 p-3 rounded font-mono text-xs">
+        ?$expand=to_Items
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-8 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl shadow-sm">
+    <h4 class="font-bold text-blue-900 mb-3">Kombination von beidem</h4>
+    <p class="text-sm text-blue-800 mb-4">
+      In SAP OData können Sie Felder aus der Hauptebene und der erweiterten Ebene gleichzeitig einschränken:
+    </p>
+    <div class="bg-white p-4 rounded-lg border border-blue-200 shadow-inner">
+      <code class="text-blue-600 block break-all text-xs lg:text-sm italic">
+        ?$select=SalesOrder,to_Items/Material,to_Items/Quantity&$expand=to_Items
+      </code>
+    </div>
+    <p class="text-xs text-blue-500 mt-4 italic">
+      * Hinweis: In OData V4 ist die Syntax für verschachteltes Select etwas anders: $expand=to_Items($select=Material,Quantity).
+    </p>
+  </div>
+</article>

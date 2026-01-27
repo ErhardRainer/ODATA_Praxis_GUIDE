@@ -1,0 +1,42 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Ordenación y Paginación</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Una paginación adecuada requiere una ordenación determinista. Sin <code>$orderby</code>, el orden de los registros no está definido, lo que puede dar lugar a registros faltantes o duplicados al paginar.
+  </p>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Ordenación ($orderby)</h3>
+  <p class="text-slate-600 mb-4">Ordene los resultados utilizando <code>asc</code> (ascendente) o <code>desc</code> (descendente).</p>
+  
+  <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto mb-6">
+    <code class="text-sm font-mono text-purple-300">$orderby=CreationDate desc,SalesOrder asc</code>
+  </div>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Paginación ($top & $skip)</h3>
+  <ul class="list-disc list-inside text-slate-600 space-y-2 mb-6">
+    <li><code>$top=n</code>: Devuelve los primeros n registros.</li>
+    <li><code>$skip=n</code>: Salta los primeros n registros.</li>
+  </ul>
+
+  <div class="space-y-2">
+    <div class="bg-gray-100 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700">
+      $top=50 <span class="text-gray-400">// Primeros 50 registros</span>
+    </div>
+    <div class="bg-gray-100 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700">
+      $top=50&$skip=50 <span class="text-gray-400">// Registros 51-100</span>
+    </div>
+    <div class="bg-gray-100 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700">
+      $top=50&$skip=100 <span class="text-gray-400">// Registros 101-150</span>
+    </div>
+  </div>
+
+  <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-blue-900 font-bold mb-2">Crucial para la Paginación</h4>
+    <p class="text-blue-800 text-sm leading-relaxed mb-2">
+      <strong>¡Ordene siempre por una clave única!</strong>
+    </p>
+    <p class="text-blue-800 text-sm leading-relaxed">
+      Si ordena por un campo no único (por ejemplo, la fecha), los registros con la misma fecha pueden cambiar de orden entre peticiones. Añada siempre un desempate único como la clave primaria: <br>
+      <code>$orderby=CreationDate desc, <strong>SalesOrderID asc</strong></code>
+    </p>
+  </div>
+</article>

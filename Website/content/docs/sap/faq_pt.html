@@ -1,0 +1,61 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Perguntas Frequentes (FAQ)</h2>
+  
+  <div class="grid gap-8 mt-8">
+    
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Qual é a diferença entre OData v2 e v4 no SAP?</h3>
+      <p class="text-slate-600">O OData v2 é o padrão para a maioria das implementações do SAP Gateway. O v4 é o padrão mais novo e eficiente usado em sistemas S/4HANA modernos. O v4 oferece melhor performance, metadados simplificados e capacidades de consulta mais poderosas.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Por que estou recebendo erros de 'Property cannot be filtered'?</h3>
+      <p class="text-slate-600">Isso acontece quando um campo está marcado com <code>sap:filterable="false"</code> no <code>$metadata</code>. O SAP frequentemente restringe a filtragem em campos calculados ou campos de texto grandes para garantir o desempenho do banco de dados.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Como lidar com a autenticação para chamadas OData?</h3>
+      <p class="text-slate-600">O SAP suporta Basic Auth, OAuth 2.0 (recomendado) e SAML. Para aplicativos baseados em navegador, a Propagação de Principal é frequentemente usada. Sempre use HTTPS para proteger as credenciais.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Qual é o número máximo de registros que posso recuperar?</h3>
+      <p class="text-slate-600">Os sistemas SAP geralmente têm limites no lado do servidor (ex: 1.000 registros). Se você precisar de mais, deverá usar a **paginação** (seguindo o link <code>__next</code> ou usando <code>$skip</code>/<code>$top</code>).</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Como faço para chamar funções ou ações OData?</h3>
+      <p class="text-slate-600">Funções (GET) e Ações (POST) são operações personalizadas definidas no <code>$metadata</code>. Você as chama anexando o nome à URL do serviço, ex: <code>.../GetQuickStats()</code> ou <code>.../ReleaseOrder</code>.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Posso atualizar vários registros em uma única solicitação?</h3>
+      <p class="text-slate-600">Sim, usando as **solicitações em lote OData** (<code>$batch</code>). Você pode agrupar várias operações GET, POST, PATCH ou DELETE em um único POST HTTP. O SAP suporta processamento atômico (tudo ou nada) e não atômico usando tipos de conteúdo multipart/mixed.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Como lidar com deep inserts (criação de entidades relacionadas)?</h3>
+      <p class="text-slate-600">Os deep inserts permitem criar entidades pai e filho (como uma Ordem de Venda e seus Itens) em uma única solicitação POST, aninhando os dados do filho dentro da estrutura JSON do pai.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">O que significa o erro do token CSRF?</h3>
+      <p class="text-slate-600">O SAP exige um token CSRF para todas as solicitações que alteram o estado (POST/PUT/DELETE). Você deve primeiro buscar um token via uma solicitação GET com o cabeçalho <code>x-csrf-token: fetch</code> e, em seguida, enviar o token recebido de volta em sua solicitação de gravação subsequente.</p>
+    </div>
+
+    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+      <h3 class="font-bold text-lg text-slate-800 mb-2 italic text-sm uppercase">Conceitos Legados</h3>
+      <div class="space-y-4">
+        <div>
+          <h4 class="font-bold text-slate-700">EntitySet vs. EntityType?</h4>
+          <p class="text-slate-600 text-sm">EntityType é a "Classe" (Modelo), EntitySet é a "Tabela" (Coleção de instâncias).</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-700">JSON vs. XML?</h4>
+          <p class="text-slate-600 text-sm">Sempre prefira JSON. É mais leve, mais rápido de processar e usa menos largura de banda.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>

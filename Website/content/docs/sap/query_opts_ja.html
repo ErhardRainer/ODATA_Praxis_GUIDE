@@ -1,0 +1,47 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> クエリオプション チートシート</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    クエリオプションを使用すると、OData サービスによって返されるデータをフィルタリング、ソート、ページング、および構造化できます。すべてのオプションは <code>$</code> で始まります。
+  </p>
+
+  <div class="grid gap-6 mt-6">
+    
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$filter</h3>
+      <p class="text-slate-600 mb-2">条件に一致するエンティティに結果を制限します。</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">$filter=SalesOrderType eq 'OR' and TotalNetAmount gt 1000</code>
+    </div>
+
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$select</h3>
+      <p class="text-slate-600 mb-2">指定されたプロパティのみを返し、ペイロードサイズを削減します。</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">$select=SalesOrder,CustomerID,NetValue</code>
+    </div>
+
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$orderby</h3>
+      <p class="text-slate-600 mb-2">結果をソートします。<code>asc</code> または <code>desc</code> を使用します。</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">$orderby=CreationDate desc,SalesOrder asc</code>
+    </div>
+
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$top & $skip</h3>
+      <p class="text-slate-600 mb-2">ページング制御です。<code>$top</code> は結果を制限し、<code>$skip</code> は開始点をオフセットします。</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">$top=50&$skip=100</code>
+    </div>
+
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$count / $inlinecount</h3>
+      <p class="text-slate-600 mb-2">一致するエンティティの総数を取得します。</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">/A_SalesOrder/$count</code>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words mt-1">?$inlinecount=allpages</code>
+    </div>
+
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$format</h3>
+      <p class="text-slate-600 mb-2">レスポンス形式を指定します。OData v2 では通常 Atom/XML がデフォルトです。</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">$format=json</code>
+    </div>
+
+  </div>
+</article>

@@ -1,0 +1,37 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Comptage des Enregistrements</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Il existe deux façons d'obtenir le nombre d'enregistrements dans OData, chacune répondant à un objectif différent.
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-6 mt-8">
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      <h3 class="text-xl font-bold text-slate-800">$inlinecount (Paramètre)</h3>
+      <p class="text-slate-600 text-sm">
+        Renvoie les données <strong>et</strong> le nombre total d'enregistrements (en ignorant $top et $skip) dans une seule charge utile (payload).
+      </p>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-xs font-mono text-purple-300">/SalesOrders?$inlinecount=allpages</code>
+      </div>
+      <p class="text-xs text-slate-500 italic">Idéal pour construire des composants de pagination dans l'interface utilisateur.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      <h3 class="text-xl font-bold text-slate-800">$count (Ressource)</h3>
+      <p class="text-slate-600 text-sm">
+        Renvoie <strong>uniquement</strong> un nombre simple (text/plain) représentant le total. Ne renvoie aucune donnée.
+      </p>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-xs font-mono text-purple-300">/SalesOrders/$count</code>
+      </div>
+      <p class="text-xs text-slate-500 italic">Idéal pour les badges ou les compteurs rapides sur un tableau de bord.</p>
+    </div>
+  </div>
+
+  <div class="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-amber-900 font-bold mb-2">Impact sur les Performances</h4>
+    <p class="text-amber-800 text-sm leading-relaxed">
+      Le comptage peut être lent sur les grandes tables dans SAP. Le système doit d'abord effectuer un <code>SELECT COUNT(*)</code> sur la base de données avant de récupérer les données pour les paramètres <code>$top</code> et <code>$skip</code>. À n'utiliser que si nécessaire.
+    </p>
+  </div>
+</article>

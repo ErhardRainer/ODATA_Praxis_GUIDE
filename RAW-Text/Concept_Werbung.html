@@ -1,0 +1,396 @@
+import React, { useState, useEffect } from 'react';
+import { 
+  BookOpen, 
+  Code, 
+  Filter, 
+  Database, 
+  Layers, 
+  AlertTriangle, 
+  CheckCircle2, 
+  ChevronRight, 
+  Copy,
+  Terminal,
+  Search,
+  Info,
+  Zap,
+  Globe, 
+  Share2,
+  Cpu,
+  History,
+  Settings,
+  ShieldCheck,
+  Boxes,
+  Laptop,
+  ExternalLink,
+  PlayCircle,
+  FileCode,
+  ShieldAlert,
+  Sparkles,
+  Wand2,
+  Loader2,
+  Lock,
+  Hash,
+  Copyright,
+  Megaphone,
+  Languages,
+  ShoppingCart,
+  Star,
+  GraduationCap,
+  Play
+} from 'lucide-react';
+
+const translations = {
+  de: {
+    title: "OData Praxis",
+    subtitle: "Guide",
+    nav_docs: "DOKUMENTATION",
+    nav_code: "IMPLEMENTATION",
+    nav_ai: "INTELLIGENZ",
+    programming: "Programmierung",
+    expert_tip: "Experten-Tipp",
+    security_note: "Sicherheits-Hinweis: OData-Requests können sensible Daten enthalten. Verwenden Sie stets HTTPS.",
+    ai_title: "KI Code Generator",
+    ai_button: "Code generieren",
+    ai_loading: "Gemini rechnet...",
+    ad_placeholder: "Anzeige / AdSense",
+    sponsored: "Gesponsert",
+    setup: "Setup",
+    fetch: "Daten abrufen",
+    payload: "Payload",
+    error: "Fehler",
+    privacy: "Datenschutz",
+    imprint: "Impressum",
+    book_recommendation: "Empfohlene Fachliteratur",
+    course_recommendation: "Video-Trainings & Zertifizierung",
+    buy_now: "Auf Amazon ansehen",
+    enroll_now: "Kurs starten",
+    rating: "Bewertung"
+  },
+  en: {
+    title: "OData Mastery",
+    subtitle: "Guide",
+    nav_docs: "DOCUMENTATION",
+    nav_code: "IMPLEMENTATION",
+    nav_ai: "INTELLIGENCE",
+    programming: "Programming",
+    expert_tip: "Expert Tip",
+    security_note: "Security Note: OData requests can contain sensitive data. Always use HTTPS.",
+    ai_title: "AI Code Generator",
+    ai_button: "Generate Code",
+    ai_loading: "Gemini thinking...",
+    ad_placeholder: "Advertisement / AdSense",
+    sponsored: "Sponsored",
+    setup: "Setup",
+    fetch: "Fetch Data",
+    payload: "Payload",
+    error: "Errors",
+    privacy: "Privacy",
+    imprint: "Imprint",
+    book_recommendation: "Recommended Reading",
+    course_recommendation: "Video Training & Certification",
+    buy_now: "View on Amazon",
+    enroll_now: "Start Learning",
+    rating: "Rating"
+  },
+  ja: {
+    title: "OData 実践",
+    subtitle: "ガイド",
+    nav_docs: "ドキュメント",
+    nav_code: "実装",
+    nav_ai: "AI機能",
+    programming: "プログラミング",
+    expert_tip: "エキスパートのヒント",
+    security_note: "セキュリティに関する注意：HTTPSを使用してください。",
+    ai_title: "AIコード生成",
+    ai_button: "コードを生成する",
+    ai_loading: "Geminiが計算中...",
+    ad_placeholder: "広告 / AdSense",
+    sponsored: "スポンサー",
+    setup: "設定",
+    fetch: "データ取得",
+    payload: "ペイロード",
+    error: "エラー",
+    privacy: "プライバシー",
+    imprint: "インプリント",
+    book_recommendation: "おすすめの書籍",
+    course_recommendation: "ビデオトレーニングと認定",
+    buy_now: "Amazonで見る",
+    enroll_now: "学習を開始する",
+    rating: "評価"
+  }
+};
+
+// Kursempfehlungen (Simulation dynamischer Affiliate-Daten)
+const courseData = {
+  SAP: {
+    title: "SAP Gateway & OData - Deep Dive",
+    provider: "Udemy",
+    duration: "12h Video",
+    rating: 4.8,
+    price: "19,99 €",
+    link: "https://www.udemy.com/topic/odata/"
+  },
+  SharePoint: {
+    title: "SharePoint REST API & OData Mastery",
+    provider: "LinkedIn Learning",
+    duration: "4.5h Video",
+    rating: 4.7,
+    price: "Abo",
+    link: "https://www.udemy.com/topic/odata/"
+  },
+  Allgemein: {
+    title: "Building Modern APIs with OData",
+    provider: "Udemy / Pluralsight",
+    duration: "8h Video",
+    rating: 4.9,
+    price: "14,99 €",
+    link: "https://www.udemy.com/topic/odata/"
+  }
+};
+
+const affiliateBooks = {
+  de: {
+    title: "SAP Gateway und OData",
+    author: "B. Gebhard",
+    rating: 5,
+    price: "ca. 79,90 €",
+    link: "https://www.amazon.de/s?k=SAP+Gateway+und+OData"
+  },
+  en: {
+    title: "OData Essentials",
+    author: "M. Pizzo",
+    rating: 4,
+    price: "ca. $45.00",
+    link: "https://www.amazon.com/s?k=OData+Programming"
+  },
+  ja: {
+    title: "OData Web API 実践ガイド",
+    author: "Tech Press JP",
+    rating: 5,
+    price: "¥4,500",
+    link: "https://www.amazon.co.jp/s?k=OData+Programming"
+  }
+};
+
+const AdContainer = ({ type, className = "" }) => (
+  <div className={`bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center p-2 transition-all hover:bg-white group overflow-hidden ${className}`}>
+    <span className="text-[8px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1 group-hover:text-blue-500 transition-colors">Advertisement</span>
+    <div className={`bg-white/80 border border-slate-200 rounded flex items-center justify-center text-slate-300 font-mono text-[10px] w-full h-full shadow-inner`}>
+      {type === 'leaderboard' && '728 x 90'}
+      {type === 'sidebar' && '300 x 600'}
+      {type === 'content' && 'Responsive Banner'}
+    </div>
+  </div>
+);
+
+const ODataGuide = () => {
+  const [lang, setLang] = useState('en');
+  const [viewMode, setViewMode] = useState('docs'); 
+  const [activeContext, setActiveContext] = useState('Allgemein');
+  const [activeTab, setActiveTab] = useState('intro');
+  const [activeLang, setActiveLang] = useState(null);
+  const [copied, setCopied] = useState(null);
+
+  useEffect(() => {
+    const userLang = navigator.language.split('-')[0];
+    if (translations[userLang]) setLang(userLang);
+  }, []);
+
+  const t = translations[lang];
+  const book = affiliateBooks[lang] || affiliateBooks['en'];
+  const course = courseData[activeContext] || courseData['Allgemein'];
+  const currentYear = new Date().getFullYear();
+
+  const contexts = ['Allgemein', 'OData V2', 'OData V4', 'SAP', 'SharePoint', 'Dynamics 365'];
+  const languages = [
+    { id: 'python', name: 'Python' },
+    { id: 'js', name: 'JavaScript' },
+    { id: 'csharp', name: 'C#' },
+    { id: 'vbnet', name: 'VB.NET' },
+    { id: 'generator', name: 'Generator 🪄', isAi: true }
+  ];
+
+  const getSidebarSections = () => {
+    if (viewMode === 'code' && activeLang) {
+      if (activeLang === 'generator') return [{ id: 'ai_setup', title: t.ai_title, icon: <Wand2 size={18} /> }];
+      return [
+        { id: 'setup', title: t.setup, icon: <Settings size={18} /> },
+        { id: 'fetch', title: t.fetch, icon: <PlayCircle size={18} /> },
+        { id: 'payload', title: t.payload, icon: <FileCode size={18} /> },
+        { id: 'error', title: t.error, icon: <ShieldAlert size={18} /> }
+      ];
+    }
+    return [
+      { id: 'intro', title: 'Introduction', icon: <BookOpen size={18} /> },
+      { id: 'query', title: 'Query Syntax', icon: <Filter size={18} /> },
+      { id: 'limitations', title: 'Limitations', icon: <AlertTriangle size={18} /> }
+    ];
+  };
+
+  const currentSections = getSidebarSections();
+
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-100">
+      {/* Header */}
+      <div className="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+        <header className="max-w-[1440px] mx-auto px-6 py-4 flex flex-col xl:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-6 shrink-0">
+            <div className="flex items-center gap-2">
+              <div className="bg-blue-600 p-1 rounded-lg shadow-md">
+                <Terminal size={22} className="text-white" />
+              </div>
+              <h1 className="font-black text-xl tracking-tight uppercase italic">
+                {t.title} <span className="text-blue-600">{t.subtitle}</span>
+              </h1>
+            </div>
+            <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
+              {Object.keys(translations).map(l => (
+                <button key={l} onClick={() => setLang(l)} className={`px-2 py-1 text-[10px] font-bold rounded-lg transition-all ${lang === l ? 'bg-white shadow-sm text-blue-600' : 'text-slate-400'}`}>
+                  {l.toUpperCase()}
+                </button>
+              ))}
+            </div>
+          </div>
+          <AdContainer type="leaderboard" className="hidden md:flex w-full max-w-[728px] h-[90px]" />
+        </header>
+      </div>
+
+      {/* Navigation Sub-Bar */}
+      <div className="bg-slate-900 border-b border-slate-800 sticky top-[160px] xl:top-[122px] z-30 shadow-lg overflow-x-auto no-scrollbar">
+        <div className="max-w-[1440px] mx-auto px-6 py-3 flex items-center justify-between min-w-max gap-8">
+           <div className="flex items-center gap-2 shrink-0">
+              {contexts.map(ctx => (
+                <button key={ctx} onClick={() => {setViewMode('docs'); setActiveContext(ctx); setActiveLang(null);}} className={`px-3 py-1.5 rounded-lg text-[11px] font-bold transition-all border-2 ${viewMode === 'docs' && activeContext === ctx ? 'border-blue-600 bg-blue-600 text-white' : 'border-transparent text-slate-400 hover:text-white'}`}>
+                  {ctx}
+                </button>
+              ))}
+           </div>
+           <div className="h-6 w-px bg-slate-700 mx-2" />
+           <div className="flex items-center gap-2 shrink-0">
+            {languages.map(langItem => (
+              <button key={langItem.id} onClick={() => {setViewMode('code'); setActiveLang(langItem.id);}} className={`px-3 py-1.5 rounded-lg text-[11px] font-bold transition-all border-2 ${viewMode === 'code' && activeLang === langItem.id ? (langItem.isAi ? 'border-purple-500 bg-purple-500 text-white' : 'border-blue-500 bg-blue-500 text-white') : 'border-transparent text-slate-400 hover:text-white'}`}>
+                {langItem.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <main className="max-w-[1440px] mx-auto px-6 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <aside className="lg:col-span-3 space-y-8">
+            <nav className="space-y-1 sticky top-56">
+              <p className="text-[10px] uppercase font-black text-slate-400 tracking-widest mb-4 px-3">
+                {viewMode === 'docs' ? t.nav_docs : t.nav_code}
+              </p>
+              {currentSections.map(s => (
+                <button key={s.id} onClick={() => setActiveTab(s.id)} className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all group ${activeTab === s.id ? 'bg-white shadow-sm border border-slate-200 text-blue-600' : 'text-slate-600 hover:bg-slate-200/50'}`}>
+                  <span className={`${activeTab === s.id ? 'text-blue-600' : 'text-slate-400 group-hover:text-slate-600'}`}>{s.icon}</span>
+                  {s.title}
+                </button>
+              ))}
+              <div className="pt-8">
+                <AdContainer type="sidebar" className="w-full h-[400px]" />
+              </div>
+            </nav>
+          </aside>
+
+          <div className="lg:col-span-9 flex flex-col gap-8">
+            {/* Main Content Area */}
+            <div className="bg-white rounded-[2.5rem] border border-slate-200 p-10 shadow-sm relative overflow-hidden">
+              <div className="flex items-center gap-2 text-[10px] font-black text-slate-300 uppercase tracking-widest mb-6">
+                <span>{activeContext}</span>
+                <ChevronRight size={12} />
+                <span className="text-blue-600">{activeTab}</span>
+              </div>
+
+              <h2 className="text-4xl font-black mb-6 text-slate-900 leading-tight">
+                {activeContext} <span className="text-blue-600">/</span> {currentSections.find(s => s.id === activeTab)?.title}
+              </h2>
+
+              <div className="prose prose-slate max-w-none">
+                <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                  Hier erfahren Sie, wie Sie OData-Abfragen spezifisch in {activeContext} Umgebungen implementieren. 
+                </p>
+                <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-2xl mb-8">
+                   <h4 className="text-blue-900 font-bold mb-2 flex items-center gap-2"><Info size={18}/> {t.expert_tip}</h4>
+                   <p className="text-blue-800 text-sm leading-relaxed">Vergessen Sie nicht den Header 'OData-Version: 4.0'!</p>
+                </div>
+              </div>
+
+              <div className="mt-12">
+                <AdContainer type="content" className="w-full h-[180px]" />
+              </div>
+            </div>
+
+            {/* NEU: Schulungs / Udemy Sektion */}
+            <div className="bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-sm transition-all hover:shadow-md border-t-4 border-t-purple-500">
+               <div className="p-10 flex flex-col md:flex-row items-center gap-8">
+                  <div className="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 shrink-0">
+                    <GraduationCap size={40} />
+                  </div>
+                  <div className="flex-1 text-center md:text-left">
+                     <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+                        <span className="bg-purple-100 text-purple-700 text-[9px] font-black px-2 py-0.5 rounded uppercase tracking-widest italic">{course.provider}</span>
+                        <div className="flex text-amber-400"><Star size={10} fill="currentColor"/><Star size={10} fill="currentColor"/><Star size={10} fill="currentColor"/><Star size={10} fill="currentColor"/><Star size={10} fill="currentColor"/></div>
+                     </div>
+                     <h3 className="text-2xl font-black text-slate-900 mb-2">{course.title}</h3>
+                     <p className="text-slate-500 text-sm font-medium">Lerne {activeContext} Implementation von Grund auf. Inklusive Zertifikat und Praxisbeispielen.</p>
+                  </div>
+                  <div className="flex flex-col items-center gap-2 shrink-0">
+                     <a 
+                      href={course.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest transition-all flex items-center gap-2 shadow-lg shadow-purple-200 active:scale-95"
+                     >
+                       <PlayCircle size={18} fill="white" />
+                       {t.enroll_now}
+                     </a>
+                     <span className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">{course.duration} • {course.price}</span>
+                  </div>
+               </div>
+            </div>
+
+            {/* Affiliate / Book Section */}
+            <div className="bg-slate-900 rounded-[2.5rem] p-1 shadow-xl overflow-hidden group">
+              <div className="bg-slate-800/50 p-10 flex flex-col md:flex-row items-center gap-10">
+                <div className="shrink-0 relative">
+                  <div className="w-32 h-44 bg-gradient-to-br from-blue-500 to-indigo-700 rounded-md shadow-2xl flex flex-col p-3 text-white border-l-4 border-blue-400/30 transform group-hover:rotate-3 transition-transform duration-500">
+                    <div className="h-2 w-10 bg-white/20 rounded mb-2"></div>
+                    <p className="text-[10px] font-black uppercase leading-tight mt-auto">{book.title}</p>
+                    <p className="text-[8px] opacity-60 mt-1">{book.author}</p>
+                  </div>
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <span className="text-[10px] font-black text-blue-400 uppercase tracking-[0.3em] mb-3 block">{t.book_recommendation}</span>
+                  <h3 className="text-white text-2xl font-black mb-2">{book.title}</h3>
+                  <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+                    Das Standardwerk für professionelle Enterprise-Architektur.
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-center gap-4">
+                    <a href={book.link} target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-slate-100 text-slate-900 px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest transition-all flex items-center gap-2 shadow-lg active:scale-95">
+                      <ShoppingCart size={18} />
+                      {t.buy_now}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer className="max-w-[1440px] mx-auto px-6 py-12 border-t border-slate-200 mt-10 text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] flex justify-between items-center">
+        <div>&copy; {currentYear} ThinkBIGGER.at</div>
+        <div className="flex gap-8">
+          <span className="hover:text-blue-600 cursor-pointer">{t.privacy}</span>
+          <span className="hover:text-blue-600 cursor-pointer">{t.imprint}</span>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default ODataGuide;

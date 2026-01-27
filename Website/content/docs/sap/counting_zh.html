@@ -1,0 +1,37 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> 记录计数</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    在 OData 中有两种获取记录计数的方法，每种方法都有不同的用途。
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-6 mt-8">
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      <h3 class="text-xl font-bold text-slate-800">$inlinecount (参数)</h3>
+      <p class="text-slate-600 text-sm">
+        在单个有效负载中返回数据<strong>以及</strong>总记录数（忽略 $top 和 $skip）。
+      </p>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-xs font-mono text-purple-300">/SalesOrders?$inlinecount=allpages</code>
+      </div>
+      <p class="text-xs text-slate-500 italic">非常适合在 UI 中构建分页组件。</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      <h3 class="text-xl font-bold text-slate-800">$count (资源)</h3>
+      <p class="text-slate-600 text-sm">
+        <strong>仅</strong>返回一个表示计数的简单数字 (text/plain)。不返回任何数据。
+      </p>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-xs font-mono text-purple-300">/SalesOrders/$count</code>
+      </div>
+      <p class="text-xs text-slate-500 italic">非常适合仪表板上的徽章或快速计数器。</p>
+    </div>
+  </div>
+
+  <div class="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-amber-900 font-bold mb-2">性能影响</h4>
+    <p class="text-amber-800 text-sm leading-relaxed">
+      在 SAP 的大型表中，计数可能会很慢。系统必须先在数据库上执行 <code>SELECT COUNT(*)</code>，然后才能检索 <code>$top</code> 和 <code>$skip</code> 参数的数据。仅在必要时使用。
+    </p>
+  </div>
+</article>

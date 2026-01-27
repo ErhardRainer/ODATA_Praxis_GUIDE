@@ -1,0 +1,11 @@
+# Python
+python/__pycache__/
+**/__pycache__/
+*.pyc
+
+# OpenAI / Secrets (niemals einchecken)
+python/openai_key.json
+**/openai_key.json
+
+# Backups
+*.bak

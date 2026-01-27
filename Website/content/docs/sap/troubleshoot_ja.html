@@ -1,0 +1,30 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> トラブルシューティング</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    SAP OData サービスの操作時によく発生する問題とその解決方法について説明します。
+  </p>
+
+  <div class="space-y-6 mt-8">
+    
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">エラー: "Property 'X' is not a valid property"</h3>
+      <p class="text-red-700 text-sm mt-1">EntityType に存在しないプロパティ名を使用している可能性があります。大文字小文字の区別を確認してください（例：<code>SalesOrder</code> と <code>salesOrder</code>）。OData は大文字小文字を区別します。</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">エラー: "Filter not supported" または無効なシステムクエリオプション</h3>
+      <p class="text-red-700 text-sm mt-1">プロパティがフィルタリングを厳密に禁止している可能性があります (<code>sap:filterable="false"</code>)。または、Gateway 実装でサポートされていない演算子を使用している可能性があります（例：数値フィールドでの <code>substringof</code>）。</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">ページング時のデータの欠落 / 重複</h3>
+      <p class="text-red-700 text-sm mt-1">これは、非決定論的なソート（順序が確定しないソート）の典型的な症状です。<code>$orderby</code> 句にユニークキーを追加してください。</p>
+    </div>
+
+    <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+      <h3 class="font-bold text-red-800">HTTP 401 Unauthorized / 403 Forbidden</h3>
+      <p class="text-red-700 text-sm mt-1">認証情報を確認してください。また、SAP ユーザーが、特定の OData サービスにアクセスするために必要な PFCG ロールおよび権限オブジェクト (S_SERVICE) を持っているかどうかも確認してください。</p>
+    </div>
+
+  </div>
+</article>

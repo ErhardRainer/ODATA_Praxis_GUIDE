@@ -1,0 +1,38 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight underline decoration-blue-500 decoration-3 underline-offset-8 mb-6">Metadaten ($metadata)</h2>
+  
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Der wichtigste Endpunkt für Entwickler. Er liefert ein XML-Dokument, das das gesamte Datenmodell des Services beschreibt.
+  </p>
+
+  <div class="bg-gray-100 p-6 rounded-xl border border-gray-200 shadow-inner">
+    <h3 class="text-xl font-semibold mb-4 text-slate-900 border-b pb-2">Wie man sie aufruft</h3>
+    <p class="mb-4">Hängen Sie einfach <code class="bg-white px-2 py-0.5 rounded text-blue-600 font-mono text-sm border border-gray-300 shadow-sm">$metadata</code> am Ende des Service Root an:</p>
+    <div class="bg-slate-900 p-4 rounded-lg">
+      <code class="text-green-400 text-sm">/sap/opu/odata/sap/API_SALES_ORDER_SRV/$metadata</code>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mt-8">
+    <div class="p-5 border border-slate-200 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+      <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5l5 5v11a2 2 0 01-2 2z" /></svg>
+        Entitätstypen & Mengen
+      </h4>
+      <p class="text-sm text-slate-600">Listet alle Tabellen (EntitySets) und deren Struktur (Properties) auf. Achten Sie auf <code class="text-blue-500">Nullable="false"</code> für Pflichtfelder.</p>
+    </div>
+    
+    <div class="p-5 border border-slate-200 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+      <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+        Assoziationen & Navigation
+      </h4>
+      <p class="text-sm text-slate-600">Definiert die Beziehungen zwischen Entitäten ($expand). So wissen Sie, wie Sie von einem Header zu seinen Positionen gelangen.</p>
+    </div>
+  </div>
+
+  <div class="mt-8">
+    <h4 class="text-xl font-bold mb-4">Profi-Tipp für SAP</h4>
+    <p class="text-slate-700">SAP OData Services enthalten oft <strong>SAP-Annotationen</strong> innerhalb der Metadaten, die wichtige Business-Regeln beschreiben, wie <code class="text-blue-600">sap:creatable="false"</code> oder <code class="text-blue-600">sap:label="Auftragsnummer"</code>.</p>
+  </div>
+</article>

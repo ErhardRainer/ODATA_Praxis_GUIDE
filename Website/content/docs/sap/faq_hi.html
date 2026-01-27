@@ -1,0 +1,61 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> अक्सर पूछे जाने वाले प्रश्न (FAQ)</h2>
+  
+  <div class="grid gap-8 mt-8">
+    
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">SAP में OData v2 और v4 के बीच क्या अंतर है?</h3>
+      <p class="text-slate-600">अधिकांश SAP गेटवे कार्यान्वयन के लिए OData v2 मानक है। v4 आधुनिक S/4HANA सिस्टम में उपयोग किया जाने वाला नया, अधिक कुशल मानक है। v4 बेहतर प्रदर्शन, सरलीकृत मेटाडेटा और अधिक शक्तिशाली क्वेरी क्षमताएं प्रदान करता है।</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">मुझे 'Property cannot be filtered' त्रुटियां क्यों मिल रही हैं?</h3>
+      <p class="text-slate-600">ऐसा तब होता है जब <code>$metadata</code> में किसी फ़ील्ड को <code>sap:filterable="false"</code> के साथ चिह्नित किया जाता है। डेटाबेस प्रदर्शन सुनिश्चित करने के लिए SAP अक्सर गणना किए गए फ़ील्ड या बड़े टेक्स्ट फ़ील्ड पर फ़िल्टरिंग को प्रतिबंधित करता है।</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">मैं OData कॉल के लिए ऑथेंटिकेशन को कैसे संभालूँ?</h3>
+      <p class="text-slate-600">SAP बेसिक ऑथ (Basic Auth), OAuth 2.0 (अनुशंसित) और SAML का समर्थन करता है। ब्राउज़र-आधारित ऐप्स के लिए, अक्सर प्रिंसिपल प्रोपेगेशन (Principal Propagation) का उपयोग किया जाता है। क्रेडेंशियल्स की सुरक्षा के लिए हमेशा HTTPS का उपयोग करें।</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">मैं अधिकतम कितने रिकॉर्ड प्राप्त कर सकता हूँ?</h3>
+      <p class="text-slate-600">SAP सिस्टम में अक्सर सर्वर-साइड सीमाएं होती हैं (जैसे, 1000 रिकॉर्ड)। यदि आपको अधिक की आवश्यकता है, तो आपको **पेजिंग** का उपयोग करना चाहिए (<code>__next</code> लिंक का पालन करके या <code>$skip</code>/<code>$top</code> का उपयोग करके)।</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">मैं OData फ़ंक्शंस या एक्शन्स को कैसे कॉल करूँ?</h3>
+      <p class="text-slate-600">फ़ंक्शंस (GET) और एक्शन्स (POST) <code>$metadata</code> में परिभाषित कस्टम ऑपरेशन्स हैं। आप उन्हें सेवा URL में नाम जोड़कर कॉल करते हैं, जैसे, <code>.../GetQuickStats()</code> या <code>.../ReleaseOrder</code>।</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">क्या मैं एक ही अनुरोध में कई रिकॉर्ड अपडेट कर सकता हूँ?</h3>
+      <p class="text-slate-600">हाँ, **OData बैच अनुरोध** (<code>$batch</code>) का उपयोग करके। आप एक ही HTTP POST में कई GET, POST, PATCH या DELETE ऑपरेशन्स को बंडल कर सकते हैं। SAP मल्टीपार्ट/मिक्स्ड कंटेंट प्रकारों का उपयोग करके परमाणु (atomic - सब या कुछ नहीं) और गैर-परमाणु (non-atomic) दोनों प्रोसेसिंग का समर्थन करता है।</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">मैं डीप इंसर्ट (संबंधित संस्थाओं को बनाना) को कैसे संभालूँ?</h3>
+      <p class="text-slate-600">डीप इंसर्ट (Deep inserts) आपको पैरेंट JSON संरचना के भीतर चाइल्ड डेटा को नेस्ट करके एक ही POST अनुरोध में पैरेंट और चाइल्ड एंटिटी (जैसे सेल्स ऑर्डर और उसके आइटम) बनाने की अनुमति देते हैं।</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">CSRF टोकन त्रुटि का क्या अर्थ है?</h3>
+      <p class="text-slate-600">SAP को सभी स्थिति-परिवर्तनकारी अनुरोधों (POST/PUT/DELETE) के लिए CSRF टोकन की आवश्यकता होती है। आपको पहले हेडर <code>x-csrf-token: fetch</code> के साथ GET अनुरोध के माध्यम से एक टोकन प्राप्त करना होगा, फिर प्राप्त टोकन को अपने बाद के राइट अनुरोध (write request) में वापस भेजना होगा।</p>
+    </div>
+
+    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+      <h3 class="font-bold text-lg text-slate-800 mb-2 italic text-sm uppercase">पुराने कॉन्सेप्ट्स</h3>
+      <div class="space-y-4">
+        <div>
+          <h4 class="font-bold text-slate-700">EntitySet बनाम EntityType?</h4>
+          <p class="text-slate-600 text-sm">EntityType "क्लास" (ब्लूप्रिंट) है, EntitySet "टेबल" (इंस्टेंस कलेक्शन) है।</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-700">JSON बनाम XML?</h4>
+          <p class="text-slate-600 text-sm">हमेशा JSON को प्राथमिकता दें। यह हल्का है, पार्स करने में तेज़ है और कम बैंडविड्थ का उपयोग करता है।</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>

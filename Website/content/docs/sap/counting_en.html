@@ -1,0 +1,36 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Counting ($count)</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Sometimes you just need to know "how many," or you need the total count alongside a page of data for a UI pager.
+  </p>
+
+  <div class="grid gap-6 md:grid-cols-2 mt-8">
+    
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="text-xl font-bold text-slate-800 mb-3">$count (Resource)</h3>
+      <p class="text-slate-600 mb-4">Returns the raw integer count of matching entities. No data is returned.</p>
+      <div class="bg-slate-100 p-2 rounded text-sm font-mono text-slate-700 break-all">
+        /A_SalesOrder/$count
+      </div>
+      <div class="bg-slate-100 p-2 rounded text-sm font-mono text-slate-700 break-all mt-2">
+        /A_SalesOrder/$count?$filter=Status eq 'Open'
+      </div>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="text-xl font-bold text-slate-800 mb-3">$inlinecount</h3>
+      <p class="text-slate-600 mb-4">Returns the data <strong>plus</strong> the total count in the response wrapper (<code>__count</code>).</p>
+      <div class="bg-slate-100 p-2 rounded text-sm font-mono text-slate-700 break-all">
+        /A_SalesOrder?$top=10&$inlinecount=allpages
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-yellow-900 font-bold mb-2">Performance Note</h4>
+    <p class="text-yellow-800 text-sm leading-relaxed">
+      Calculating the total count (<code>$inlinecount=allpages</code>) can be performance-intensive on large datasets because the database has to count all matching rows, even if you only requested the top 10. Use it only when necessary.
+    </p>
+  </div>
+</article>

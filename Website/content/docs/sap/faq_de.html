@@ -1,0 +1,55 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-8">
+  <h2 class="text-3xl font-extrabold tracking-tight">Häufig gestellte Fragen (FAQ)</h2>
+  
+  <div class="space-y-6">
+    <details class="group bg-white border border-slate-200 rounded-xl" open>
+      <summary class="p-5 font-bold cursor-pointer list-none flex items-center justify-between text-slate-800">
+        <span>Was ist der Unterschied zwischen OData V2 und V4 in SAP?</span>
+        <span class="transition-transform group-open:rotate-180">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </span>
+      </summary>
+      <div class="px-5 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-50 pt-4">
+        V2 ist der Standard für ältere SAP-Systeme (Gateway/ECC) und bietet eine tiefere Integration in das klassische ABAP-Dictionary. V4 ist moderner, effizienter bei der Payload-Größe und wird für neuere S/4HANA-Entwicklungen bevorzugt. Die Syntax für Filter und Expands unterscheidet sich leicht.
+      </div>
+    </details>
+
+    <details class="group bg-white border border-slate-200 rounded-xl">
+      <summary class="p-5 font-bold cursor-pointer list-none flex items-center justify-between text-slate-800">
+        <span>Wie gehe ich mit CSRF-Tokens bei POST-Requests um?</span>
+        <span class="transition-transform group-open:rotate-180">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </span>
+      </summary>
+      <div class="px-5 pb-5 text-slate-600 text-sm border-t border-slate-50 pt-4">
+        1. Führen Sie einen GET-Request (z.B. auf den Service Root) mit dem Header <code>x-csrf-token: fetch</code> aus. <br>
+        2. Lesen Sie das Token aus dem Response-Header <code>x-csrf-token</code> aus. <br>
+        3. Senden Sie dieses Token in Ihrem POST/PUT/DELETE-Request im Header mit.
+      </div>
+    </details>
+
+    <details class="group bg-white border border-slate-200 rounded-xl">
+      <summary class="p-5 font-bold cursor-pointer list-none flex items-center justify-between text-slate-800">
+        <span>Können OData-Abfragen die SAP-Datenbank langsam machen?</span>
+        <span class="transition-transform group-open:rotate-180">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </span>
+      </summary>
+      <div class="px-5 pb-5 text-slate-600 text-sm border-t border-slate-50 pt-4">
+        Ja, besonders wenn keine Filter auf indizierte Felder angewendet werden oder massive <code>$expand</code>-Ketten über viele Tabellen genutzt werden. Nutzen Sie immer <code>$top</code> und <code>$select</code>, um die Last zu begrenzen.
+      </div>
+    </details>
+
+    <details class="group bg-white border border-slate-200 rounded-xl">
+      <summary class="p-5 font-bold cursor-pointer list-none flex items-center justify-between text-slate-800">
+        <span>Was ist $batch und wann sollte ich es nutzen?</span>
+        <span class="transition-transform group-open:rotate-180">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        </span>
+      </summary>
+      <div class="px-5 pb-5 text-slate-600 text-sm border-t border-slate-50 pt-4">
+        <code>$batch</code> erlaubt es, mehrere OData-Operationen in einem einzigen HTTP-Request zu bündeln. Dies ist extrem nützlich, wenn Sie viele kleine Änderungen gleichzeitig speichern wollen, ohne für jede Änderung einen eigenen Netzwerk-Call auszuführen.
+      </div>
+    </details>
+  </div>
+</article>

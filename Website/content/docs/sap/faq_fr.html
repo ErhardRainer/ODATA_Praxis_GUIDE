@@ -1,0 +1,61 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Foire Aux Questions (FAQ)</h2>
+  
+  <div class="grid gap-8 mt-8">
+    
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Quelle est la différence entre OData v2 et v4 dans SAP ?</h3>
+      <p class="text-slate-600">OData v2 est le standard pour la plupart des implémentations SAP Gateway. La v4 est le standard plus récent et plus efficace utilisé dans les systèmes S/4HANA modernes. La v4 offre de meilleures performances, des métadonnées simplifiées et des capacités de requête plus puissantes.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Pourquoi ai-je des erreurs 'Property cannot be filtered' ?</h3>
+      <p class="text-slate-600">Cela se produit lorsqu'un champ est marqué par <code>sap:filterable="false"</code> dans le <code>$metadata</code>. SAP restreint souvent le filtrage sur les champs calculés ou les champs de texte longs pour garantir les performances de la base de données.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Comment gérer l'authentification pour les appels OData ?</h3>
+      <p class="text-slate-600">SAP prend en charge l'authentification de base (Basic Auth), OAuth 2.0 (recommandé) et SAML. Pour les applications basées sur un navigateur, la propagation du principal est souvent utilisée. Utilisez toujours HTTPS pour protéger vos identifiants.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Quel est le nombre maximum d'enregistrements que je peux récupérer ?</h3>
+      <p class="text-slate-600">Les systèmes SAP ont souvent des limites côté serveur (ex. 1000 enregistrements). Si vous en avez besoin de plus, vous devez utiliser la **pagination** (en suivant le lien <code>__next</code> ou en utilisant <code>$skip</code>/<code>$top</code>).</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Comment appeler des fonctions ou des actions OData ?</h3>
+      <p class="text-slate-600">Les fonctions (GET) et les actions (POST) sont des opérations personnalisées définies dans le <code>$metadata</code>. Vous les appelez en ajoutant le nom à l'URL du service, par exemple <code>.../GetQuickStats()</code> ou <code>.../ReleaseOrder</code>.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Puis-je mettre à jour plusieurs enregistrements en une seule requête ?</h3>
+      <p class="text-slate-600">Oui, en utilisant les **requêtes par lots OData** (<code>$batch</code>). Vous pouvez regrouper plusieurs opérations GET, POST, PATCH ou DELETE en un seul POST HTTP. SAP prend en charge le traitement atomique (tout ou rien) et non atomique à l'aide des types de contenu multipart/mixed.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Comment gérer les deep inserts (création d'entités liées) ?</h3>
+      <p class="text-slate-600">Les "deep inserts" vous permettent de créer une entité parent et des entités enfants (comme une commande client et ses postes) en une seule requête POST en imbriquant les données enfants dans la structure JSON parent.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="font-bold text-lg text-slate-800 mb-2">Que signifie l'erreur de jeton CSRF ?</h3>
+      <p class="text-slate-600">SAP nécessite un jeton CSRF pour toutes les requêtes modifiant l'état (POST/PUT/DELETE). Vous devez d'abord récupérer un jeton via une requête GET avec l'en-tête <code>x-csrf-token: fetch</code>, puis renvoyer le jeton reçu dans votre requête d'écriture suivante.</p>
+    </div>
+
+    <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+      <h3 class="font-bold text-lg text-slate-800 mb-2 italic text-sm uppercase">Concepts Hérités</h3>
+      <div class="space-y-4">
+        <div>
+          <h4 class="font-bold text-slate-700">EntitySet vs EntityType ?</h4>
+          <p class="text-slate-600 text-sm">EntityType est la "Classe" (modèle), EntitySet est la "Table" (collection d'instances).</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-slate-700">JSON vs XML ?</h4>
+          <p class="text-slate-600 text-sm">Privilégiez toujours JSON. Il est plus léger, plus rapide à analyser et utilise moins de bande passante.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>

@@ -1,0 +1,38 @@
+/* Custom additions for the static (no-build) setup. */
+
+html,
+body {
+  height: 100%;
+}
+
+/* Tailwind doesn't ship this utility by default. */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Minimal fallbacks for animation utility classes used in the JSX. */
+@keyframes odataGuideFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes odataGuideSlideInRight {
+  from { opacity: 0; transform: translateX(1rem); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes odataGuideSlideInBottom {
+  from { opacity: 0; transform: translateY(0.5rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes odataGuideZoomIn95 {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-in.fade-in { animation: odataGuideFadeIn 0.5s ease both; }
+.animate-in.fade-in.slide-in-from-right-4 { animation: odataGuideSlideInRight 0.5s ease both; }
+.animate-in.fade-in.slide-in-from-bottom-2 { animation: odataGuideSlideInBottom 0.5s ease both; }
+.animate-in.zoom-in-95 { animation: odataGuideZoomIn95 0.3s ease both; }

@@ -1,0 +1,40 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> एंडपॉइंट शारीरिक रचना (Anatomy)</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    OData URL की संरचना को समझना मौलिक है। प्रत्येक एंडपॉइंट एक पूर्वानुमानित पैटर्न का पालन करता है जो घटकों को जानने के बाद नेविगेशन को सहज बनाता है।
+  </p>
+
+  <div class="bg-slate-900 rounded-lg p-4 overflow-x-auto my-6">
+    <code class="text-sm font-mono text-green-400">
+      https://&lt;host&gt;:&lt;port&gt;/sap/opu/odata/sap/&lt;SERVICE_NAME&gt;/&lt;EntitySet&gt;(&lt;Key&gt;)?&lt;QueryOptions&gt;
+    </code>
+  </div>
+
+  <div class="space-y-4">
+    <div class="border-l-4 border-blue-500 pl-4 py-2">
+      <h3 class="font-bold text-slate-800">सर्विस रूट (Service Root)</h3>
+      <p class="text-slate-600">सेवा के नाम तक और उसे शामिल करते हुए आधार URL। यह आपका शुरुआती बिंदु है।<br>
+      <code class="bg-slate-100 px-2 py-1 rounded text-sm text-slate-700">https://host/sap/opu/odata/sap/API_SALES_ORDER_SRV</code></p>
+    </div>
+    
+    <div class="border-l-4 border-indigo-500 pl-4 py-2">
+      <h3 class="font-bold text-slate-800">एंटीटी सेट (Entity Set)</h3>
+      <p class="text-slate-600">एंटिटीज़ का एक संग्रह (डेटाबेस टेबल की तरह)। सर्विस रूट से जुड़ा होता है।<br>
+      <code class="bg-slate-100 px-2 py-1 rounded text-sm text-slate-700">.../API_SALES_ORDER_SRV/A_SalesOrder</code></p>
+    </div>
+
+    <div class="border-l-4 border-purple-500 pl-4 py-2">
+      <h3 class="font-bold text-slate-800">की (Key) द्वारा एंटिटी</h3>
+      <p class="text-slate-600">कोष्ठक में इसकी की (key) का उपयोग करके किसी विशिष्ट एंटिटी तक पहुँचें।<br>
+      <code class="bg-slate-100 px-2 py-1 rounded text-sm text-slate-700">.../A_SalesOrder('0000000123')</code></p>
+    </div>
+  </div>
+
+  <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-2xl shadow-sm mt-6">
+    <h4 class="text-blue-900 font-bold mb-2 flex items-center gap-2"><span class="inline-flex" aria-hidden="true">i</span> नेविगेशन गुण (Navigation Properties)</h4>
+    <p class="text-blue-800 text-sm leading-relaxed">
+      संबंधों (relationships) को पार करने के लिए नेविगेशन गुणों का उपयोग करें। उदाहरण के लिए, सेल्स ऑर्डर के आइटम प्राप्त करने के लिए: <br>
+      <code>.../A_SalesOrder('0000000123')/to_Item</code>। उपलब्ध नेविगेशन की खोज के लिए <code>$metadata</code> की जाँच करें।
+    </p>
+  </div>
+</article>

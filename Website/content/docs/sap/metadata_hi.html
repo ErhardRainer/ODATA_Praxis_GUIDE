@@ -1,0 +1,53 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> मेटाडेटा ($metadata)</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    <code>$metadata</code> एंडपॉइंट आपका API खाका (blueprint) है। यह सेवा के पूर्ण स्कीमा का वर्णन करता है—एंटीटी प्रकार, गुण, संबंध और क्षमताएं।
+  </p>
+
+  <div class="my-4">
+    <p class="font-semibold mb-2">मेटाडेटा तक पहुँचना:</p>
+    <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+      <code class="text-sm font-mono text-blue-300">GET /sap/opu/odata/sap/API_SALES_ORDER_SRV/$metadata</code>
+    </div>
+  </div>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">इसके अंदर क्या है?</h3>
+  <ul class="space-y-3">
+    <li class="flex items-start">
+      <span class="bg-blue-100 text-blue-800 font-bold px-2 py-1 rounded text-xs mr-3 mt-1 uppercase">EntityType</span>
+      <span class="text-slate-700">संरचना को परिभाषित करता है: गुण, डेटा प्रकार और कीज़ (keys)। इसे क्लास परिभाषा के रूप में समझें।</span>
+    </li>
+    <li class="flex items-start">
+      <span class="bg-green-100 text-green-800 font-bold px-2 py-1 rounded text-xs mr-3 mt-1 uppercase">EntitySet</span>
+      <span class="text-slate-700">EntityType इंस्टेंस का एक नामित संग्रह। यही वह है जिसे आप URL में क्वेरी करते हैं।</span>
+    </li>
+    <li class="flex items-start">
+      <span class="bg-purple-100 text-purple-800 font-bold px-2 py-1 rounded text-xs mr-3 mt-1 uppercase">NavigationProperty</span>
+      <span class="text-slate-700">एंटिटीज़ के बीच संबंधों को परिभाषित करता है (जैसे, SalesOrder &rarr; SalesOrderItem)।</span>
+    </li>
+  </ul>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">ध्यान देने योग्य SAP एनोटेशन</h3>
+  <div class="overflow-x-auto">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-slate-100 border-b border-slate-200">
+          <th class="p-3 font-semibold text-slate-700">एनोटेशन (Annotation)</th>
+          <th class="p-3 font-semibold text-slate-700">अर्थ</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100">
+        <tr><td class="p-3 font-mono text-sm text-pink-600">sap:filterable="false"</td><td class="p-3 text-slate-600"><code>$filter</code> में इस प्रॉपर्टी का उपयोग नहीं किया जा सकता</td></tr>
+        <tr><td class="p-3 font-mono text-sm text-pink-600">sap:sortable="false"</td><td class="p-3 text-slate-600"><code>$orderby</code> में इस प्रॉपर्टी का उपयोग नहीं किया जा सकता</td></tr>
+        <tr><td class="p-3 font-mono text-sm text-pink-600">sap:creatable="false"</td><td class="p-3 text-slate-600">POST के दौरान इस प्रॉपर्टी को सेट नहीं किया जा सकता</td></tr>
+        <tr><td class="p-3 font-mono text-sm text-pink-600">sap:required-in-filter="true"</td><td class="p-3 text-slate-600"><code>$filter</code> में इस प्रॉपर्टी को शामिल करना अनिवार्य है</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-6">
+    <p class="text-yellow-800 text-sm">
+      <strong>हमेशा पहले मेटाडेटा की जाँच करें:</strong> क्वेरी बनाने से पहले, फ़ील्ड प्रतिबंधों को समझने के लिए <code>$metadata</code> की समीक्षा करें। एक गैर-फ़िल्टर करने योग्य फ़ील्ड पर फ़िल्टर करने का प्रयास करने पर त्रुटि आएगी।
+    </p>
+  </div>
+</article>

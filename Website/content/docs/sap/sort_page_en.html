@@ -1,0 +1,42 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Sorting & Paging</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Proper pagination requires deterministic sorting. Without <code>$orderby</code>, the order of records is undefined, which can lead to missing or duplicate records when paging.
+  </p>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Sorting ($orderby)</h3>
+  <p class="text-slate-600 mb-4">Sort results using <code>asc</code> (ascending) or <code>desc</code> (descending).</p>
+  
+  <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto mb-6">
+    <code class="text-sm font-mono text-purple-300">$orderby=CreationDate desc,SalesOrder asc</code>
+  </div>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Paging ($top & $skip)</h3>
+  <ul class="list-disc list-inside text-slate-600 space-y-2 mb-6">
+    <li><code>$top=n</code>: Return the first n records.</li>
+    <li><code>$skip=n</code>: Skip the first n records.</li>
+  </ul>
+
+  <div class="space-y-2">
+    <div class="bg-gray-100 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700">
+      $top=50 <span class="text-gray-400">// First 50 records</span>
+    </div>
+    <div class="bg-gray-100 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700">
+      $top=50&$skip=50 <span class="text-gray-400">// Records 51-100</span>
+    </div>
+    <div class="bg-gray-100 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700">
+      $top=50&$skip=100 <span class="text-gray-400">// Records 101-150</span>
+    </div>
+  </div>
+
+  <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-blue-900 font-bold mb-2">Crucial for Paging</h4>
+    <p class="text-blue-800 text-sm leading-relaxed mb-2">
+      <strong>Always sort by a unique key!</strong>
+    </p>
+    <p class="text-blue-800 text-sm leading-relaxed">
+      If you sort by a non-unique field (e.g., date), records with the same date might change order between requests. Always add a unique tie-breaker like the primary key: <br>
+      <code>$orderby=CreationDate desc, <strong>SalesOrderID asc</strong></code>
+    </p>
+  </div>
+</article>

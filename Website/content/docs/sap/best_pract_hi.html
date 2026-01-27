@@ -1,0 +1,68 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">SAP OData <span class="text-slate-300 mx-2">&rsaquo;</span> सर्वोत्तम अभ्यास (Best Practices)</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    यह सुनिश्चित करने के लिए कि आपका SAP OData इंटीग्रेशन कुशल, स्केलेबल और सिस्टम प्रदर्शन के अनुकूल है, इन गाइडलाइन्स का पालन करें।
+  </p>
+
+  <div class="space-y-4 mt-8">
+    <div class="flex items-start gap-4 p-4 rounded-xl border border-emerald-100 bg-emerald-50/30">
+      <div class="bg-emerald-500 text-white rounded-lg p-2 mt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900">चयनात्मक बनें ($select)</h4>
+        <p class="text-slate-600 text-sm italic">"वह कभी न मांगें जिसकी आपको आवश्यकता नहीं है।"</p>
+        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+          SAP गेटवे को डेटाबेस से हर फ़ील्ड को पुनः प्राप्त करना होता है और उसे XML/JSON में बदलना होता है। <code>$select</code> का उपयोग करके, आप ABAP प्रोसेसिंग समय और नेटवर्क पर स्थानांतरित डेटा पैकेट के आकार को काफी कम कर देते हैं।
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4 p-4 rounded-xl border border-blue-100 bg-blue-50/30">
+      <div class="bg-blue-500 text-white rounded-lg p-2 mt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900">जल्दी फ़िल्टर करें, हमेशा फ़िल्टर करें ($filter)</h4>
+        <p class="text-slate-600 text-sm italic">"डेटाबेस को भारी काम करने दें।"</p>
+        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+          अपने जावास्क्रिप्ट कोड में केवल 10 को फ़िल्टर करने के लिए कभी भी 10,000 रिकॉर्ड न लें। यह सुनिश्चित करने के लिए OData फ़िल्टर का उपयोग करें कि SAP अनुकूलित SQL स्टेटमेंट चलाता है और केवल वही लौटाता है जो कड़ाई से आवश्यक है।
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4 p-4 rounded-xl border border-purple-100 bg-purple-50/30">
+      <div class="bg-purple-500 text-white rounded-lg p-2 mt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900">नियतात्मक पेजिनेशन (Deterministic Pagination)</h4>
+        <p class="text-slate-600 text-sm italic">"स्थिरता एक अच्छे UX की कुंजी है।"</p>
+        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+          हमेशा <code>$top</code> और <code>$skip</code> को <code>$orderby</code> के साथ कम से कम एक यूनिक वैल्यू फ़ील्ड (जैसे प्राइमरी की) के साथ जोड़ें। यह पेजों के बीच नेविगेट करते समय डेटा के "कूदने" (jumping) या दोहराव से बचाता है।
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-start gap-4 p-4 rounded-xl border border-amber-100 bg-amber-50/30">
+      <div class="bg-amber-500 text-white rounded-lg p-2 mt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <div>
+        <h4 class="font-bold text-slate-900">$expand के साथ सावधानी बरतें</h4>
+        <p class="text-slate-600 text-sm italic">"संयम के साथ विस्तार करें।"</p>
+        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+          हालाँकि <code>$expand</code> नेटवर्क कॉल की संख्या को कम करने के लिए शक्तिशाली है, गहरे या कई जुड़ाव SAP सर्वर पर प्रदर्शन को गंभीर रूप से खराब कर सकते हैं। मूल्यांकन करें कि क्या एक विस्तार दो अनुकूलित कॉलों से बेहतर है।
+        </p>
+      </div>
+    </div>
+  </div>
+</article>

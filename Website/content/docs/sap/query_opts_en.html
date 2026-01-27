@@ -1,0 +1,47 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Query Options Cheat Sheet</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Query options let you filter, sort, page, and shape the data returned by OData services. All options start with <code>$</code>.
+  </p>
+
+  <div class="grid gap-6 mt-6">
+    
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$filter</h3>
+      <p class="text-slate-600 mb-2">Restricts results to entities matching a condition.</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">$filter=SalesOrderType eq 'OR' and TotalNetAmount gt 1000</code>
+    </div>
+
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$select</h3>
+      <p class="text-slate-600 mb-2">Returns only specified properties, reducing payload size.</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">$select=SalesOrder,CustomerID,NetValue</code>
+    </div>
+
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$orderby</h3>
+      <p class="text-slate-600 mb-2">Sorts results. Use <code>asc</code> or <code>desc</code>.</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">$orderby=CreationDate desc,SalesOrder asc</code>
+    </div>
+
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$top & $skip</h3>
+      <p class="text-slate-600 mb-2">Pagination controls. <code>$top</code> limits results; <code>$skip</code> offsets the starting point.</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">$top=50&$skip=100</code>
+    </div>
+
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$count / $inlinecount</h3>
+      <p class="text-slate-600 mb-2">Get the total count of matching entities.</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">/A_SalesOrder/$count</code>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words mt-1">?$inlinecount=allpages</code>
+    </div>
+
+    <div class="border rounded-xl p-5 shadow-sm bg-white">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">$format</h3>
+      <p class="text-slate-600 mb-2">Specify response format. Default is usually Atom/XML in OData v2.</p>
+      <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 break-words">$format=json</code>
+    </div>
+
+  </div>
+</article>

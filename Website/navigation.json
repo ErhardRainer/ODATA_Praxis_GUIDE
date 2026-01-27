@@ -1,0 +1,1946 @@
+{
+  "i18n": {
+    "cookie": "odata_lang",
+    "default": "de",
+    "languages": [
+      {
+        "id": "ja",
+        "title": "JA"
+      },
+      {
+        "id": "pt",
+        "title": "PT"
+      },
+      {
+        "id": "es",
+        "title": "ES"
+      },
+      {
+        "id": "fr",
+        "title": "FR"
+      },
+      {
+        "id": "zh",
+        "title": "ZH"
+      },
+      {
+        "id": "hi",
+        "title": "HI"
+      },
+      {
+        "id": "de",
+        "title": "DE"
+      },
+      {
+        "id": "en",
+        "title": "EN"
+      }
+    ]
+  },
+  "labels": {
+    "documentation": {
+      "de": "DOKUMENTATION",
+      "en": "DOCUMENTATION",
+      "ja": "ドキュメント",
+      "pt": "DOCUMENTAÇÃO",
+      "es": "DOCUMENTACIÓN",
+      "fr": "DOCUMENTATION",
+      "zh": "文档",
+      "hi": "दस्तावेज़ीकरण"
+    },
+    "intelligence": {
+      "de": "INTELLIGENZ",
+      "en": "INTELLIGENCE",
+      "ja": "インテリジェンス",
+      "pt": "INTELIGÊNCIA",
+      "es": "INTELIGENCIA",
+      "fr": "INTELLIGENCE",
+      "zh": "人工智能",
+      "hi": "बुद्धिमत्ता"
+    },
+    "implementation": {
+      "de": "IMPLEMENTATION",
+      "en": "IMPLEMENTATION",
+      "ja": "実装",
+      "pt": "IMPLEMENTAÇÃO",
+      "es": "IMPLEMENTACIÓN",
+      "fr": "IMPLÉMENTATION",
+      "zh": "实现",
+      "hi": "कार्यान्वयन"
+    },
+    "programming": {
+      "de": "Programmierung",
+      "en": "Programming",
+      "ja": "プログラミング",
+      "pt": "Programação",
+      "es": "Programación",
+      "fr": "Programmation",
+      "zh": "编程",
+      "hi": "प्रोग्रामिंग"
+    },
+    "loading": {
+      "de": "lädt...",
+      "en": "loading...",
+      "ja": "読み込み中...",
+      "pt": "carregando...",
+      "es": "cargando...",
+      "fr": "chargement...",
+      "zh": "加载中...",
+      "hi": "लोड हो रहा है..."
+    },
+    "error_loading": {
+      "de": "Inhalt konnte nicht geladen werden",
+      "en": "Content could not be loaded",
+      "ja": "コンテンツを読み込めませんでした",
+      "pt": "Não foi möglich carregar o conteúdo",
+      "es": "No se pudo cargar el contenido",
+      "fr": "Le contenu n'a pas pu être chargé",
+      "zh": "无法加载内容",
+      "hi": "सामग्री लोड नहीं की जा सकी"
+    },
+    "security_note": {
+      "de": "Sicherheits-Hinweis",
+      "en": "Security Note",
+      "ja": "セキュリティ上の注意",
+      "pt": "Nota de Segurança",
+      "es": "Nota de Seguridad",
+      "fr": "Note de Sécurité",
+      "zh": "安全说明",
+      "hi": "सुरक्षा सूचना"
+    },
+    "ad_label": {
+      "de": "Anzeige / Werbung",
+      "en": "Advertisement",
+      "ja": "広告",
+      "pt": "Anúncio",
+      "es": "Anuncio",
+      "fr": "Publicité",
+      "zh": "广告",
+      "hi": "विज्ञापन"
+    },
+    "ad_placeholder": {
+      "de": "Werbeplatz",
+      "en": "Ad Space",
+      "ja": "広告スペース",
+      "pt": "Espaço Publicitário",
+      "es": "Espacio Publicitario",
+      "fr": "Espace Publicitaire",
+      "zh": "广告位",
+      "hi": "विज्ञापन स्थान"
+    },
+    "ad_text": {
+      "de": "Präsentieren Sie Ihre OData-Lösungen hier einem Fachpublikum.",
+      "en": "Present your OData solutions to a professional audience here.",
+      "ja": "ここでODataソリューションを専門家の聴衆に提示してください。",
+      "pt": "Apresente suas soluções OData para um público profissional aqui.",
+      "es": "Presente sus soluciones OData a una audiencia profesional aquí.",
+      "fr": "Présentez vos solutions OData à un public professionnel ici.",
+      "zh": "在这里向专业受众展示您的 OData 解决方案。",
+      "hi": "यहां पेशेवर दर्शकों के लिए अपने OData समाधान प्रस्तुत करें।"
+    },
+    "ad_request": {
+      "de": "Anfragen",
+      "en": "Inquiries",
+      "ja": "お問い合わせ",
+      "pt": "Consultas",
+      "es": "Consultas",
+      "fr": "Demandes",
+      "zh": "查询",
+      "hi": "पूछताछ"
+    },
+    "copy": {
+      "de": "Kopieren",
+      "en": "Copy",
+      "ja": "コピー",
+      "pt": "Copiar",
+      "es": "Copiar",
+      "fr": "Copier",
+      "zh": "复制",
+      "hi": "कॉपी करें"
+    },
+    "copied": {
+      "de": "Kopiert!",
+      "en": "Copied!",
+      "ja": "コピーしました！",
+      "pt": "Copiado!",
+      "es": "¡Copiado!",
+      "fr": "Copié !",
+      "zh": "已复制！",
+      "hi": "कॉपी किया गया!"
+    },
+    "close_popup": {
+      "de": "Schließen",
+      "en": "Close",
+      "ja": "閉じる",
+      "pt": "Fechar",
+      "es": "Cerrar",
+      "fr": "Fermer",
+      "zh": "关闭",
+      "hi": "बंद करें"
+    },
+    "security_text": {
+      "de": "OData-Requests können sensible Daten enthalten. Verwenden Sie im Produktivbetrieb stets HTTPS und validieren Sie die Server-Zertifikate.",
+      "en": "OData requests can contain sensitive data. Always use HTTPS in production and validate server certificates.",
+      "ja": "ODataリクエストには機密データが含まれる場合があります。本番環境では常にHTTPSを使用し、サーバー証明書を検証してください。",
+      "pt": "As solicitações OData podem conter dados confidenciais. Sempre use HTTPS in produção e valide os certificados do servidor.",
+      "es": "Las solicitudes OData pueden conter datos sensibles. Use siempre HTTPS en producción y valide los certificados del servidor.",
+      "fr": "Les requêtes OData können des données sensibles. Utilisez toujours HTTPS en production et validez les certificats du serveur.",
+      "zh": "OData 请求可能包含敏感数据。在生产中始终 use HTTPS 并验证服务器证书。",
+      "hi": "OData अनुरोधों में संवेदनशील डेटा हो सकता है। उत्पादन में हमेशा HTTPS का उपयोग करें और सर्ver प्रमाणपत्रों को मान्य करें।"
+    }
+  },
+  "docs": {
+    "contexts": [
+      {
+        "id": "allg",
+        "title": "Allgemein",
+        "titles": {
+          "de": "Allgemein",
+          "en": "General",
+          "ja": "一般",
+          "pt": "Geral",
+          "es": "General",
+          "fr": "Général",
+          "zh": "常规",
+          "hi": "सामान्य"
+        },
+        "groups": [
+          {
+            "id": "gen",
+            "title": "Allgemein",
+            "titles": {
+              "de": "Allgemein",
+              "en": "General",
+              "ja": "一般",
+              "pt": "Geral",
+              "es": "General",
+              "fr": "Général",
+              "zh": "常规",
+              "hi": "सामान्य"
+            },
+            "items": [
+              {
+                "id": "i",
+                "title": "Was ist OData?",
+                "titles": {
+                  "de": "Was ist OData?",
+                  "en": "What is OData?",
+                  "ja": "ODataとは？",
+                  "pt": "O que é OData?",
+                  "es": "¿Qué es OData?",
+                  "fr": "Qu'est-ce que OData ?",
+                  "zh": "什么是 OData？",
+                  "hi": "OData क्या है?"
+                },
+                "files": {
+                  "de": "content/docs/allg/i_de.html",
+                  "en": "content/docs/allg/i_en.html",
+                  "fr": "content/docs/allg/i_fr.html",
+                  "es": "content/docs/allg/i_es.html",
+                  "pt": "content/docs/allg/i_pt.html",
+                  "ja": "content/docs/allg/i_ja.html",
+                  "zh": "content/docs/allg/i_zh.html",
+                  "hi": "content/docs/allg/i_hi.html"
+                }
+              },
+              {
+                "id": "iso",
+                "title": "Standards & ISO",
+                "titles": {
+                  "de": "Standards & ISO",
+                  "en": "Standards & ISO",
+                  "ja": "標準とISO",
+                  "pt": "Padrões e ISO",
+                  "es": "Estándares e ISO",
+                  "fr": "Normes et ISO",
+                  "zh": "标准与 ISO",
+                  "hi": "मानक और आईएसओ"
+                },
+                "files": {
+                  "de": "content/docs/allg/iso_de.html",
+                  "en": "content/docs/allg/iso_en.html",
+                  "fr": "content/docs/allg/iso_fr.html",
+                  "es": "content/docs/allg/iso_es.html",
+                  "pt": "content/docs/allg/iso_pt.html",
+                  "ja": "content/docs/allg/iso_ja.html",
+                  "zh": "content/docs/allg/iso_zh.html",
+                  "hi": "content/docs/allg/iso_hi.html"
+                }
+              },
+              {
+                "id": "ben",
+                "title": "Vorteile & Nutzen",
+                "titles": {
+                  "de": "Vorteile & Nutzen",
+                  "en": "Benefits & Utility",
+                  "ja": "利点と有用性",
+                  "pt": "Benefícios e Utilidade",
+                  "es": "Beneficios y Utilidad",
+                  "fr": "Avantages et Utilité",
+                  "zh": "优点与实用性",
+                  "hi": "लाभ और उपयोगिता"
+                },
+                "files": {
+                  "de": "content/docs/allg/ben_de.html",
+                  "en": "content/docs/allg/ben_en.html",
+                  "fr": "content/docs/allg/ben_fr.html",
+                  "es": "content/docs/allg/ben_es.html",
+                  "pt": "content/docs/allg/ben_pt.html",
+                  "ja": "content/docs/allg/ben_ja.html",
+                  "zh": "content/docs/allg/ben_zh.html",
+                  "hi": "content/docs/allg/ben_hi.html"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "v1",
+        "title": "OData V1",
+        "titles": {
+          "de": "OData V1",
+          "en": "OData V1",
+          "ja": "OData V1",
+          "pt": "OData V1",
+          "es": "OData V1",
+          "fr": "OData V1",
+          "zh": "OData V1",
+          "hi": "OData V1"
+        },
+        "groups": [
+          {
+            "id": "v",
+            "title": "OData Version",
+            "titles": {
+              "de": "OData Version",
+              "en": "OData Version",
+              "ja": "OData バージョン",
+              "pt": "Versão OData",
+              "es": "Versión OData",
+              "fr": "Version OData",
+              "zh": "OData 版本",
+              "hi": "OData संस्करण"
+            },
+            "items": [
+              {
+                "id": "i",
+                "title": "V-Version Intro",
+                "titles": {
+                  "de": "V-Version Intro",
+                  "en": "Introduction",
+                  "ja": "イントロダクション",
+                  "pt": "Introdução",
+                  "es": "Introducción",
+                  "fr": "Introduction",
+                  "zh": "简介",
+                  "hi": "परिचय"
+                },
+                "files": {
+                  "de": "content/docs/v1/i_de.html",
+                  "en": "content/docs/v1/i_en.html",
+                  "fr": "content/docs/v1/i_fr.html",
+                  "es": "content/docs/v1/i_es.html",
+                  "pt": "content/docs/v1/i_pt.html",
+                  "ja": "content/docs/v1/i_ja.html",
+                  "zh": "content/docs/v1/i_zh.html",
+                  "hi": "content/docs/v1/i_hi.html"
+                }
+              },
+              {
+                "id": "q",
+                "title": "Query Syntax",
+                "titles": {
+                  "de": "Query Syntax",
+                  "en": "Query Syntax",
+                  "ja": "クエリ構文",
+                  "pt": "Sintaxe de Consulta",
+                  "es": "Sintaxis de Consulta",
+                  "fr": "Syntaxe de Requête",
+                  "zh": "查询语法",
+                  "hi": "क्वेरी सिंटैक्स"
+                },
+                "files": {
+                  "de": "content/docs/v1/q_de.html",
+                  "en": "content/docs/v1/q_en.html",
+                  "fr": "content/docs/v1/q_fr.html",
+                  "es": "content/docs/v1/q_es.html",
+                  "pt": "content/docs/v1/q_pt.html",
+                  "ja": "content/docs/v1/q_ja.html",
+                  "zh": "content/docs/v1/q_zh.html",
+                  "hi": "content/docs/v1/q_hi.html"
+                }
+              },
+              {
+                "id": "lim",
+                "title": "Einschränkungen",
+                "titles": {
+                  "de": "Einschränkungen",
+                  "en": "Limitations",
+                  "ja": "制限事項",
+                  "pt": "Limitações",
+                  "es": "Limitaciones",
+                  "fr": "Limitations",
+                  "zh": "限制",
+                  "hi": "सीमाएं"
+                },
+                "files": {
+                  "de": "content/docs/v1/lim_de.html",
+                  "en": "content/docs/v1/lim_en.html",
+                  "fr": "content/docs/v1/lim_fr.html",
+                  "es": "content/docs/v1/lim_es.html",
+                  "pt": "content/docs/v1/lim_pt.html",
+                  "ja": "content/docs/v1/lim_ja.html",
+                  "zh": "content/docs/v1/lim_zh.html",
+                  "hi": "content/docs/v1/lim_hi.html"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "v2",
+        "title": "OData V2",
+        "titles": {
+          "de": "OData V2",
+          "en": "OData V2",
+          "ja": "OData V2",
+          "pt": "OData V2",
+          "es": "OData V2",
+          "fr": "OData V2",
+          "zh": "OData V2",
+          "hi": "OData V2"
+        },
+        "groups": [
+          {
+            "id": "v",
+            "title": "OData Version",
+            "titles": {
+              "de": "OData Version",
+              "en": "OData Version",
+              "ja": "OData バージョン",
+              "pt": "Versão OData",
+              "es": "Versión OData",
+              "fr": "Version OData",
+              "zh": "OData 版本",
+              "hi": "OData संस्करण"
+            },
+            "items": [
+              {
+                "id": "i",
+                "title": "V-Version Intro",
+                "titles": {
+                  "de": "V-Version Intro",
+                  "en": "Introduction",
+                  "ja": "イントロダクション",
+                  "pt": "Introdução",
+                  "es": "Introducción",
+                  "fr": "Introduction",
+                  "zh": "简介",
+                  "hi": "परिचय"
+                },
+                "files": {
+                  "de": "content/docs/v2/i_de.html",
+                  "en": "content/docs/v2/i_en.html",
+                  "fr": "content/docs/v2/i_fr.html",
+                  "es": "content/docs/v2/i_es.html",
+                  "pt": "content/docs/v2/i_pt.html",
+                  "ja": "content/docs/v2/i_ja.html",
+                  "zh": "content/docs/v2/i_zh.html",
+                  "hi": "content/docs/v2/i_hi.html"
+                }
+              },
+              {
+                "id": "q",
+                "title": "Query Syntax",
+                "titles": {
+                  "de": "Query Syntax",
+                  "en": "Query Syntax",
+                  "ja": "クエリ構文",
+                  "pt": "Sintaxe de Consulta",
+                  "es": "Sintaxis de Consulta",
+                  "fr": "Syntaxe de Requête",
+                  "zh": "查询语法",
+                  "hi": "क्वेरी सिंटैक्स"
+                },
+                "files": {
+                  "de": "content/docs/v2/q_de.html",
+                  "en": "content/docs/v2/q_en.html",
+                  "fr": "content/docs/v2/q_fr.html",
+                  "es": "content/docs/v2/q_es.html",
+                  "pt": "content/docs/v2/q_pt.html",
+                  "ja": "content/docs/v2/q_ja.html",
+                  "zh": "content/docs/v2/q_zh.html",
+                  "hi": "content/docs/v2/q_hi.html"
+                }
+              },
+              {
+                "id": "lim",
+                "title": "Einschränkungen",
+                "titles": {
+                  "de": "Einschränkungen",
+                  "en": "Limitations",
+                  "ja": "制限事項",
+                  "pt": "Limitações",
+                  "es": "Limitaciones",
+                  "fr": "Limitations",
+                  "zh": "限制",
+                  "hi": "सीमाएं"
+                },
+                "files": {
+                  "de": "content/docs/v2/lim_de.html",
+                  "en": "content/docs/v2/lim_en.html",
+                  "fr": "content/docs/v2/lim_fr.html",
+                  "es": "content/docs/v2/lim_es.html",
+                  "pt": "content/docs/v2/lim_pt.html",
+                  "ja": "content/docs/v2/lim_ja.html",
+                  "zh": "content/docs/v2/lim_zh.html",
+                  "hi": "content/docs/v2/lim_hi.html"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "v3",
+        "title": "OData V3",
+        "titles": {
+          "de": "OData V3",
+          "en": "OData V3",
+          "ja": "OData V3",
+          "pt": "OData V3",
+          "es": "OData V3",
+          "fr": "OData V3",
+          "zh": "OData V3",
+          "hi": "OData V3"
+        },
+        "groups": [
+          {
+            "id": "v",
+            "title": "OData Version",
+            "titles": {
+              "de": "OData Version",
+              "en": "OData Version",
+              "ja": "OData バージョン",
+              "pt": "Versão OData",
+              "es": "Versión OData",
+              "fr": "Version OData",
+              "zh": "OData 版本",
+              "hi": "OData संस्करण"
+            },
+            "items": [
+              {
+                "id": "i",
+                "title": "V-Version Intro",
+                "titles": {
+                  "de": "V-Version Intro",
+                  "en": "Introduction",
+                  "ja": "イントロダクション",
+                  "pt": "Introdução",
+                  "es": "Introducción",
+                  "fr": "Introduction",
+                  "zh": "简介",
+                  "hi": "परिचय"
+                },
+                "files": {
+                  "de": "content/docs/v3/i_de.html",
+                  "en": "content/docs/v3/i_en.html",
+                  "fr": "content/docs/v3/i_fr.html",
+                  "es": "content/docs/v3/i_es.html",
+                  "pt": "content/docs/v3/i_pt.html",
+                  "ja": "content/docs/v3/i_ja.html",
+                  "zh": "content/docs/v3/i_zh.html",
+                  "hi": "content/docs/v3/i_hi.html"
+                }
+              },
+              {
+                "id": "q",
+                "title": "Query Syntax",
+                "titles": {
+                  "de": "Query Syntax",
+                  "en": "Query Syntax",
+                  "ja": "クエリ構文",
+                  "pt": "Sintaxe de Consulta",
+                  "es": "Sintaxis de Consulta",
+                  "fr": "Syntaxe de Requête",
+                  "zh": "查询语法",
+                  "hi": "क्वेरी सिंटैक्स"
+                },
+                "files": {
+                  "de": "content/docs/v3/q_de.html",
+                  "en": "content/docs/v3/q_en.html",
+                  "fr": "content/docs/v3/q_fr.html",
+                  "es": "content/docs/v3/q_es.html",
+                  "pt": "content/docs/v3/q_pt.html",
+                  "ja": "content/docs/v3/q_ja.html",
+                  "zh": "content/docs/v3/q_zh.html",
+                  "hi": "content/docs/v3/q_hi.html"
+                }
+              },
+              {
+                "id": "lim",
+                "title": "Einschränkungen",
+                "titles": {
+                  "de": "Einschränkungen",
+                  "en": "Limitations",
+                  "ja": "制限事項",
+                  "pt": "Limitações",
+                  "es": "Limitaciones",
+                  "fr": "Limitations",
+                  "zh": "限制",
+                  "hi": "सीमाएं"
+                },
+                "files": {
+                  "de": "content/docs/v3/lim_de.html",
+                  "en": "content/docs/v3/lim_en.html",
+                  "fr": "content/docs/v3/lim_fr.html",
+                  "es": "content/docs/v3/lim_es.html",
+                  "pt": "content/docs/v3/lim_pt.html",
+                  "ja": "content/docs/v3/lim_ja.html",
+                  "zh": "content/docs/v3/lim_zh.html",
+                  "hi": "content/docs/v3/lim_hi.html"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "v4",
+        "title": "OData V4",
+        "titles": {
+          "de": "OData V4",
+          "en": "OData V4",
+          "ja": "OData V4",
+          "pt": "OData V4",
+          "es": "OData V4",
+          "fr": "OData V4",
+          "zh": "OData V4",
+          "hi": "OData V4"
+        },
+        "groups": [
+          {
+            "id": "v",
+            "title": "OData Version",
+            "titles": {
+              "de": "OData Version",
+              "en": "OData Version",
+              "ja": "OData バージョン",
+              "pt": "Versão OData",
+              "es": "Versión OData",
+              "fr": "Version OData",
+              "zh": "OData 版本",
+              "hi": "OData संस्करण"
+            },
+            "items": [
+              {
+                "id": "i",
+                "title": "V-Version Intro",
+                "titles": {
+                  "de": "V-Version Intro",
+                  "en": "Introduction",
+                  "ja": "イントロダクション",
+                  "pt": "Introdução",
+                  "es": "Introducción",
+                  "fr": "Introduction",
+                  "zh": "简介",
+                  "hi": "परिचय"
+                },
+                "files": {
+                  "de": "content/docs/v4/i_de.html",
+                  "en": "content/docs/v4/i_en.html",
+                  "fr": "content/docs/v4/i_fr.html",
+                  "es": "content/docs/v4/i_es.html",
+                  "pt": "content/docs/v4/i_pt.html",
+                  "ja": "content/docs/v4/i_ja.html",
+                  "zh": "content/docs/v4/i_zh.html",
+                  "hi": "content/docs/v4/i_hi.html"
+                }
+              },
+              {
+                "id": "q",
+                "title": "Query Syntax",
+                "titles": {
+                  "de": "Query Syntax",
+                  "en": "Query Syntax",
+                  "ja": "クエリ構文",
+                  "pt": "Sintaxe de Consulta",
+                  "es": "Sintaxis de Consulta",
+                  "fr": "Syntaxe de Requête",
+                  "zh": "查询语法",
+                  "hi": "क्वेरी सिंटैक्स"
+                },
+                "files": {
+                  "de": "content/docs/v4/q_de.html",
+                  "en": "content/docs/v4/q_en.html",
+                  "fr": "content/docs/v4/q_fr.html",
+                  "es": "content/docs/v4/q_es.html",
+                  "pt": "content/docs/v4/q_pt.html",
+                  "ja": "content/docs/v4/q_ja.html",
+                  "zh": "content/docs/v4/q_zh.html",
+                  "hi": "content/docs/v4/q_hi.html"
+                }
+              },
+              {
+                "id": "lim",
+                "title": "Einschränkungen",
+                "titles": {
+                  "de": "Einschränkungen",
+                  "en": "Limitations",
+                  "ja": "制限事項",
+                  "pt": "Limitações",
+                  "es": "Limitaciones",
+                  "fr": "Limitations",
+                  "zh": "限制",
+                  "hi": "सीमाएं"
+                },
+                "files": {
+                  "de": "content/docs/v4/lim_de.html",
+                  "en": "content/docs/v4/lim_en.html",
+                  "fr": "content/docs/v4/lim_fr.html",
+                  "es": "content/docs/v4/lim_es.html",
+                  "pt": "content/docs/v4/lim_pt.html",
+                  "ja": "content/docs/v4/lim_ja.html",
+                  "zh": "content/docs/v4/lim_zh.html",
+                  "hi": "content/docs/v4/lim_hi.html"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sap",
+        "title": "SAP",
+        "titles": {
+          "de": "SAP",
+          "en": "SAP",
+          "ja": "SAP",
+          "pt": "SAP",
+          "es": "SAP",
+          "fr": "SAP",
+          "zh": "SAP",
+          "hi": "SAP"
+        },
+        "groups": [
+          {
+            "id": "sap",
+            "title": "SAP Integration",
+            "titles": {
+              "de": "SAP Integration",
+              "en": "SAP Integration",
+              "ja": "SAP 統合",
+              "pt": "Integração SAP",
+              "es": "Integración SAP",
+              "fr": "Intégration SAP",
+              "zh": "SAP 集成",
+              "hi": "एसएपी एकीकरण"
+            },
+            "items": [
+              {
+                "id": "overview",
+                "title": "Übersicht",
+                "titles": {
+                  "de": "Übersicht",
+                  "en": "Overview",
+                  "ja": "概要",
+                  "pt": "Visão Geral",
+                  "es": "Resumen",
+                  "fr": "Aperçu",
+                  "zh": "概览",
+                  "hi": "अवलोकन"
+                },
+                "files": {
+                  "de": "content/docs/sap/overview_de.html",
+                  "en": "content/docs/sap/overview_en.html",
+                  "fr": "content/docs/sap/overview_fr.html",
+                  "es": "content/docs/sap/overview_es.html",
+                  "pt": "content/docs/sap/overview_pt.html",
+                  "ja": "content/docs/sap/overview_ja.html",
+                  "zh": "content/docs/sap/overview_zh.html",
+                  "hi": "content/docs/sap/overview_hi.html"
+                }
+              },
+              {
+                "id": "anatomy",
+                "title": "Aufbau & Anatomie",
+                "titles": {
+                  "de": "Aufbau & Anatomie",
+                  "en": "Anatomy",
+                  "ja": "構造と解剖学",
+                  "pt": "Estrutura e Anatomia",
+                  "es": "Estructura y Anatomía",
+                  "fr": "Structure et Anatomie",
+                  "zh": "结构与解剖",
+                  "hi": "संरचना और शरीर रचना"
+                },
+                "files": {
+                  "de": "content/docs/sap/anatomy_de.html",
+                  "en": "content/docs/sap/anatomy_en.html",
+                  "fr": "content/docs/sap/anatomy_fr.html",
+                  "es": "content/docs/sap/anatomy_es.html",
+                  "pt": "content/docs/sap/anatomy_pt.html",
+                  "ja": "content/docs/sap/anatomy_ja.html",
+                  "zh": "content/docs/sap/anatomy_zh.html",
+                  "hi": "content/docs/sap/anatomy_hi.html"
+                }
+              },
+              {
+                "id": "metadata",
+                "title": "Metadaten ($metadata)",
+                "titles": {
+                  "de": "Metadaten ($metadata)",
+                  "en": "Metadata ($metadata)",
+                  "ja": "メタデータ ($metadata)",
+                  "pt": "Metadados ($metadata)",
+                  "es": "Metadatos ($metadata)",
+                  "fr": "Métadonnées ($metadata)",
+                  "zh": "元数据 ($metadata)",
+                  "hi": "मेटाडेटा ($metadata)"
+                },
+                "files": {
+                  "de": "content/docs/sap/metadata_de.html",
+                  "en": "content/docs/sap/metadata_en.html",
+                  "fr": "content/docs/sap/metadata_fr.html",
+                  "es": "content/docs/sap/metadata_es.html",
+                  "pt": "content/docs/sap/metadata_pt.html",
+                  "ja": "content/docs/sap/metadata_ja.html",
+                  "zh": "content/docs/sap/metadata_zh.html",
+                  "hi": "content/docs/sap/metadata_hi.html"
+                }
+              },
+              {
+                "id": "query_opts",
+                "title": "Abfrageoptionen",
+                "titles": {
+                  "de": "Abfrageoptionen",
+                  "en": "Query Options",
+                  "ja": "クエリ・オプション",
+                  "pt": "Opções de Consulta",
+                  "es": "Opciones de Consulta",
+                  "fr": "Options de Requête",
+                  "zh": "查询选项",
+                  "hi": "क्वेरी विकल्प"
+                },
+                "files": {
+                  "de": "content/docs/sap/query_opts_de.html",
+                  "en": "content/docs/sap/query_opts_en.html",
+                  "fr": "content/docs/sap/query_opts_fr.html",
+                  "es": "content/docs/sap/query_opts_es.html",
+                  "pt": "content/docs/sap/query_opts_pt.html",
+                  "ja": "content/docs/sap/query_opts_ja.html",
+                  "zh": "content/docs/sap/query_opts_zh.html",
+                  "hi": "content/docs/sap/query_opts_hi.html"
+                }
+              },
+              {
+                "id": "filtering",
+                "title": "Filtern ($filter)",
+                "titles": {
+                  "de": "Filtern ($filter)",
+                  "en": "Filtering ($filter)",
+                  "ja": "フィルタリング ($filter)",
+                  "pt": "Filtragem ($filter)",
+                  "es": "Filtrado ($filter)",
+                  "fr": "Filtrage ($filter)",
+                  "zh": "过滤 ($filter)",
+                  "hi": "फ़िल्टरिंग ($filter)"
+                },
+                "files": {
+                  "de": "content/docs/sap/filtering_de.html",
+                  "en": "content/docs/sap/filtering_en.html",
+                  "fr": "content/docs/sap/filtering_fr.html",
+                  "es": "content/docs/sap/filtering_es.html",
+                  "pt": "content/docs/sap/filtering_pt.html",
+                  "ja": "content/docs/sap/filtering_ja.html",
+                  "zh": "content/docs/sap/filtering_zh.html",
+                  "hi": "content/docs/sap/filtering_hi.html"
+                }
+              },
+              {
+                "id": "selecting",
+                "title": "Selektieren ($select)",
+                "titles": {
+                  "de": "Selektieren ($select)",
+                  "en": "Selecting ($select)",
+                  "ja": "選択 ($select)",
+                  "pt": "Selecionando ($select)",
+                  "es": "Selección ($select)",
+                  "fr": "Sélection ($select)",
+                  "zh": "选择 ($select)",
+                  "hi": "चयन ($select)"
+                },
+                "files": {
+                  "de": "content/docs/sap/selecting_de.html",
+                  "en": "content/docs/sap/selecting_en.html",
+                  "fr": "content/docs/sap/selecting_fr.html",
+                  "es": "content/docs/sap/selecting_es.html",
+                  "pt": "content/docs/sap/selecting_pt.html",
+                  "ja": "content/docs/sap/selecting_ja.html",
+                  "zh": "content/docs/sap/selecting_zh.html",
+                  "hi": "content/docs/sap/selecting_hi.html"
+                }
+              },
+              {
+                "id": "sort_page",
+                "title": "Sortieren & Paging",
+                "titles": {
+                  "de": "Sortieren & Paging",
+                  "en": "Sort & Page",
+                  "ja": "ソートとページング",
+                  "pt": "Ordenação e Paginação",
+                  "es": "Ordenación y Paginación",
+                  "fr": "Tri et Pagination",
+                  "zh": "排序与分页",
+                  "hi": "सॉर्ट और पेज"
+                },
+                "files": {
+                  "de": "content/docs/sap/sort_page_de.html",
+                  "en": "content/docs/sap/sort_page_en.html",
+                  "fr": "content/docs/sap/sort_page_fr.html",
+                  "es": "content/docs/sap/sort_page_es.html",
+                  "pt": "content/docs/sap/sort_page_pt.html",
+                  "ja": "content/docs/sap/sort_page_ja.html",
+                  "zh": "content/docs/sap/sort_page_zh.html",
+                  "hi": "content/docs/sap/sort_page_hi.html"
+                }
+              },
+              {
+                "id": "counting",
+                "title": "Zählen ($count)",
+                "titles": {
+                  "de": "Zählen ($count)",
+                  "en": "Counting ($count)",
+                  "ja": "カウント ($count)",
+                  "pt": "Contagem ($count)",
+                  "es": "Recuento ($count)",
+                  "fr": "Comptage ($count)",
+                  "zh": "计数 ($count)",
+                  "hi": "गिनती ($count)"
+                },
+                "files": {
+                  "de": "content/docs/sap/counting_de.html",
+                  "en": "content/docs/sap/counting_en.html",
+                  "fr": "content/docs/sap/counting_fr.html",
+                  "es": "content/docs/sap/counting_es.html",
+                  "pt": "content/docs/sap/counting_pt.html",
+                  "ja": "content/docs/sap/counting_ja.html",
+                  "zh": "content/docs/sap/counting_zh.html",
+                  "hi": "content/docs/sap/counting_hi.html"
+                }
+              },
+              {
+                "id": "best_pract",
+                "title": "Best Practices",
+                "titles": {
+                  "de": "Best Practices",
+                  "en": "Best Practices",
+                  "ja": "ベストプラクティス",
+                  "pt": "Melhores Práticas",
+                  "es": "Mejores Práticas",
+                  "fr": "Bonnes Pratiques",
+                  "zh": "最佳实践",
+                  "hi": "सर्वोत्तम प्रथाएं"
+                },
+                "files": {
+                  "de": "content/docs/sap/best_pract_de.html",
+                  "en": "content/docs/sap/best_pract_en.html",
+                  "fr": "content/docs/sap/best_pract_fr.html",
+                  "es": "content/docs/sap/best_pract_es.html",
+                  "pt": "content/docs/sap/best_pract_pt.html",
+                  "ja": "content/docs/sap/best_pract_ja.html",
+                  "zh": "content/docs/sap/best_pract_zh.html",
+                  "hi": "content/docs/sap/best_pract_hi.html"
+                }
+              },
+              {
+                "id": "troubleshoot",
+                "title": "Fehlersuche",
+                "titles": {
+                  "de": "Fehlersuche",
+                  "en": "Troubleshooting",
+                  "ja": "トラブルシューティング",
+                  "pt": "Solução de Problemas",
+                  "es": "Solución de Problemas",
+                  "fr": "Dépannage",
+                  "zh": "故障排除",
+                  "hi": "समस्या निवारण"
+                },
+                "files": {
+                  "de": "content/docs/sap/troubleshoot_de.html",
+                  "en": "content/docs/sap/troubleshoot_en.html",
+                  "fr": "content/docs/sap/troubleshoot_fr.html",
+                  "es": "content/docs/sap/troubleshoot_es.html",
+                  "pt": "content/docs/sap/troubleshoot_pt.html",
+                  "ja": "content/docs/sap/troubleshoot_ja.html",
+                  "zh": "content/docs/sap/troubleshoot_zh.html",
+                  "hi": "content/docs/sap/troubleshoot_hi.html"
+                }
+              },
+              {
+                "id": "build_query",
+                "title": "Abfrage-Generator",
+                "titles": {
+                  "de": "Abfrage-Generator",
+                  "en": "Query Builder",
+                  "ja": "クエリ・ビルダー",
+                  "pt": "Construtor de Consultas",
+                  "es": "Constructor de Consultas",
+                  "fr": "Constructeur de Requêtes",
+                  "zh": "查询构建器",
+                  "hi": "क्वेरी बिल्डर"
+                },
+                "init": "query_builder",
+                "files": {
+                  "de": "content/docs/sap/build_query_de.html",
+                  "en": "content/docs/sap/build_query_en.html",
+                  "fr": "content/docs/sap/build_query_fr.html",
+                  "es": "content/docs/sap/build_query_es.html",
+                  "pt": "content/docs/sap/build_query_pt.html",
+                  "ja": "content/docs/sap/build_query_ja.html",
+                  "zh": "content/docs/sap/build_query_zh.html",
+                  "hi": "content/docs/sap/build_query_hi.html"
+                }
+              },
+              {
+                "id": "faq",
+                "title": "Häufige Fragen (FAQ)",
+                "titles": {
+                  "de": "Häufige Fragen (FAQ)",
+                  "en": "FAQ",
+                  "ja": "よくある質問 (FAQ)",
+                  "pt": "Perguntas Frequentes (FAQ)",
+                  "es": "Preguntas Frecuentes (FAQ)",
+                  "fr": "Questions Fréquentes (FAQ)",
+                  "zh": "常见问题 (FAQ)",
+                  "hi": "अक्सर पूछे जाने वाले प्रश्न (FAQ)"
+                },
+                "files": {
+                  "de": "content/docs/sap/faq_de.html",
+                  "en": "content/docs/sap/faq_en.html",
+                  "fr": "content/docs/sap/faq_fr.html",
+                  "es": "content/docs/sap/faq_es.html",
+                  "pt": "content/docs/sap/faq_pt.html",
+                  "ja": "content/docs/sap/faq_ja.html",
+                  "zh": "content/docs/sap/faq_zh.html",
+                  "hi": "content/docs/sap/faq_hi.html"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sp",
+        "title": "SharePoint",
+        "titles": {
+          "de": "SharePoint",
+          "en": "SharePoint",
+          "ja": "SharePoint",
+          "pt": "SharePoint",
+          "es": "SharePoint",
+          "fr": "SharePoint",
+          "zh": "SharePoint",
+          "hi": "SharePoint"
+        },
+        "groups": [
+          {
+            "id": "sp",
+            "title": "SharePoint",
+            "titles": {
+              "de": "SharePoint",
+              "en": "SharePoint",
+              "ja": "SharePoint",
+              "pt": "SharePoint",
+              "es": "SharePoint",
+              "fr": "SharePoint",
+              "zh": "SharePoint",
+              "hi": "SharePoint"
+            },
+            "items": [
+              {
+                "id": "i",
+                "title": "V-Version Intro",
+                "titles": {
+                  "de": "V-Version Intro",
+                  "en": "Introduction",
+                  "ja": "イントロダクション",
+                  "pt": "Introdução",
+                  "es": "Introducción",
+                  "fr": "Introduction",
+                  "zh": "简介",
+                  "hi": "परिचय"
+                },
+                "files": {
+                  "de": "content/docs/sp/i_de.html",
+                  "en": "content/docs/sp/i_en.html",
+                  "fr": "content/docs/sp/i_fr.html",
+                  "es": "content/docs/sp/i_es.html",
+                  "pt": "content/docs/sp/i_pt.html",
+                  "ja": "content/docs/sp/i_ja.html",
+                  "zh": "content/docs/sp/i_zh.html",
+                  "hi": "content/docs/sp/i_hi.html"
+                }
+              },
+              {
+                "id": "q",
+                "title": "Query Syntax",
+                "titles": {
+                  "de": "Query Syntax",
+                  "en": "Query Syntax",
+                  "ja": "クエリ構文",
+                  "pt": "Sintaxe de Consulta",
+                  "es": "Sintaxis de Consulta",
+                  "fr": "Syntaxe de Requête",
+                  "zh": "查询语法",
+                  "hi": "क्वेरी सिंटैक्स"
+                },
+                "files": {
+                  "de": "content/docs/sp/q_de.html",
+                  "en": "content/docs/sp/q_en.html",
+                  "fr": "content/docs/sp/q_fr.html",
+                  "es": "content/docs/sp/q_es.html",
+                  "pt": "content/docs/sp/q_pt.html",
+                  "ja": "content/docs/sp/q_ja.html",
+                  "zh": "content/docs/sp/q_zh.html",
+                  "hi": "content/docs/sp/q_hi.html"
+                }
+              },
+              {
+                "id": "lim",
+                "title": "Einschränkungen",
+                "titles": {
+                  "de": "Einschränkungen",
+                  "en": "Limitations",
+                  "ja": "制限事項",
+                  "pt": "Limitações",
+                  "es": "Limitaciones",
+                  "fr": "Limitations",
+                  "zh": "限制",
+                  "hi": "सीमाएं"
+                },
+                "files": {
+                  "de": "content/docs/sp/lim_de.html",
+                  "en": "content/docs/sp/lim_en.html",
+                  "fr": "content/docs/sp/lim_fr.html",
+                  "es": "content/docs/sp/lim_es.html",
+                  "pt": "content/docs/sp/lim_pt.html",
+                  "ja": "content/docs/sp/lim_ja.html",
+                  "zh": "content/docs/sp/lim_zh.html",
+                  "hi": "content/docs/sp/lim_hi.html"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "code": {
+    "languages": [
+      {
+        "id": "python",
+        "title": "Python",
+        "titles": {
+          "de": "Python",
+          "en": "Python",
+          "ja": "Python",
+          "pt": "Python",
+          "es": "Python",
+          "fr": "Python",
+          "zh": "Python",
+          "hi": "Python"
+        },
+        "groups": [
+          {
+            "id": "impl",
+            "title": "IMPLEMENTATION",
+            "titles": {
+              "de": "IMPLEMENTATION",
+              "en": "IMPLEMENTATION",
+              "ja": "実装",
+              "pt": "IMPLEMENTAÇÃO",
+              "es": "IMPLEMENTACIÓN",
+              "fr": "IMPLÉMENTATION",
+              "zh": "实现",
+              "hi": "कार्यान्वयन"
+            },
+            "items": [
+              {
+                "id": "setup",
+                "title": "PYTHON Setup",
+                "titles": {
+                  "de": "PYTHON Setup",
+                  "en": "PYTHON Setup",
+                  "ja": "PYTHON セットアップ",
+                  "pt": "Configuração PYTHON",
+                  "es": "Configuración PYTHON",
+                  "fr": "Configuration PYTHON",
+                  "zh": "Python 设置",
+                  "hi": "पायथन सेटअप"
+                },
+                "files": {
+                  "de": "content/code/python/setup_de.html",
+                  "en": "content/code/python/setup_en.html",
+                  "fr": "content/code/python/setup_fr.html",
+                  "es": "content/code/python/setup_es.html",
+                  "pt": "content/code/python/setup_pt.html",
+                  "ja": "content/code/python/setup_ja.html",
+                  "zh": "content/code/python/setup_zh.html",
+                  "hi": "content/code/python/setup_hi.html"
+                }
+              },
+              {
+                "id": "fetch",
+                "title": "Daten abrufen",
+                "titles": {
+                  "de": "Daten abrufen",
+                  "en": "Fetch Data",
+                  "ja": "データの取得",
+                  "pt": "Buscar Dados",
+                  "es": "Obtener Datos",
+                  "fr": "Récupérer des Données",
+                  "zh": "获取数据",
+                  "hi": "डेटा प्राप्त करें"
+                },
+                "files": {
+                  "de": "content/code/python/fetch_de.html",
+                  "en": "content/code/python/fetch_en.html",
+                  "fr": "content/code/python/fetch_fr.html",
+                  "es": "content/code/python/fetch_es.html",
+                  "pt": "content/code/python/fetch_pt.html",
+                  "ja": "content/code/python/fetch_ja.html",
+                  "zh": "content/code/python/fetch_zh.html",
+                  "hi": "content/code/python/fetch_hi.html"
+                }
+              },
+              {
+                "id": "payload",
+                "title": "Payload Logik",
+                "titles": {
+                  "de": "Payload Logik",
+                  "en": "Payload Logic",
+                  "ja": "ペイロード・ロジック",
+                  "pt": "Lógica de Payload",
+                  "es": "Lógica de Carga Útil",
+                  "fr": "Logique de Payload",
+                  "zh": "有效载荷逻辑",
+                  "hi": "पेलोड लॉजिक"
+                },
+                "files": {
+                  "de": "content/code/python/payload_de.html",
+                  "en": "content/code/python/payload_en.html",
+                  "fr": "content/code/python/payload_fr.html",
+                  "es": "content/code/python/payload_es.html",
+                  "pt": "content/code/python/payload_pt.html",
+                  "ja": "content/code/python/payload_ja.html",
+                  "zh": "content/code/python/payload_zh.html",
+                  "hi": "content/code/python/payload_hi.html"
+                }
+              },
+              {
+                "id": "error",
+                "title": "Fehlerbehandlung",
+                "titles": {
+                  "de": "Fehlerbehandlung",
+                  "en": "Error Handling",
+                  "ja": "エラー処理",
+                  "pt": "Tratamento de Erros",
+                  "es": "Manejo de Errores",
+                  "fr": "Gestion des Erreurs",
+                  "zh": "错误处理",
+                  "hi": "त्रुटि संभालना"
+                },
+                "files": {
+                  "de": "content/code/python/error_de.html",
+                  "en": "content/code/python/error_en.html",
+                  "fr": "content/code/python/error_fr.html",
+                  "es": "content/code/python/error_es.html",
+                  "pt": "content/code/python/error_pt.html",
+                  "ja": "content/code/python/error_ja.html",
+                  "zh": "content/code/python/error_zh.html",
+                  "hi": "content/code/python/error_hi.html"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "js",
+        "title": "JavaScript",
+        "titles": {
+          "de": "JavaScript",
+          "en": "JavaScript",
+          "ja": "JavaScript",
+          "pt": "JavaScript",
+          "es": "JavaScript",
+          "fr": "JavaScript",
+          "zh": "JavaScript",
+          "hi": "JavaScript"
+        },
+        "groups": [
+          {
+            "id": "impl",
+            "title": "IMPLEMENTATION",
+            "titles": {
+              "de": "IMPLEMENTATION",
+              "en": "IMPLEMENTATION",
+              "ja": "実装",
+              "pt": "IMPLEMENTAÇÃO",
+              "es": "IMPLEMENTACIÓN",
+              "fr": "IMPLÉMENTATION",
+              "zh": "实现",
+              "hi": "कार्यान्वयन"
+            },
+            "items": [
+              {
+                "id": "setup",
+                "title": "JS Setup",
+                "titles": {
+                  "de": "JS Setup",
+                  "en": "JS Setup",
+                  "ja": "JS セットアップ",
+                  "pt": "Configuração JS",
+                  "es": "Configuración JS",
+                  "fr": "Configuration JS",
+                  "zh": "JS 设置",
+                  "hi": "JS सेटअप"
+                },
+                "files": {
+                  "de": "content/code/js/setup_de.html",
+                  "en": "content/code/js/setup_en.html",
+                  "fr": "content/code/js/setup_fr.html",
+                  "es": "content/code/js/setup_es.html",
+                  "pt": "content/code/js/setup_pt.html",
+                  "ja": "content/code/js/setup_ja.html",
+                  "zh": "content/code/js/setup_zh.html",
+                  "hi": "content/code/js/setup_hi.html"
+                }
+              },
+              {
+                "id": "fetch",
+                "title": "Daten abrufen",
+                "titles": {
+                  "de": "Daten abrufen",
+                  "en": "Fetch Data",
+                  "ja": "データの取得",
+                  "pt": "Buscar Dados",
+                  "es": "Obtener Datos",
+                  "fr": "Récupérer des Données",
+                  "zh": "获取数据",
+                  "hi": "डेटा प्राप्त करें"
+                },
+                "files": {
+                  "de": "content/code/js/fetch_de.html",
+                  "en": "content/code/js/fetch_en.html",
+                  "fr": "content/code/js/fetch_fr.html",
+                  "es": "content/code/js/fetch_es.html",
+                  "pt": "content/code/js/fetch_pt.html",
+                  "ja": "content/code/js/fetch_ja.html",
+                  "zh": "content/code/js/fetch_zh.html",
+                  "hi": "content/code/js/fetch_hi.html"
+                }
+              },
+              {
+                "id": "payload",
+                "title": "Payload Logik",
+                "titles": {
+                  "de": "Payload Logik",
+                  "en": "Payload Logic",
+                  "ja": "ペイロード・ロジック",
+                  "pt": "Lógica de Payload",
+                  "es": "Lógica de Carga Útil",
+                  "fr": "Logique de Payload",
+                  "zh": "有效载荷逻辑",
+                  "hi": "पेलोड लॉजिक"
+                },
+                "files": {
+                  "de": "content/code/js/payload_de.html",
+                  "en": "content/code/js/payload_en.html",
+                  "fr": "content/code/js/payload_fr.html",
+                  "es": "content/code/js/payload_es.html",
+                  "pt": "content/code/js/payload_pt.html",
+                  "ja": "content/code/js/payload_ja.html",
+                  "zh": "content/code/js/payload_zh.html",
+                  "hi": "content/code/js/payload_hi.html"
+                }
+              },
+              {
+                "id": "error",
+                "title": "Fehlerbehandlung",
+                "titles": {
+                  "de": "Fehlerbehandlung",
+                  "en": "Error Handling",
+                  "ja": "エラー処理",
+                  "pt": "Tratamento de Erros",
+                  "es": "Manejo de Errores",
+                  "fr": "Gestion des Erreurs",
+                  "zh": "错误处理",
+                  "hi": "त्रुटि संभालना"
+                },
+                "files": {
+                  "de": "content/code/js/error_de.html",
+                  "en": "content/code/js/error_en.html",
+                  "fr": "content/code/js/error_fr.html",
+                  "es": "content/code/js/error_es.html",
+                  "pt": "content/code/js/error_pt.html",
+                  "ja": "content/code/js/error_ja.html",
+                  "zh": "content/code/js/error_zh.html",
+                  "hi": "content/code/js/error_hi.html"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "csharp",
+        "title": "C#",
+        "titles": {
+          "de": "C#",
+          "en": "C#",
+          "ja": "C#",
+          "pt": "C#",
+          "es": "C#",
+          "fr": "C#",
+          "zh": "C#",
+          "hi": "C#"
+        },
+        "groups": [
+          {
+            "id": "impl",
+            "title": "IMPLEMENTATION",
+            "titles": {
+              "de": "IMPLEMENTATION",
+              "en": "IMPLEMENTATION",
+              "ja": "実装",
+              "pt": "IMPLEMENTAÇÃO",
+              "es": "IMPLEMENTACIÓN",
+              "fr": "IMPLÉMENTATION",
+              "zh": "实现",
+              "hi": "कार्यान्वयन"
+            },
+            "items": [
+              {
+                "id": "setup",
+                "title": "CSHARP Setup",
+                "titles": {
+                  "de": "CSHARP Setup",
+                  "en": "C# Setup",
+                  "ja": "C# セットアップ",
+                  "pt": "Configuração C#",
+                  "es": "Configuración C#",
+                  "fr": "Configuration C#",
+                  "zh": "C# 设置",
+                  "hi": "सी# सेटअप"
+                },
+                "files": {
+                  "de": "content/code/csharp/setup_de.html",
+                  "en": "content/code/csharp/setup_en.html",
+                  "fr": "content/code/csharp/setup_fr.html",
+                  "es": "content/code/csharp/setup_es.html",
+                  "pt": "content/code/csharp/setup_pt.html",
+                  "ja": "content/code/csharp/setup_ja.html",
+                  "zh": "content/code/csharp/setup_zh.html",
+                  "hi": "content/code/csharp/setup_hi.html"
+                }
+              },
+              {
+                "id": "fetch",
+                "title": "Daten abrufen",
+                "titles": {
+                  "de": "Daten abrufen",
+                  "en": "Fetch Data",
+                  "ja": "データの取得",
+                  "pt": "Buscar Dados",
+                  "es": "Obtener Datos",
+                  "fr": "Récupérer des Données",
+                  "zh": "获取数据",
+                  "hi": "डेटा प्राप्त करें"
+                },
+                "files": {
+                  "de": "content/code/csharp/fetch_de.html",
+                  "en": "content/code/csharp/fetch_en.html",
+                  "fr": "content/code/csharp/fetch_fr.html",
+                  "es": "content/code/csharp/fetch_es.html",
+                  "pt": "content/code/csharp/fetch_pt.html",
+                  "ja": "content/code/csharp/fetch_ja.html",
+                  "zh": "content/code/csharp/fetch_zh.html",
+                  "hi": "content/code/csharp/fetch_hi.html"
+                }
+              },
+              {
+                "id": "payload",
+                "title": "Payload Logik",
+                "titles": {
+                  "de": "Payload Logik",
+                  "en": "Payload Logic",
+                  "ja": "ペイロード・ロジック",
+                  "pt": "Lógica de Payload",
+                  "es": "Lógica de Carga Útil",
+                  "fr": "Logique de Payload",
+                  "zh": "有效载荷逻辑",
+                  "hi": "पेलोड लॉजिक"
+                },
+                "files": {
+                  "de": "content/code/csharp/payload_de.html",
+                  "en": "content/code/csharp/payload_en.html",
+                  "fr": "content/code/csharp/payload_fr.html",
+                  "es": "content/code/csharp/payload_es.html",
+                  "pt": "content/code/csharp/payload_pt.html",
+                  "ja": "content/code/csharp/payload_ja.html",
+                  "zh": "content/code/csharp/payload_zh.html",
+                  "hi": "content/code/csharp/payload_hi.html"
+                }
+              },
+              {
+                "id": "error",
+                "title": "Fehlerbehandlung",
+                "titles": {
+                  "de": "Fehlerbehandlung",
+                  "en": "Error Handling",
+                  "ja": "エラー処理",
+                  "pt": "Tratamento de Erros",
+                  "es": "Manejo de Errores",
+                  "fr": "Gestion des Erreurs",
+                  "zh": "错误处理",
+                  "hi": "त्रुटि संभालना"
+                },
+                "files": {
+                  "de": "content/code/csharp/error_de.html",
+                  "en": "content/code/csharp/error_en.html",
+                  "fr": "content/code/csharp/error_fr.html",
+                  "es": "content/code/csharp/error_es.html",
+                  "pt": "content/code/csharp/error_pt.html",
+                  "ja": "content/code/csharp/error_ja.html",
+                  "zh": "content/code/csharp/error_zh.html",
+                  "hi": "content/code/csharp/error_hi.html"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "vbnet",
+        "title": "VB.NET",
+        "titles": {
+          "de": "VB.NET",
+          "en": "VB.NET",
+          "ja": "VB.NET",
+          "pt": "VB.NET",
+          "es": "VB.NET",
+          "fr": "VB.NET",
+          "zh": "VB.NET",
+          "hi": "VB.NET"
+        },
+        "groups": [
+          {
+            "id": "impl",
+            "title": "IMPLEMENTATION",
+            "titles": {
+              "de": "IMPLEMENTATION",
+              "en": "IMPLEMENTATION",
+              "ja": "実装",
+              "pt": "IMPLEMENTAÇÃO",
+              "es": "IMPLEMENTACIÓN",
+              "fr": "IMPLÉMENTATION",
+              "zh": "实现",
+              "hi": "कार्यान्वयन"
+            },
+            "items": [
+              {
+                "id": "setup",
+                "title": "VBNET Setup",
+                "titles": {
+                  "de": "VBNET Setup",
+                  "en": "VB.NET Setup",
+                  "ja": "VB.NET セットアップ",
+                  "pt": "Configuração VB.NET",
+                  "es": "Configuración VB.NET",
+                  "fr": "Configuration VB.NET",
+                  "zh": "VB.NET 设置",
+                  "hi": "VB.NET सेटअप"
+                },
+                "files": {
+                  "de": "content/code/vbnet/setup_de.html",
+                  "en": "content/code/vbnet/setup_en.html",
+                  "fr": "content/code/vbnet/setup_fr.html",
+                  "es": "content/code/vbnet/setup_es.html",
+                  "pt": "content/code/vbnet/setup_pt.html",
+                  "ja": "content/code/vbnet/setup_ja.html",
+                  "zh": "content/code/vbnet/setup_zh.html",
+                  "hi": "content/code/vbnet/setup_hi.html"
+                }
+              },
+              {
+                "id": "fetch",
+                "title": "Daten abrufen",
+                "titles": {
+                  "de": "Daten abrufen",
+                  "en": "Fetch Data",
+                  "ja": "データの取得",
+                  "pt": "Buscar Dados",
+                  "es": "Obtener Datos",
+                  "fr": "Récupérer des Données",
+                  "zh": "获取数据",
+                  "hi": "डेटा प्राप्त करें"
+                },
+                "files": {
+                  "de": "content/code/vbnet/fetch_de.html",
+                  "en": "content/code/vbnet/fetch_en.html",
+                  "fr": "content/code/vbnet/fetch_fr.html",
+                  "es": "content/code/vbnet/fetch_es.html",
+                  "pt": "content/code/vbnet/fetch_pt.html",
+                  "ja": "content/code/vbnet/fetch_ja.html",
+                  "zh": "content/code/vbnet/fetch_zh.html",
+                  "hi": "content/code/vbnet/fetch_hi.html"
+                }
+              },
+              {
+                "id": "payload",
+                "title": "Payload Logik",
+                "titles": {
+                  "de": "Payload Logik",
+                  "en": "Payload Logic",
+                  "ja": "ペイロード・ロジック",
+                  "pt": "Lógica de Payload",
+                  "es": "Lógica de Carga Útil",
+                  "fr": "Logique de Payload",
+                  "zh": "有效载荷逻辑",
+                  "hi": "पेलोड लॉजिक"
+                },
+                "files": {
+                  "de": "content/code/vbnet/payload_de.html",
+                  "en": "content/code/vbnet/payload_en.html",
+                  "fr": "content/code/vbnet/payload_fr.html",
+                  "es": "content/code/vbnet/payload_es.html",
+                  "pt": "content/code/vbnet/payload_pt.html",
+                  "ja": "content/code/vbnet/payload_ja.html",
+                  "zh": "content/code/vbnet/payload_zh.html",
+                  "hi": "content/code/vbnet/payload_hi.html"
+                }
+              },
+              {
+                "id": "error",
+                "title": "Fehlerbehandlung",
+                "titles": {
+                  "de": "Fehlerbehandlung",
+                  "en": "Error Handling",
+                  "ja": "エラー処理",
+                  "pt": "Tratamento de Erros",
+                  "es": "Manejo de Errores",
+                  "fr": "Gestion des Erreurs",
+                  "zh": "错误处理",
+                  "hi": "त्रुटि संभालना"
+                },
+                "files": {
+                  "de": "content/code/vbnet/error_de.html",
+                  "en": "content/code/vbnet/error_en.html",
+                  "fr": "content/code/vbnet/error_fr.html",
+                  "es": "content/code/vbnet/error_es.html",
+                  "pt": "content/code/vbnet/error_pt.html",
+                  "ja": "content/code/vbnet/error_ja.html",
+                  "zh": "content/code/vbnet/error_zh.html",
+                  "hi": "content/code/vbnet/error_hi.html"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "java",
+        "title": "Java",
+        "titles": {
+          "de": "Java",
+          "en": "Java",
+          "ja": "Java",
+          "pt": "Java",
+          "es": "Java",
+          "fr": "Java",
+          "zh": "Java",
+          "hi": "Java"
+        },
+        "groups": [
+          {
+            "id": "impl",
+            "title": "IMPLEMENTATION",
+            "titles": {
+              "de": "IMPLEMENTATION",
+              "en": "IMPLEMENTATION",
+              "ja": "実装",
+              "pt": "IMPLEMENTAÇÃO",
+              "es": "IMPLEMENTACIÓN",
+              "fr": "IMPLÉMENTATION",
+              "zh": "实现",
+              "hi": "कार्यान्वयन"
+            },
+            "items": [
+              {
+                "id": "setup",
+                "title": "JAVA Setup",
+                "titles": {
+                  "de": "JAVA Setup",
+                  "en": "JAVA Setup",
+                  "ja": "JAVA セットアップ",
+                  "pt": "Configuração JAVA",
+                  "es": "Configuración JAVA",
+                  "fr": "Configuration JAVA",
+                  "zh": "Java 设置",
+                  "hi": "जावा सेटअप"
+                },
+                "files": {
+                  "de": "content/code/java/setup_de.html",
+                  "en": "content/code/java/setup_en.html",
+                  "fr": "content/code/java/setup_fr.html",
+                  "es": "content/code/java/setup_es.html",
+                  "pt": "content/code/java/setup_pt.html",
+                  "ja": "content/code/java/setup_ja.html",
+                  "zh": "content/code/java/setup_zh.html",
+                  "hi": "content/code/java/setup_hi.html"
+                }
+              },
+              {
+                "id": "fetch",
+                "title": "Daten abrufen",
+                "titles": {
+                  "de": "Daten abrufen",
+                  "en": "Fetch Data",
+                  "ja": "データの取得",
+                  "pt": "Buscar Daten",
+                  "es": "Obtener Datos",
+                  "fr": "Récupérer des Données",
+                  "zh": "获取数据",
+                  "hi": "डेटा प्राप्त करें"
+                },
+                "files": {
+                  "de": "content/code/java/fetch_de.html",
+                  "en": "content/code/java/fetch_en.html",
+                  "fr": "content/code/java/fetch_fr.html",
+                  "es": "content/code/java/fetch_es.html",
+                  "pt": "content/code/java/fetch_pt.html",
+                  "ja": "content/code/java/fetch_ja.html",
+                  "zh": "content/code/java/fetch_zh.html",
+                  "hi": "content/code/java/fetch_hi.html"
+                }
+              },
+              {
+                "id": "payload",
+                "title": "Payload Logik",
+                "titles": {
+                  "de": "Payload Logik",
+                  "en": "Payload Logic",
+                  "ja": "ペイロード・ロジック",
+                  "pt": "Lógica de Payload",
+                  "es": "Lógica de Carga Útil",
+                  "fr": "Logique de Payload",
+                  "zh": "有效载荷逻辑",
+                  "hi": "पेलोड लॉजिक"
+                },
+                "files": {
+                  "de": "content/code/java/payload_de.html",
+                  "en": "content/code/java/payload_en.html",
+                  "fr": "content/code/java/payload_fr.html",
+                  "es": "content/code/java/payload_es.html",
+                  "pt": "content/code/java/payload_pt.html",
+                  "ja": "content/code/java/payload_ja.html",
+                  "zh": "content/code/java/payload_zh.html",
+                  "hi": "content/code/java/payload_hi.html"
+                }
+              },
+              {
+                "id": "error",
+                "title": "Fehlerbehandlung",
+                "titles": {
+                  "de": "Fehlerbehandlung",
+                  "en": "Error Handling",
+                  "ja": "エラー処理",
+                  "pt": "Tratamento de Erros",
+                  "es": "Manejo de Errores",
+                  "fr": "Gestion des Erreurs",
+                  "zh": "错误处理",
+                  "hi": "त्रुटि संभालना"
+                },
+                "files": {
+                  "de": "content/code/java/error_de.html",
+                  "en": "content/code/java/error_en.html",
+                  "fr": "content/code/java/error_fr.html",
+                  "es": "content/code/java/error_es.html",
+                  "pt": "content/code/java/error_pt.html",
+                  "ja": "content/code/java/error_ja.html",
+                  "zh": "content/code/java/error_zh.html",
+                  "hi": "content/code/java/error_hi.html"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "generator",
+        "title": "Generator 🪄",
+        "isAi": true,
+        "titles": {
+          "de": "Generator ✨",
+          "en": "Generator ✨",
+          "ja": "ジェネレーター ✨",
+          "pt": "Gerador ✨",
+          "es": "Generador ✨",
+          "fr": "Générateur ✨",
+          "zh": "生成器 ✨",
+          "hi": "जनरेटर ✨"
+        },
+        "groups": [
+          {
+            "id": "ai",
+            "title": "INTELLIGENZ",
+            "titles": {
+              "de": "INTELLIGENZ",
+              "en": "INTELLIGENCE",
+              "ja": "インテリジェンス",
+              "pt": "INTELIGÊNCIA",
+              "es": "INTELIGENCIA",
+              "fr": "INTELLIGENCE",
+              "zh": "人工智能",
+              "hi": "बुद्धिमत्ता"
+            },
+            "items": [
+              {
+                "id": "ai_setup",
+                "title": "KI Generator",
+                "titles": {
+                  "de": "KI Generator",
+                  "en": "AI Generator",
+                  "ja": "AI ジェネレーター",
+                  "pt": "Gerador de IA",
+                  "es": "Generador de IA",
+                  "fr": "Générateur d'IA",
+                  "zh": "人工智能生成器",
+                  "hi": "एआई जनरेटर"
+                },
+                "init": "ai_generator",
+                "files": {
+                  "de": "content/code/generator/ai_setup_de.html",
+                  "en": "content/code/generator/ai_setup_en.html",
+                  "fr": "content/code/generator/ai_setup_fr.html",
+                  "es": "content/code/generator/ai_setup_es.html",
+                  "pt": "content/code/generator/ai_setup_pt.html",
+                  "ja": "content/code/generator/ai_setup_ja.html",
+                  "zh": "content/code/generator/ai_setup_zh.html",
+                  "hi": "content/code/generator/ai_setup_hi.html"
+                }
+              },
+              {
+                "id": "ai_history",
+                "title": "Letzte Entwürfe",
+                "titles": {
+                  "de": "Letzte Entwürfe",
+                  "en": "Recent Drafts",
+                  "ja": "最近の下書き",
+                  "pt": "Rascunhos Recentes",
+                  "es": "Borradores Recientes",
+                  "fr": "Brouillons Récents",
+                  "zh": "最近的草稿",
+                  "hi": "हालिया ड्राफ्ट"
+                },
+                "files": {
+                  "de": "content/code/generator/ai_history_de.html",
+                  "en": "content/code/generator/ai_history_en.html",
+                  "fr": "content/code/generator/ai_history_fr.html",
+                  "es": "content/code/generator/ai_history_es.html",
+                  "pt": "content/code/generator/ai_history_pt.html",
+                  "ja": "content/code/generator/ai_history_ja.html",
+                  "zh": "content/code/generator/ai_history_zh.html",
+                  "hi": "content/code/generator/ai_history_hi.html"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "items": [
+      {
+        "id": "datenschutz",
+        "title": "Datenschutz",
+        "titles": {
+          "de": "Datenschutz",
+          "en": "Data Privacy",
+          "ja": "個人情報保護",
+          "pt": "Privacidade de Dados",
+          "es": "Privacidad de Datos",
+          "fr": "Confidentialité des Données",
+          "zh": "数据隐私",
+          "hi": "डेटा गोपनीयता"
+        },
+        "popup": 1,
+        "files": {
+          "de": "content/footer/datenschutz_de.html",
+          "en": "content/footer/datenschutz_en.html",
+          "fr": "content/footer/datenschutz_fr.html",
+          "es": "content/footer/datenschutz_es.html",
+          "pt": "content/footer/datenschutz_pt.html",
+          "ja": "content/footer/datenschutz_ja.html",
+          "zh": "content/footer/datenschutz_zh.html",
+          "hi": "content/footer/datenschutz_hi.html"
+        }
+      },
+      {
+        "id": "impressum",
+        "title": "Impressum",
+        "titles": {
+          "de": "Impressum",
+          "en": "Imprint",
+          "ja": "インプリント",
+          "pt": "Impressum",
+          "es": "Aviso Legal",
+          "fr": "Mentions Légales",
+          "zh": "法律声明",
+          "hi": "कानूनी नोटिस"
+        },
+        "popup": 1,
+        "files": {
+          "de": "content/footer/impressum_de.html",
+          "en": "content/footer/impressum_en.html",
+          "fr": "content/footer/impressum_fr.html",
+          "es": "content/footer/impressum_es.html",
+          "pt": "content/footer/impressum_pt.html",
+          "ja": "content/footer/impressum_ja.html",
+          "zh": "content/footer/impressum_zh.html",
+          "hi": "content/footer/impressum_hi.html"
+        }
+      },
+      {
+        "id": "support",
+        "title": "Support",
+        "titles": {
+          "de": "Support",
+          "en": "Support",
+          "ja": "サポート",
+          "pt": "Suporte",
+          "es": "Soporte",
+          "fr": "Support",
+          "zh": "支持",
+          "hi": "समर्थन"
+        },
+        "popup": 1,
+        "files": {
+          "de": "content/footer/support_de.html",
+          "en": "content/footer/support_en.html",
+          "fr": "content/footer/support_fr.html",
+          "es": "content/footer/support_es.html",
+          "pt": "content/footer/support_pt.html",
+          "ja": "content/footer/support_ja.html",
+          "zh": "content/footer/support_zh.html",
+          "hi": "content/footer/support_hi.html"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Contagem de Registros</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Existem duas maneiras de obter a contagem de registros em OData, cada uma servindo a um propósito diferente.
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-6 mt-8">
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      <h3 class="text-xl font-bold text-slate-800">$inlinecount (Parâmetro)</h3>
+      <p class="text-slate-600 text-sm">
+        Retorna os dados <strong>e</strong> o número total de registros (ignorando $top e $skip) em um único payload.
+      </p>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-xs font-mono text-purple-300">/SalesOrders?$inlinecount=allpages</code>
+      </div>
+      <p class="text-xs text-slate-500 italic">Ideal para construir componentes de paginação na interface do usuário.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      <h3 class="text-xl font-bold text-slate-800">$count (Recurso)</h3>
+      <p class="text-slate-600 text-sm">
+        Retorna <strong>apenas</strong> um número simples (text/plain) representando a contagem. Não retorna dados.
+      </p>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-xs font-mono text-purple-300">/SalesOrders/$count</code>
+      </div>
+      <p class="text-xs text-slate-500 italic">Ideal para badges ou contadores rápidos no dashboard.</p>
+    </div>
+  </div>
+
+  <div class="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-amber-900 font-bold mb-2">Impacto na Performance</h4>
+    <p class="text-amber-800 text-sm leading-relaxed">
+      Contar pode ser lento em tabelas grandes no SAP. O sistema deve primeiro realizar um <code>SELECT COUNT(*)</code> no banco de dados antes de buscar os dados para os parâmetros <code>$top</code> e <code>$skip</code>. Use apenas quando necessário.
+    </p>
+  </div>
+</article>

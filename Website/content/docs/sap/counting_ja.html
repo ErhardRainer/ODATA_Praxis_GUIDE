@@ -1,0 +1,36 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> 件数取得 ($count)</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    「全部で何件か」だけを知りたい場合や、UI のページネーションのためにデータ 1 ページ分と合わせて総件数が必要な場合があります。
+  </p>
+
+  <div class="grid gap-6 md:grid-cols-2 mt-8">
+    
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="text-xl font-bold text-slate-800 mb-3">$count (リソース)</h3>
+      <p class="text-slate-600 mb-4">一致するエンティティの生の整数カウントを返します。データは返されません。</p>
+      <div class="bg-slate-100 p-2 rounded text-sm font-mono text-slate-700 break-all">
+        /A_SalesOrder/$count
+      </div>
+      <div class="bg-slate-100 p-2 rounded text-sm font-mono text-slate-700 break-all mt-2">
+        /A_SalesOrder/$count?$filter=Status eq 'Open'
+      </div>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h3 class="text-xl font-bold text-slate-800 mb-3">$inlinecount</h3>
+      <p class="text-slate-600 mb-4">データに <strong>加えて</strong>、レスポンスラッパー (<code>__count</code>) 内に総件数を返します。</p>
+      <div class="bg-slate-100 p-2 rounded text-sm font-mono text-slate-700 break-all">
+        /A_SalesOrder?$top=10&$inlinecount=allpages
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-yellow-900 font-bold mb-2">パフォーマンスに関する注意点</h4>
+    <p class="text-yellow-800 text-sm leading-relaxed">
+      総件数の計算 (<code>$inlinecount=allpages</code>) は、データベースが（たとえ 10 件しか要求していなくても）すべての一致する行をカウントする必要があるため、大規模なデータセットではパフォーマンスに影響を与える可能性があります。必要な場合にのみ使用してください。
+    </p>
+  </div>
+</article>

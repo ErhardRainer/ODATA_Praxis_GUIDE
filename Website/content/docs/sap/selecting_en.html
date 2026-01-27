@@ -1,0 +1,48 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Selecting ($select)</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    The <code>$select</code> option limits which properties are returned. This is a key optimization technique.
+  </p>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Benefits of $select</h3>
+  <ul class="grid gap-4 md:grid-cols-3">
+    <li class="bg-green-50 p-4 rounded-lg border border-green-100">
+      <strong class="block text-green-700 mb-1">Reduced payload</strong>
+      <span class="text-green-800 text-sm">Smaller response sizes mean faster transfers.</span>
+    </li>
+    <li class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+      <strong class="block text-blue-700 mb-1">Faster processing</strong>
+      <span class="text-blue-800 text-sm">The backend may skip expensive calculations for unselected fields.</span>
+    </li>
+    <li class="bg-purple-50 p-4 rounded-lg border border-purple-100">
+      <strong class="block text-purple-700 mb-1">Cleaner data</strong>
+      <span class="text-purple-800 text-sm">Get only what you need—easier to work with downstream.</span>
+    </li>
+  </ul>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">Examples</h3>
+  
+  <div class="space-y-6">
+    <div>
+      <h4 class="font-bold text-slate-700 mb-2">Basic Selection</h4>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-sm font-mono text-cyan-300">$select=SalesOrder,CustomerID,CreationDate,TotalNetAmount</code>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="font-bold text-slate-700 mb-2">Combining with $expand</h4>
+      <p class="text-slate-600 mb-2 text-sm">Select fields from the main entity AND the related entity.</p>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-sm font-mono text-cyan-300">$select=SalesOrder,CustomerID&$expand=to_Item($select=SalesOrderItem,Material,NetAmount)</code>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-red-900 font-bold mb-2">Caution</h4>
+    <p class="text-red-800 text-sm leading-relaxed">
+       Some endpoints (especially analytical ones with <code>sap:semantics="aggregate"</code>) may restrict specific <code>$select</code> combinations.
+    </p>
+  </div>
+</article>

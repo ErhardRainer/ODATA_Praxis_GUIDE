@@ -1,0 +1,37 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Conteo de Registros</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Hay dos formas de obtener el recuento de registros en OData, cada una de los cuales sirve para un propósito diferente.
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-6 mt-8">
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      <h3 class="text-xl font-bold text-slate-800">$inlinecount (Parámetro)</h3>
+      <p class="text-slate-600 text-sm">
+        Devuelve los datos <strong>y</strong> el número total de registros (ignorando $top y $skip) en un solo payload.
+      </p>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-xs font-mono text-purple-300">/SalesOrders?$inlinecount=allpages</code>
+      </div>
+      <p class="text-xs text-slate-500 italic">Ideal para construir componentes de paginación en la interfaz de usuario.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      <h3 class="text-xl font-bold text-slate-800">$count (Recurso)</h3>
+      <p class="text-slate-600 text-sm">
+        Devuelve <strong>solo</strong> un número simple (text/plain) que representa el recuento. No devuelve datos.
+      </p>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-xs font-mono text-purple-300">/SalesOrders/$count</code>
+      </div>
+      <p class="text-xs text-slate-500 italic">Ideal para insignias o contadores rápidos en el panel de control.</p>
+    </div>
+  </div>
+
+  <div class="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-amber-900 font-bold mb-2">Impacto en el Rendimiento</h4>
+    <p class="text-amber-800 text-sm leading-relaxed">
+      El conteo puede ser lento en tablas grandes en SAP. El sistema debe realizar primero un <code>SELECT COUNT(*)</code> en la base de datos antes de recuperar los datos para los parámetros <code>$top</code> y <code>$skip</code>. Utilícelo solo cuando sea necesario.
+    </p>
+  </div>
+</article>

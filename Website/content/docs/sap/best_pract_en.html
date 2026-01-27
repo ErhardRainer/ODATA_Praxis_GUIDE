@@ -1,0 +1,42 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Best Practices</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Optimizing OData queries is essential for ensuring the stability and speed of your SAP applications.
+  </p>
+
+  <div class="space-y-8 mt-6">
+    
+    <div class="flex gap-4">
+      <div class="flex-none w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold text-xl">1</div>
+      <div>
+        <h3 class="text-xl font-bold text-slate-800">Select Only What You Need</h3>
+        <p class="text-slate-600 mt-1">Always use <code>$select</code> to retrieve only the fields required for your process. This reduces database load, application server memory usage, and network payload.</p>
+      </div>
+    </div>
+
+    <div class="flex gap-4">
+      <div class="flex-none w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold text-xl">2</div>
+      <div>
+        <h3 class="text-xl font-bold text-slate-800">Filter on Keys & Indexed Fields</h3>
+        <p class="text-slate-600 mt-1">Filtering on non-indexed columns causes full table scans in the HANA database. Prefer filtering on Primary Keys or indexed business keys.</p>
+      </div>
+    </div>
+
+    <div class="flex gap-4">
+      <div class="flex-none w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold text-xl">3</div>
+      <div>
+        <h3 class="text-xl font-bold text-slate-800">Use Correct Paging</h3>
+        <p class="text-slate-600 mt-1">When retrieving large datasets, always use server-side paging (<code>$top</code>/<code>$skip</code>) and ensure deterministic sorting with a unique key in <code>$orderby</code>.</p>
+      </div>
+    </div>
+
+    <div class="flex gap-4">
+      <div class="flex-none w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold text-xl">4</div>
+      <div>
+        <h3 class="text-xl font-bold text-slate-800">Check Metadata Capabilities</h3>
+        <p class="text-slate-600 mt-1">Don't assume all fields are filterable. Check <code>sap:filterable</code> and <code>sap:sortable</code> annotations in the <code>$metadata</code> to avoid runtime errors.</p>
+      </div>
+    </div>
+
+  </div>
+</article>

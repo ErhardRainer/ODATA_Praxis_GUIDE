@@ -1,0 +1,48 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> 選択 ($select)</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    <code>$select</code> オプションは、返されるプロパティを制限します。これは主要な最適化手法の1つです。
+  </p>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">$select のメリット</h3>
+  <ul class="grid gap-4 md:grid-cols-3">
+    <li class="bg-green-50 p-4 rounded-lg border border-green-100">
+      <strong class="block text-green-700 mb-1">ペイロードの削減</strong>
+      <span class="text-green-800 text-sm">レスポンスサイズが小さくなることで、転送速度が向上します。</span>
+    </li>
+    <li class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+      <strong class="block text-blue-700 mb-1">処理の高速化</strong>
+      <span class="text-blue-800 text-sm">バックエンドで選択されていないフィールドの負荷の高い計算をスキップできる場合があります。</span>
+    </li>
+    <li class="bg-purple-50 p-4 rounded-lg border border-purple-100">
+      <strong class="block text-purple-700 mb-1">データのクリーン化</strong>
+      <span class="text-purple-800 text-sm">必要なデータのみを取得できるため、後続の処理が容易になります。</span>
+    </li>
+  </ul>
+
+  <h3 class="text-2xl font-bold text-slate-800 mt-8 mb-4">例</h3>
+  
+  <div class="space-y-6">
+    <div>
+      <h4 class="font-bold text-slate-700 mb-2">基本的な選択</h4>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-sm font-mono text-cyan-300">$select=SalesOrder,CustomerID,CreationDate,TotalNetAmount</code>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="font-bold text-slate-700 mb-2">$expand との組み合わせ</h4>
+      <p class="text-slate-600 mb-2 text-sm">メインエンティティと関連エンティティの両方からフィールドを選択します。</p>
+      <div class="bg-slate-900 rounded-lg p-3 overflow-x-auto">
+        <code class="text-sm font-mono text-cyan-300">$select=SalesOrder,CustomerID&$expand=to_Item($select=SalesOrderItem,Material,NetAmount)</code>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-2xl shadow-sm mt-8">
+    <h4 class="text-red-900 font-bold mb-2">注意</h4>
+    <p class="text-red-800 text-sm leading-relaxed">
+       一部のエンドポイント（特に <code>sap:semantics="aggregate"</code> を持つ分析用のもの）では、特定の <code>$select</code> の組み合わせが制限される場合があります。
+    </p>
+  </div>
+</article>

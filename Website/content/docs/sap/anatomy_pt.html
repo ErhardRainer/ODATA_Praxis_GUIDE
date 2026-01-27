@@ -1,0 +1,40 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">SAP <span class="text-slate-300 mx-2">&rsaquo;</span> Anatomia do Endpoint</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Compreender a estrutura de uma URL OData é fundamental. Cada endpoint segue um padrão previsível que torna a navegação intuitiva uma vez que você conhece os componentes.
+  </p>
+
+  <div class="bg-slate-900 rounded-lg p-4 overflow-x-auto my-6">
+    <code class="text-sm font-mono text-green-400">
+      https://&lt;host&gt;:&lt;port&gt;/sap/opu/odata/sap/&lt;SERVICE_NAME&gt;/&lt;EntitySet&gt;(&lt;Key&gt;)?&lt;QueryOptions&gt;
+    </code>
+  </div>
+
+  <div class="space-y-4">
+    <div class="border-l-4 border-blue-500 pl-4 py-2">
+      <h3 class="font-bold text-slate-800">Raiz do Serviço (Service Root)</h3>
+      <p class="text-slate-600">A URL base até e incluindo o nome do serviço. Este é o seu ponto de partida.<br>
+      <code class="bg-slate-100 px-2 py-1 rounded text-sm text-slate-700">https://host/sap/opu/odata/sap/API_SALES_ORDER_SRV</code></p>
+    </div>
+    
+    <div class="border-l-4 border-indigo-500 pl-4 py-2">
+      <h3 class="font-bold text-slate-800">Conjunto de Entidades (Entity Set)</h3>
+      <p class="text-slate-600">Uma coleção de entidades (como uma tabela de banco de dados). Anexado à raiz do serviço.<br>
+      <code class="bg-slate-100 px-2 py-1 rounded text-sm text-slate-700">.../API_SALES_ORDER_SRV/A_SalesOrder</code></p>
+    </div>
+
+    <div class="border-l-4 border-purple-500 pl-4 py-2">
+      <h3 class="font-bold text-slate-800">Entidade por Chave (Entity by Key)</h3>
+      <p class="text-slate-600">Acesse uma entidade específica usando sua chave entre parênteses.<br>
+      <code class="bg-slate-100 px-2 py-1 rounded text-sm text-slate-700">.../A_SalesOrder('0000000123')</code></p>
+    </div>
+  </div>
+
+  <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-2xl shadow-sm mt-6">
+    <h4 class="text-blue-900 font-bold mb-2 flex items-center gap-2"><span class="inline-flex" aria-hidden="true">i</span> Propriedades de Navegação</h4>
+    <p class="text-blue-800 text-sm leading-relaxed">
+      Use propriedades de navegação para percorrer relacionamentos. Por exemplo, para obter os itens de uma ordem de vendas: <br>
+      <code>.../A_SalesOrder('0000000123')/to_Item</code>. Verifique o <code>$metadata</code> para descobrir as navegações disponíveis.
+    </p>
+  </div>
+</article>

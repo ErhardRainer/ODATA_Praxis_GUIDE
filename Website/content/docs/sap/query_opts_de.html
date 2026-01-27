@@ -1,0 +1,56 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">System-Abfrageoptionen</h2>
+  <p class="text-lg text-slate-700 leading-relaxed">
+    Abfrageoptionen ermöglichen es Ihnen, die vom Server zurückgegebenen Daten zu filtern, zu sortieren und zu formatieren. Diese beginnen immer mit einem Dollarzeichen <code class="text-blue-600 font-bold">$</code>.
+  </p>
+
+  <div class="overflow-hidden border border-slate-200 rounded-xl shadow-sm overflow-x-auto">
+    <table class="w-full text-left text-sm">
+      <thead class="bg-slate-50 border-b border-slate-200">
+        <tr>
+          <th class="px-4 py-3 font-semibold text-slate-900">Option</th>
+          <th class="px-4 py-3 font-semibold text-slate-900">Beschreibung</th>
+          <th class="px-4 py-3 font-semibold text-slate-900">Beispiel</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100">
+        <tr>
+          <td class="px-4 py-3 font-mono text-blue-600 font-bold">$filter</td>
+          <td class="px-4 py-3 text-slate-600">Filtert die Ergebnismenge basierend auf Bedingungen.</td>
+          <td class="px-4 py-3 font-mono text-xs">status eq 'A'</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-3 font-mono text-blue-600 font-bold">$select</td>
+          <td class="px-4 py-3 text-slate-600">Gibt nur die angegebenen Felder zurück.</td>
+          <td class="px-4 py-3 font-mono text-xs">ID,Name,Date</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-3 font-mono text-blue-600 font-bold">$expand</td>
+          <td class="px-4 py-3 text-slate-600">Lädt verknüpfte Entitäten inline (Joins).</td>
+          <td class="px-4 py-3 font-mono text-xs">to_Items,to_Header</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-3 font-mono text-blue-600 font-bold">$orderby</td>
+          <td class="px-4 py-3 text-slate-600">Sortiert die Ergebnisse (asc/desc).</td>
+          <td class="px-4 py-3 font-mono text-xs">CreatedAt desc</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-3 font-mono text-blue-600 font-bold">$top / $skip</td>
+          <td class="px-4 py-3 text-slate-600">Wird für Paginierung verwendet.</td>
+          <td class="px-4 py-3 font-mono text-xs">$top=10&$skip=20</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-3 font-mono text-blue-600 font-bold">$format</td>
+          <td class="px-4 py-3 text-slate-600">Fordert JSON oder XML an (standardmäßig oft XML bei SAP).</td>
+          <td class="px-4 py-3 font-mono text-xs">json</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-lg mt-8">
+    <p class="text-amber-900 text-sm">
+      <strong>Wichtig:</strong> Sie können mehrere Optionen mit dem <code class="font-bold">&amp;</code> Zeichen kombinieren. Der erste Parameter nach dem Pfad muss jedoch immer mit einem <code class="font-bold">?</code> eingeleitet werden.
+    </p>
+  </div>
+</article>

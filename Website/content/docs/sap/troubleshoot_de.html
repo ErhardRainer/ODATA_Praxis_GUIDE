@@ -1,0 +1,37 @@
+<article class="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-6">
+  <h2 class="text-3xl font-extrabold tracking-tight">Fehlersuche (Troubleshooting)</h2>
+  
+  <p class="text-slate-700">Wenn Ihr OData-Call fehlschlägt, prüfen Sie diese häufigen Fehlerquellen im SAP-Kontext:</p>
+
+  <div class="space-y-6">
+    <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+      <h3 class="text-red-800 font-bold flex items-center gap-2 mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" /></svg>
+        403 Forbidden (CSRF Token)
+      </h3>
+      <p class="text-sm text-red-700">
+        SAP benötigt für schreibende Zugriffe (POST, PUT, DELETE) ein <strong>x-csrf-token</strong>. Holen Sie dieses mit einem GET-Request und dem Header <code>x-csrf-token: fetch</code> ab.
+      </p>
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+      <h3 class="text-amber-800 font-bold flex items-center gap-2 mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" /><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" /></svg>
+        Transaktion /IWFND/ERROR_LOG
+      </h3>
+      <p class="text-sm text-amber-900">
+        Dies ist der wichtigste Ort im SAP-System, um detaillierte Fehlermeldungen inkl. ABAP-Shortdumps zu finden, wenn der Browser nur "500 Internal Server Error" anzeigt.
+      </p>
+    </div>
+
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+      <h3 class="text-blue-800 font-bold flex items-center gap-2 mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.3 1.047a1 1 0 01.74 0l7 4.75a1 1 0 010 1.406l-7 4.75a1 1 0 01-1.48 0l-7-4.75a1 1 0 010-1.406l7-4.75a1 1 0 01.74 0zM10.8 11.45l-6.912-4.69L10.8 2.07l6.912 4.69-6.912 4.69z" clip-rule="evenodd" /></svg>
+        Leere Ergebnisse?
+      </h3>
+      <p class="text-sm text-blue-900 leading-relaxed">
+        Prüfen Sie, ob Sie führende Nullen bei Schlüsseln vergessen haben (z.B. <code>'0000000123'</code> statt <code>'123'</code>) oder ob Groß-/Kleinschreibung im Filter beachtet werden muss.
+      </p>
+    </div>
+  </div>
+</article>
