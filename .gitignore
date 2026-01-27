@@ -9,3 +9,4 @@ python/openai_key.json
 
 # Backups
 *.bak
+ftp/ftp.json

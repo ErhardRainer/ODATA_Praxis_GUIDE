@@ -21,5 +21,10 @@ Ein Highlight des Projekts ist die Integration modernster Künstlicher Intellige
 ## Philosophie
 Dieses Projekt versteht sich nicht als rein technisches Handbuch, sondern als **praktischer Begleiter**. Es geht darum, die Hürden bei der Nutzung von standardisierten Schnittstellen abzubauen. Durch die Kombination aus Dokumentation, interaktiven Generatoren und KI-Unterstützung bietet der "OData Guide" einen ganzheitlichen Ansatz, um Datenverbindungen schneller, sicherer und verständlicher zu gestalten.
 
+## weiterfürhrende Informationen
+* [ftp](./ftp/README.md) - Skript, um die Webseite automatisiert auf den vServer hochzuladen.
+* [python](./python/README.md) - In diesem Verzeichnis liegen Python-Scripte, die die wartung der Webseite vereinfachen.
+* [Webiste](./Website/index.html) - die eigentliche Webseite mit HTML und JS.
+
 ---
 *OData Guide  Damit Daten fließen können.*
