@@ -1,7 +1,7 @@
 ﻿# OData Guide  Der Praxis-Leitfaden für moderne API-Schnittstellen
 
 ## Zielsetzung
-Das Projekt "OData Guide" (odataguid.com](https://odataguide.com) ist eine zentrale Informationsplattform, die darauf abzielt, das Open Data Protocol (OData) für Entwickler, Architekten und Daten-Analysten verständlich und praxisnah zugänglich zu machen. Die Vision ist es, die oft komplexe Welt der OData-Spezifikationen in eine benutzerfreundliche Ressource zu verwandeln, die sowohl theoretisches Wissen als auch interaktive Werkzeuge für den Arbeitsalltag bietet.
+Das Projekt "OData Guide" [odataguid.com](https://odataguide.com) ist eine zentrale Informationsplattform, die darauf abzielt, das Open Data Protocol (OData) für Entwickler, Architekten und Daten-Analysten verständlich und praxisnah zugänglich zu machen. Die Vision ist es, die oft komplexe Welt der OData-Spezifikationen in eine benutzerfreundliche Ressource zu verwandeln, die sowohl theoretisches Wissen als auch interaktive Werkzeuge für den Arbeitsalltag bietet.
 
 ## Kernfunktionen und Angebote
 
