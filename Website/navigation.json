@@ -178,6 +178,16 @@
       "zh": "关闭",
       "hi": "बंद करें"
     },
+    "course_details": {
+      "de": "Kurs Details",
+      "en": "Course Details",
+      "ja": "コースの詳細",
+      "pt": "Detalhes do Curso",
+      "es": "Detalles del Curso",
+      "fr": "Détails du Cours",
+      "zh": "课程详情",
+      "hi": "पाठ्यक्रम विवरण"
+    },
     "security_text": {
       "de": "OData-Requests können sensible Daten enthalten. Verwenden Sie im Produktivbetrieb stets HTTPS und validieren Sie die Server-Zertifikate.",
       "en": "OData requests can contain sensitive data. Always use HTTPS in production and validate server certificates.",

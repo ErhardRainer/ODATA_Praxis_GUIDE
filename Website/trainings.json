@@ -1,0 +1,76 @@
+{
+  "trainings": [
+    {
+      "title": "From Zero to Hero: Understanding OData Queries",
+      "description": "Cracking OData Queries: A Step-by-Step Guide for All Levels",
+      "link": "https://www.udemy.com/course/from-zero-to-hero-understanding-odata-queries/",
+      "viewMode": "docs",
+      "contextId": "allg",
+      "general": true,
+      "language": "en"
+    },
+    {
+      "title": "SAP OData Services | UI5 | FIORI ( Using Eclipse & WEB IDE )",
+      "description": "With detailed material/documentation of step by step procedure including coding part of SAP UI5 / FIORI / OData",
+      "link": "https://www.udemy.com/course/sap-odata-abap-services/",
+      "viewMode": "docs",
+      "contextId": "allg",
+      "language": "en"
+    },
+    {
+      "title": "SAP OData services - Rest API and Consume Salesforce API",
+      "description": "Learn How to Create OData Service to perform CURD operations, batch & more, Rest API, Consumes Salesforce API in SAP",
+      "link": "https://www.udemy.com/course/sap-odata-basics/",
+      "viewMode": "docs",
+      "contextId": "sap",
+      "language": "en"
+    },
+    {
+      "title": "Learn SAP OData Services Developments in 2 Hours",
+      "description": "Create, Debug, Test and Analyze Your First Custom SAP OData Service",
+      "link": "https://www.udemy.com/course/learn-sap-odata-services-developments-in-2-hours/",
+      "viewMode": "docs",
+      "contextId": "sap",
+      "language": "en"
+    },
+    {
+      "title": "The Complete Course of SAP OData 2025",
+      "description": "Learn SAP OData in a Professional way from Scratch. Become an expert in SAP OData Services, from ZERO to HERO!",
+      "link": "https://www.udemy.com/course/odata-course/",
+      "viewMode": "docs",
+      "contextId": "sap",
+      "language": "en"
+    },
+    {
+      "title": "SAP OData Interview Questions and Answer Made Easy",
+      "description": "Learn ODATA Interview Questions not by Mugging up but with Concept and Crack it",
+      "link": "https://www.udemy.com/course/sap-odata-interview-questions-answer-made-easy/",
+      "viewMode": "docs",
+      "contextId": "sap",
+      "language": "en"
+    },
+    {
+      "title": "OData Preparation Practice Exams",
+      "description": "High Quality Practice Tests of OData",
+      "link": "https://www.udemy.com/course/odata-preparation-practice-exams/",
+      "viewMode": "docs",
+      "language": "en"
+    },
+    {
+      "title": "SAP ABAP CDS (Core Data Service) Views for S/4 HANA",
+      "description": "End-to-End Functions in ABAP CDS Views | AMDP | SAP Fiori Template Apps",
+      "link": "https://www.udemy.com/course/abap-cds-views-for-s4-hana/",
+      "viewMode": "docs",
+      "contextId": "sap",
+      "language": "en"
+    },
+    {
+      "title": "SAP ABAP Core Data Services ( CDS Views ) for S/4 HANA",
+      "description": "Complete CDS View Course | VDM | Access Control | Creation of UI5 App using Annotations | AMDP | CDS View Extn.",
+      "link": "https://www.udemy.com/course/sap-abap-core-data-services/",
+      "viewMode": "docs",
+      "contextId": "sap",
+      "language": "en"
+    }
+  ]
+}

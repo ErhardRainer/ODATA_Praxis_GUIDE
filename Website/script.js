@@ -96,6 +96,7 @@ const safeCopyText = async (text) => {
 const App = () => {
   const [nav, setNav] = useState(null);
   const [navError, setNavError] = useState(null);
+  const [trainingsData, setTrainingsData] = useState([]);
   const [viewMode, setViewMode] = useState('docs');
   const [activeContextId, setActiveContextId] = useState(null);
   const [activeLangId, setActiveLangId] = useState(null);
@@ -146,6 +147,28 @@ const App = () => {
     if (!codeLanguages.length || !activeLangId) return null;
     return codeLanguages.find(l => l.id === activeLangId) ?? null;
   }, [codeLanguages, activeLangId]);
+
+  const activeTrainings = useMemo(() => {
+    if (!trainingsData.length) return [];
+    
+    // 1) Precise match: viewMode AND contextId/langId
+    const specific = trainingsData.filter(t => 
+      t.viewMode === viewMode && 
+      (viewMode === 'docs' ? t.contextId === activeContextId : t.contextId === activeLangId) &&
+      !t.general
+    );
+    
+    if (specific.length > 0) return specific;
+
+    // 2) Fallback: General trainings for this viewMode
+    const generalForMode = trainingsData.filter(t => 
+       t.general && t.viewMode === viewMode
+    );
+    if (generalForMode.length > 0) return generalForMode;
+
+    // 3) Final fallback: Any general training
+    return trainingsData.filter(t => t.general);
+  }, [trainingsData, viewMode, activeContextId, activeLangId]);
 
   const currentGroups = useMemo(() => {
     if (viewMode === 'code') return activeLanguage?.groups ?? [];
@@ -533,10 +556,19 @@ const App = () => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch('./navigation.json', { cache: 'no-store' });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const data = await response.json();
+        const [navRes, trainingsRes] = await Promise.all([
+          fetch('./navigation.json', { cache: 'no-store' }),
+          fetch('./trainings.json', { cache: 'no-store' }).catch(() => null)
+        ]);
+        
+        if (!navRes.ok) throw new Error(`HTTP ${navRes.status}`);
+        const data = await navRes.json();
         setNav(data);
+
+        if (trainingsRes && trainingsRes.ok) {
+           const tData = await trainingsRes.json();
+           setTrainingsData(tData?.trainings || []);
+        }
 
         const firstContext = firstOrNull(data?.docs?.contexts);
         const firstGroup = firstOrNull(firstContext?.groups);
@@ -882,25 +914,34 @@ const App = () => {
 
             <AdContainer type="content" title={ll('ad_label')} className="w-full min-h-[150px]" />
 
-            <div className="bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-sm border-t-4 border-t-purple-500 p-8 md:p-12">
-               <div className="flex flex-col md:flex-row items-center gap-8">
-                  <div className="w-20 h-20 bg-purple-50 rounded-[2rem] flex items-center justify-center text-purple-600 shrink-0">
-                    <Icon name="graduation-cap" size={40} />
-                  </div>
-                  <div className="flex-1 text-center md:text-left">
-                     <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                        <span className="bg-purple-100 text-purple-700 text-[9px] font-black px-2 py-0.5 rounded uppercase tracking-widest italic">{ll('ad_label')}</span>
-                     </div>
-                     <h3 className="text-2xl font-black text-slate-900 mb-2">OData Masterclass</h3>
-                     <p className="text-slate-500 text-sm font-medium">Lernen Sie professionelle API-Entwicklung mit OData von Grund auf.</p>
-                  </div>
-                  <div className="shrink-0">
-                     <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest transition-all shadow-lg shadow-purple-100 active:scale-95">
-                       Kurs Details
-                     </button>
-                  </div>
-               </div>
-            </div>
+            {(activeTrainings || []).map((t, idx) => (
+              <div key={idx} className="bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-sm border-t-4 border-t-purple-500 p-8 md:p-12 mb-6">
+                 <div className="flex flex-col md:flex-row items-center gap-8">
+                    <div className="w-20 h-20 bg-purple-50 rounded-[2rem] flex items-center justify-center text-purple-600 shrink-0">
+                      <Icon name="graduation-cap" size={40} />
+                    </div>
+                    <div className="flex-1 text-center md:text-left">
+                       <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+                          <span className="bg-purple-100 text-purple-700 text-[9px] font-black px-2 py-0.5 rounded uppercase tracking-widest italic">
+                            {t.general ? "Empfehlung" : ll('ad_label')}
+                          </span>
+                       </div>
+                       <h3 className="text-2xl font-black text-slate-900 mb-2">{t.title}</h3>
+                       <p className="text-slate-500 text-sm font-medium">{t.description}</p>
+                    </div>
+                    <div className="shrink-0">
+                       <a 
+                         href={t.link} 
+                         target="_blank" 
+                         rel="noopener noreferrer"
+                         className="inline-block bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest transition-all shadow-lg shadow-purple-100 active:scale-95"
+                       >
+                         {ll('course_details')}
+                       </a>
+                    </div>
+                 </div>
+              </div>
+            ))}
 
             <AdContainer type="content" title={ll('ad_label')} className="w-full min-h-[150px]" />
           </div>
