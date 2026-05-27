@@ -24,15 +24,19 @@ if ($php) {
 	Write-Host "API aktiv unter /api/getData.php" -ForegroundColor Green
 	php -S localhost:8000
 } else {
-	# Versuche py, dann python3, dann python
-	$py = Get-Command py -ErrorAction SilentlyContinue
-	if (-not $py) { $py = Get-Command python3 -ErrorAction SilentlyContinue }
-	if (-not $py) { $py = Get-Command python -ErrorAction SilentlyContinue }
-	if ($py) {
-	Write-Host "PHP nicht gefunden. Starte statischen Python-Server (API /api GETs funktionieren NICHT)." -ForegroundColor Yellow
-	& $py.Source -m http.server 8000
+	$pythonExe = 'C:\Users\remotelogin\AppData\Local\Programs\Python\Python313\python.exe'
+	if (-not (Test-Path $pythonExe)) {
+		# Falls der konkrete Pfad nicht existiert, prüfen wir weitere Python-Launcher
+		$py = Get-Command py -ErrorAction SilentlyContinue
+		if (-not $py) { $py = Get-Command python3 -ErrorAction SilentlyContinue }
+		if (-not $py) { $py = Get-Command python -ErrorAction SilentlyContinue }
+		if ($py) { $pythonExe = $py.Source }
+	}
+	if (Test-Path $pythonExe) {
+		Write-Host "PHP nicht gefunden. Starte statischen Python-Server (API /api GETs funktionieren NICHT)." -ForegroundColor Yellow
+		& $pythonExe -m http.server 8000
 	} else {
-	Write-Host "Weder PHP noch Python gefunden. Starte PowerShell-basierten statischen Server (API /api GETs funktionieren NICHT)." -ForegroundColor Yellow
+		Write-Host "Weder PHP noch Python gefunden. Starte PowerShell-basierten statischen Server (API /api GETs funktionieren NICHT)." -ForegroundColor Yellow
 		Write-Host "Statischer Server läuft auf http://localhost:8000 (nur statische Dateien; PHP-API nicht verfügbar)" -ForegroundColor Cyan
 
 		# Minimaler statischer HTTP-Server in PowerShell (benutzt HttpListener)
